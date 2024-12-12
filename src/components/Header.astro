@@ -1,0 +1,88 @@
+---
+
+---
+
+<style>
+  .header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150%;
+    backdrop-filter: blur(20px);
+    mask-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, 0.4)
+    );
+    -webkit-mask-image: linear-gradient(to bottom, black, transparent);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .link {
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-weight: 500;
+  }
+
+  .link:hover {
+    background-color: #6363630a;
+    font-weight: 700;
+  }
+</style>
+
+<header
+  class="top-0 header w-screen h-20 bg-opacity-50 px-10 flex flex-row gap-6 items-center justify-between z-50 fixed"
+>
+  <h1 class="text-white text-2xl">TARS</h1>
+  <nav class="flex justify-between">
+    <a
+      onmouseover="followMouse('/')"
+      onmouseleave="removeMov('/')"
+      href="/"
+      class="link text-white transition-all">Home</a
+    >
+    <a
+      onmouseover="followMouse('/about')"
+      onmouseleave="removeMov('/about')"
+      href="/about"
+      class="link text-white transition-all">About</a
+    >
+    <a
+      onmouseover="followMouse('/contact')"
+      onmouseleave="removeMov('/contact')"
+      href="/contact"
+      class="link text-white transition-all">Contact</a
+    >
+  </nav>
+</header>
+
+<script is:inline>
+  function followMouse(element) {
+    const el = document.querySelector(`a[href="${element}"]`);
+    let firstTransformApplied = false;
+
+    el.addEventListener("mousemove", (e) => {
+      const moveX = (e.clientX - el.getBoundingClientRect().left) / 10;
+      const moveY = (e.clientY - el.getBoundingClientRect().top) / 10;
+      el.style.transform = `translate(${moveX}px, ${moveY}px)`;
+
+      if (!firstTransformApplied) {
+        setTimeout(() => {
+          el.style.transition = "none";
+        }, 200);
+        firstTransformApplied = true;
+      }
+    });
+  }
+
+  function removeMov(element) {
+    const el = document.querySelector(`a[href="${element}"]`);
+    el.style.transition = "0.2s";
+    el.style.transform = `translate(0px, 0px)`;
+    firstTransformApplied = false;
+    console.log("removed");
+  }
+</script>

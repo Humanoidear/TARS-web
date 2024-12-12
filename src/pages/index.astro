@@ -1,0 +1,357 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const images = [
+  "https://picsum.photos/200/300?random=1",
+  "https://picsum.photos/200/300?random=2",
+  "https://picsum.photos/200/300?random=3",
+  "https://picsum.photos/200/300?random=4",
+  "https://picsum.photos/200/300?random=5",
+  "https://picsum.photos/200/300?random=6",
+  "https://picsum.photos/200/300?random=7",
+  "https://picsum.photos/200/300?random=8",
+];
+
+function getRandomImage() {
+  return images[Math.floor(Math.random() * images.length)];
+}
+
+const competitions = [
+  {
+    image:
+      "https://www.spaceagenda.com/wp-content/uploads/2024/07/erc-featured-min-1024x597-1.webp",
+    title: "ERC",
+    description:
+      "European Rover Challenge (ERC) es una competición internacional de robótica espacial donde equipos de todo el mundo diseñan y construyen rovers para realizar misiones en un entorno simulado de Marte.",
+  },
+  {
+    image:
+      "https://www.eurobot.es/wp-content/uploads/2024/02/Eurobot2024_Cartel-724x1024.png",
+    title: "Eurobot",
+    description:
+      "Eurobot es una competición internacional de robótica donde equipos de estudiantes y aficionados diseñan, construyen y programan robots autónomos para completar desafíos específicos en un campo de juego.",
+  },
+  {
+    image:
+      "https://thumbs.dreamstime.com/b/uav-drone-modern-cityscape-communication-network-concept-telecommunication-smart-city-iot-ict-g-ai-generated-uav-drone-318726787.jpg",
+    title: "Drone Inteligente",
+    description:
+      "La competición de Drone Inteligente desafía a los equipos a desarrollar drones autónomos capaces de realizar tareas complejas, como navegación, reconocimiento y manipulación de objetos en entornos dinámicos.",
+  },
+  {
+    image: "https://battlebots.com/wp-content/uploads/2023/11/IMG_9072.jpg",
+    title: "Battlebots",
+    description:
+      "Battlebots es una competición de robótica donde equipos diseñan y construyen robots de combate que se enfrentan en una arena, utilizando diversas armas y estrategias para derrotar a sus oponentes.",
+  },
+];
+---
+
+---
+
+<Layout title="TARS | Innovación y excelencia en robótica competitiva">
+  <Header />
+  <main>
+    <div
+      class="top-0 w-screen h-screen rounded-b-lg -translate-y-6 flex flex-row items-center px-48 relative"
+    >
+      <div class="flex flex-col items-start gap-3 z-20 relative">
+        <h1 class="mb-0 text-7xl text-white flex flex-col items-start">
+          <span class="opacity-60 text-2xl font-[SourceCodePro] font-medium"
+            >somos_</span
+          >TARS
+        </h1>
+        <p class="mb-6 max-w-[450px] text-2xl text-white/60 font-medium">
+          Innovación y excelencia en robótica competitiva
+        </p>
+        <Button text="Descubre nuestro proyectos" href="/about" />
+      </div>
+      <span
+        class="parallax-text bottom-32 -left-[10%] font-[Braille] text-[200px] text-white opacity-5 rotate-90 z-0 absolute"
+        >TARS</span
+      >
+      <iframe
+        src="/html/particles.html"
+        class="top-0 left-0 opacity-60 w-screen h-screen absolute"></iframe>
+      <div
+        class="left-0 top-0 hero w-screen h-screen min-h-[800px] z-10 absolute"
+      >
+      </div>
+      <div class="left-0 top-0 bg w-screen h-screen min-h-[800px] z-0 absolute">
+      </div>
+    </div>
+    <div class="w-screen bg-[#121212] -translate-y-6">
+      <div class="flex flex-row gap-6 px-36 relative">
+        {
+          Array.from({ length: 4 }).map((_, i) => (
+            <div class="rounded-lg bg-[#181818] -translate-y-16 hover:-translate-y-20 hover:shadow-md transition-all overflow-hidden">
+              <img
+                src={getRandomImage()}
+                alt={`Noticia ${i + 1}`}
+                class="w-full h-56 top-0 left-0 object-cover"
+              />
+              <div class="p-3">
+                <h2 class="font-bold text-2xl text-white">Proyecto {i + 1}</h2>
+                <p class="mb-3 text-white">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                  nec dui nec odio.
+                </p>
+                <Button class="mb-6" text="Leer más +" href="/projects" />
+              </div>
+            </div>
+          ))
+        }
+      </div>
+      <h3
+        class="px-36 -translate-y-12 font-[SourceCodePro] text-white/70 text-xl"
+      >
+        Últimas noticias_
+      </h3>
+      <div class="mt-16 px-36 flex flex-row gap-8 items-center">
+        <div class="max-w-[800px]">
+          <h2 class="font-bold text-4xl text-white">Sobre nosotros</h2>
+          <p class="mt-3 mb-6 text-white">
+            En TARS UPV, somos apasionados por la robótica y la tecnología. Como
+            grupo universitario de la Universidad Politécnica de Valencia, nos
+            dedicamos a diseñar, construir y programar robots para competir en
+            eventos nacionales e internacionales. Nuestro objetivo es fomentar
+            el aprendizaje y la innovación en el campo de la robótica,
+            proporcionando a nuestros miembros la oportunidad de desarrollar
+            habilidades técnicas y de trabajo en equipo.
+          </p>
+          <Button text="Conoce al equipo" href="/about" />
+        </div>
+        <div class="rover-image w-full h-auto transition-all relative">
+          <img
+            src="https://www.tarsupv.com/images/robot.jpg"
+            alt="Robot"
+            class="w-full h-auto rounded-lg bg-[#181818]"
+          />
+          <div
+            class="bg-tilt top-0 w-full h-full rounded-lg rotate-6 bg-[#18181830] transition-all absolute"
+          >
+          </div>
+        </div>
+      </div>
+      <div class="px-36 mt-36">
+        <div
+          class="mb-6 w-full flex flex-row items-center justify-between gap-6"
+        >
+          <h2 class="font-bold text-4xl text-white">Nuestros proyectos</h2>
+          <Button text="Saber más" href="/about" />
+        </div>
+        <div
+          class="w-full h-auto bg-[#121212] grid grid-cols-1 md:grid-cols-2 gap-6"
+        >
+          {
+            competitions.map((competition) => (
+              <div class="card">
+                <div class="card-inner rounded-lg bg-[#181818] hover:shadow-lg overflow-hidden">
+                  <img
+                    src={competition.image}
+                    alt={competition.title}
+                    class="w-full h-56 top-0 left-0 object-cover"
+                  />
+                  <div class="p-4">
+                    <h2 class="text-xl font-semibold text-white mb-2">
+                      {competition.title}
+                    </h2>
+                    <p class="text-gray-400">{competition.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+
+        <script>
+          document.addEventListener("DOMContentLoaded", () => {
+            const cards = document.querySelectorAll(".card");
+
+            cards.forEach((card) => {
+              card.addEventListener("mousemove", (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = (y - centerY) / 30;
+                const rotateY = (x - centerX) / 30;
+
+                card.querySelector(".card-inner").style.transform =
+                  `rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
+              });
+
+              card.addEventListener("mouseleave", () => {
+                card.querySelector(".card-inner").style.transform =
+                  "rotateY(0deg) rotateX(0deg)";
+              });
+            });
+          });
+        </script>
+      </div>
+      <div class="px-36 mt-36">
+        <div
+          class="mb-6 w-full flex flex-row items-center justify-between gap-6"
+        >
+          <h2 class="font-bold text-4xl text-white">Nuestro equipo</h2>
+        </div>
+        <div
+          class="w-full h-80 bg-[#181818] rounded-lg flex flex-col items-center justify-center"
+        >
+        <h3 class="font-bold text-2xl text-white">Próximamente...</h3>
+      </div>
+      </div>
+      <div class="px-36 mt-36">
+        <h2 class="font-bold text-4xl text-white mb-6">Contacto</h2>
+        <div class="w-full flex flex-row gap-8 relative">
+          <form class="w-full bg-[#181818] p-6 rounded-lg shadow-md">
+            <div class="mb-4">
+              <label for="name" class="block text-white text-sm font-bold mb-2"
+                >Nombre</label
+              >
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="w-full px-3 py-2 text-gray-700 bg-gray-200 rounded-lg focus:outline-none focus:shadow-outline"
+                required
+              />
+            </div>
+            <div class="mb-4">
+              <label for="email" class="block text-white text-sm font-bold mb-2"
+                >Correo Electrónico</label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="w-full px-3 py-2 text-gray-700 bg-gray-200 rounded-lg focus:outline-none focus:shadow-outline"
+                required
+              />
+            </div>
+            <div class="mb-4">
+              <label
+                for="message"
+                class="block text-white text-sm font-bold mb-2">Mensaje</label
+              >
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                class="w-full px-3 py-2 text-gray-700 bg-gray-200 rounded-lg focus:outline-none focus:shadow-outline"
+                required></textarea>
+            </div>
+            <div class="flex items-center justify-between">
+              <button
+                type="submit"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                >Enviar</button
+              >
+            </div>
+          </form>
+          <div>
+            <h3 class="text-2xl font-bold text-white mb-4">Información de Contacto</h3>
+            <p class="flex items-center text-white mb-3">
+              <img src="https://img.icons8.com/ios-filled/50/ffffff/marker.png" alt="Dirección" class="w-6 h-6 mr-2" />
+              Dirección: Camino de Vera, s/n, 46022 Valencia
+            </p>
+            <p class="flex items-center text-white mb-3">
+              <img src="https://img.icons8.com/ios-filled/50/ffffff/phone.png" alt="Teléfono" class="w-6 h-6 mr-2" />
+              Teléfono: +34 123 456 789
+            </p>
+            <p class="flex items-center text-white mb-3">
+              <img src="https://img.icons8.com/ios-filled/50/ffffff/email.png" alt="Email" class="w-6 h-6 mr-2" />
+              Email: contacto@tarsupv.com
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <Footer />
+    </div>
+  </main>
+</Layout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const parallaxText = document.querySelector(".parallax-text");
+
+    window.addEventListener("scroll", () => {
+      const scrollPosition = window.scrollY;
+      parallaxText.style.transform = `translateY(${scrollPosition * 0.3}px) rotate(90deg)`;
+    });
+  });
+</script>
+
+<style>
+  .hero {
+    background-color: #ffffff00;
+    opacity: 0.3;
+    background-image: linear-gradient(#ffffff20 1px, transparent 1px),
+      linear-gradient(to right, #ffffff20 1px, #ffffff00 1px);
+    background-size: 40px 40px;
+    mask-image: radial-gradient(circle, white 0%, transparent 70%);
+    -webkit-mask-image: radial-gradient(circle, white 0%, transparent 70%);
+  }
+  .bg {
+    background: linear-gradient(
+      45deg,
+      rgba(14, 14, 107, 0.3),
+      rgba(209, 24, 209, 0.15),
+      rgba(173, 216, 230, 0)
+    );
+  }
+  h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+  }
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+  .instructions {
+    margin-bottom: 2rem;
+    border: 1px solid rgba(var(--accent-light), 25%);
+    background: linear-gradient(
+      rgba(var(--accent-dark), 66%),
+      rgba(var(--accent-dark), 33%)
+    );
+    padding: 1.5rem;
+    border-radius: 8px;
+  }
+  .instructions code {
+    font-size: 0.8em;
+    font-weight: bold;
+    background: rgba(var(--accent-light), 12%);
+    color: rgb(var(--accent-light));
+    border-radius: 4px;
+    padding: 0.3em 0.4em;
+  }
+  .instructions strong {
+    color: rgb(var(--accent-light));
+  }
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 2rem;
+    padding: 0;
+  }
+
+  .rover-image:hover {
+    transform: scale(1.05);
+    background-color: #101010;
+  }
+  .rover-image:hover .bg-tilt {
+    transform: rotate(-6deg);
+    opacity: 0.6;
+  }
+</style>
