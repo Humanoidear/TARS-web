@@ -136,7 +136,8 @@ function parseCenterTags(html) {
   return centerHTML;
 }
 const localizedContentArray = parseLocalizedContent(bodyHTML);
-const defaultLanguage = "en";
+const defaultLanguage = "es";
+const currentLanguage = "es";
 const localizedContent = localizedContentArray.find(
   (item) => item.lang === currentLanguage
 );

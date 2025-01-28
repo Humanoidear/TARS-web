@@ -10,12 +10,13 @@ const entries = await contentfulClient.getEntries<work>({
     content_type: "blogTars",
 });
 const posts = entries.items.map((item) => {
-    const { title, slug, date, headerImg } = item.fields;
+    const { title, slug, date, headerImg, description } = item.fields;
     return {
         title,
         slug,
         date,
         headerImg,
+        description,
     };
 });
 ---
@@ -34,7 +35,7 @@ const posts = entries.items.map((item) => {
             posts.map((post, i) => (
             <a href={`work/${post.slug}`} class="post w-full rounded-lg bg-[#181818] -translate-y-16 hover:-translate-y-20 hover:shadow-md transition-all overflow-hidden">
               <img
-                src={post.headerImg?.fields?.file?.url}
+                src={post.headerImg && 'fields' in post.headerImg ? post.headerImg.fields.file.url : ''}
                 alt={`Noticia ${i + 1}`}
                 class="w-full h-56 top-0 left-0 object-cover"
               />

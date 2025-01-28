@@ -6,12 +6,10 @@ import HeadTitle from "../../components/HeadTitle.astro";
 import teamjson from "../../../public/json/team.json";
 import { ViewTransitions } from "astro:transitions";
 
-// First create Presidencia group
 const groupedMembers = {
   Presidencia: teamjson.filter((member) => member.isCoordinator === 0),
 };
 
-// Then add other positions
 teamjson
   .filter((member) => member.position && member.position.trim() !== "")
   .reduce((acc, member) => {
@@ -23,7 +21,6 @@ teamjson
     return acc;
   }, groupedMembers);
 
-// Get non-empty positions, Presidencia will be first since it was added first
 const positions = Object.keys(groupedMembers).filter(
   (pos) => pos.trim() !== "" && groupedMembers[pos].length > 0
 );
@@ -315,7 +312,6 @@ const groupIcons = {
 </style>
 
 <script>
-  // Highlight active section
   const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll(".position");
 
@@ -380,10 +376,10 @@ const groupIcons = {
   observer2.observe(sentinel);
 
   document.querySelectorAll("#parallax-container").forEach((container) => {
-    const person = container.querySelector(".person-image");
-    const background = container.querySelector(".background-image");
+    const person = container.querySelector(".person-image") as HTMLElement;
+    const background = container.querySelector(".background-image") as HTMLElement;
 
-    container.addEventListener("mousemove", (e) => {
+    container.addEventListener("mousemove", (e: MouseEvent) => {
       const rect = container.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const centerX = rect.width / 2;
