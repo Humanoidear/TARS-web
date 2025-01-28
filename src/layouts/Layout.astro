@@ -12,7 +12,7 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content="TARS UPV - Innovación y excelencia en programación robótica" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="https://www.tarsupv.com/images/favicon.ico" />
+		<link rel="icon" type="image/svg+xml" href="/img/logo-isotype.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
@@ -34,7 +34,8 @@ const { title } = Astro.props;
 	}
 	html {
 		font-family: system-ui, sans-serif;
-		background: #070707;
+		background: #070707 !important;
+		scroll-behavior: smooth;
 	}
 	code {
 		font-family:
@@ -50,11 +51,11 @@ const { title } = Astro.props;
 
 	@font-face {
 		font-family: 'Braille';
-		src: url('./fonts/Braille.ttf') format('truetype');
+		src: url('../fonts/Braille.ttf') format('truetype');
 	}
 
 	@font-face {
 		font-family: 'SourceCodePro';
-		src: url('./fonts/SourceCodePro.ttf') format('truetype');
+		src: url('../fonts/SourceCodePro.ttf') format('truetype');
 	}
 </style>

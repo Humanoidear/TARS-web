@@ -1,10 +1,9 @@
 ---
-import { localizePath } from "astro-i18next";
 const { icon, text, href, externalhref, white, nohide } = Astro.props;
 ---
 
 <a
-  href={href ? localizePath(href) : externalhref}
+  href={href ? href : externalhref}
   class={`pixel-corners px-3 py-1 hover:text-black bg-transparent hover:bg-white text-lg font-medium font-[SourceCodePro] flex-row items-center inline-flex transition-bezier ${white ? "bg-white text-black" : "text-white"}`}
 >
   {

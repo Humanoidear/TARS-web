@@ -1,0 +1,115 @@
+---
+import teamjson from "../../public/json/team.json";
+
+const socialLogos = {
+  LinkedIn: `<?xml version="1.0" ?><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g><path d="M0 0h24v24H0z" fill="none"/><path d="M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z" fill-rule="nonzero"/></g></svg>`,
+  GitHub: `<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg height="100%" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><style type="text/css"><![CDATA[
+    .st0{fill-rule:evenodd;clip-rule:evenodd;}
+]]></style><g><path class="st0" d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/></g></svg>`,
+  Twitter: `<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg height="100%" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;" version="1.1" viewBox="0 0 512 512" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:serif="http://www.serif.com/" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M161.014,464.013c193.208,0 298.885,-160.071 298.885,-298.885c0,-4.546 0,-9.072 -0.307,-13.578c20.558,-14.871 38.305,-33.282 52.408,-54.374c-19.171,8.495 -39.51,14.065 -60.334,16.527c21.924,-13.124 38.343,-33.782 46.182,-58.102c-20.619,12.235 -43.18,20.859 -66.703,25.498c-19.862,-21.121 -47.602,-33.112 -76.593,-33.112c-57.682,0 -105.145,47.464 -105.145,105.144c0,8.002 0.914,15.979 2.722,23.773c-84.418,-4.231 -163.18,-44.161 -216.494,-109.752c-27.724,47.726 -13.379,109.576 32.522,140.226c-16.715,-0.495 -33.071,-5.005 -47.677,-13.148l0,1.331c0.014,49.814 35.447,93.111 84.275,102.974c-15.464,4.217 -31.693,4.833 -47.431,1.802c13.727,42.685 53.311,72.108 98.14,72.95c-37.19,29.227 -83.157,45.103 -130.458,45.056c-8.358,-0.016 -16.708,-0.522 -25.006,-1.516c48.034,30.825 103.94,47.18 161.014,47.104" style="fill-rule:nonzero;"/></svg>`,
+  Dribbble: `<?xml version="1.0" ?><svg data-name="Layer 2" id="Layer_2" viewBox="0 0 35 35" xmlns="http://www.w3.org/2000/svg"><path d="M17.5,34.75A17.25,17.25,0,1,1,34.75,17.5,17.27,17.27,0,0,1,17.5,34.75Zm0-32A14.75,14.75,0,1,0,32.25,17.5,14.77,14.77,0,0,0,17.5,2.75Z"/><path d="M9.51,17.17a22.17,22.17,0,0,1-8.17-1.55,1.25,1.25,0,1,1,.91-2.32,20.1,20.1,0,0,0,17-1.17,19.81,19.81,0,0,0,7.52-7.46,1.25,1.25,0,0,1,1.7-.47,1.26,1.26,0,0,1,.47,1.71,22.37,22.37,0,0,1-8.46,8.4A22.42,22.42,0,0,1,9.51,17.17Z"/><path d="M7.6,31.32a1.32,1.32,0,0,1-.54-.12,1.25,1.25,0,0,1-.58-1.67A22.38,22.38,0,0,1,33.82,18.06,1.25,1.25,0,1,1,33,20.42,19.87,19.87,0,0,0,8.73,30.61,1.25,1.25,0,0,1,7.6,31.32Z"/><path d="M22.81,33.84l-.3,0a1.25,1.25,0,0,1-.92-1.51,24.78,24.78,0,0,0,.66-5.72A24.87,24.87,0,0,0,21.06,19a24.16,24.16,0,0,0-2.29-5.1A25,25,0,0,0,9.13,4.62a1.25,1.25,0,1,1,1.19-2.2,27.51,27.51,0,0,1,10.6,10.16,26.61,26.61,0,0,1,2.53,5.62,27.58,27.58,0,0,1,1.3,8.38,27,27,0,0,1-.73,6.3A1.26,1.26,0,0,1,22.81,33.84Z"/></svg>`,
+};
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  {
+    teamjson.map((member) => (
+      <div class="team-member p-3 bg-white/5 rounded-md border border-white/10 flex flex-row items-center gap-6 relative overflow-hidden">
+        <img
+          src={member.pfp}
+          alt={`${member.name}'s profile picture`}
+          class="rounded-md h-28 aspect-square"
+        />
+        <span>
+          <h2 class="text-2xl text-white font-bold">{member.name}</h2>
+          <p class="text-lg text-white/60">{member.position}</p>
+          <div class="mt-2 flex flex-row gap-2">
+            {Object.entries(member.links).map(([platform, url]) => (
+              <a
+                class="w-5 social-link"
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-platform={platform}
+              >
+                <div class="w-5 social-logo" set:html={socialLogos[platform]} />
+              </a>
+            ))}
+          </div>
+        </span>
+        <div class="hover-effect absolute inset-0 -top-full -left-full pointer-events-none" />
+      </div>
+    ))
+  }
+</div>
+
+<script is:inline>
+  document.querySelectorAll(".team-member").forEach((member) => {
+    member.addEventListener("mousemove", (e) => {
+      const rect = member.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const hoverEffect = member.querySelector(".hover-effect");
+      hoverEffect.style.setProperty("--x", `${x}px`);
+      hoverEffect.style.setProperty("--y", `${y}px`);
+    });
+
+    member.addEventListener("mouseleave", () => {
+      const hoverEffect = member.querySelector(".hover-effect");
+      hoverEffect.style.setProperty("--x", `50%`);
+      hoverEffect.style.setProperty("--y", `50%`);
+    });
+  });
+
+  document.querySelectorAll(".team-member").forEach((member) => {
+    member.addEventListener("mousemove", (e) => {
+      member.style.transition = "none";
+      const rect = member.getBoundingClientRect();
+      const x = -(rect.width / 2 - (e.clientX - rect.left)) / 50;
+      const y = (rect.height / 2 - (e.clientY - rect.top)) / 10;
+      member.style.transform = `perspective(1000px) rotateX(${y}deg) rotateY(${x}deg)`;
+    });
+
+    member.addEventListener("mouseleave", () => {
+      member.style.transform = "none";
+      member.style.transition = "transform 0.3s";
+    });
+  });
+</script>
+
+<style>
+  .team-member {
+    transition: box-shadow 0.3s;
+  }
+  .team-member:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  .hover-effect {
+    background: radial-gradient(circle, rgba(255, 255, 255, 0), transparent);
+    transform: translate(50%, 50%);
+    transition: background 0.3s;
+  }
+  .team-member:hover .hover-effect {
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.03), transparent);
+    transform: translate(var(--x), var(--y));
+    transition: background 0.3s;
+  }
+  .social-logo {
+    width: 20px;
+    height: 20px;
+    fill: white;
+    transition: fill 0.2s;
+  }
+  .social-link[data-platform="LinkedIn"]:hover .social-logo {
+    fill: #0077b5;
+  }
+  .social-link[data-platform="GitHub"]:hover .social-logo {
+    fill: #a3a3a3;
+  }
+  .social-link[data-platform="Twitter"]:hover .social-logo {
+    fill: #1da1f2;
+  }
+  .social-link[data-platform="Dribbble"]:hover .social-logo {
+    fill: #ea4c89;
+  }
+</style>

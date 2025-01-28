@@ -1,23 +1,25 @@
 ---
+import { contentfulClient } from "../lib/contentful";
+import type { work } from "../lib/contentful";
 import Layout from "../layouts/Layout.astro";
 import Button from "../components/Button.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import TeamJson from "../components/team.astro";
 
-const images = [
-  "https://picsum.photos/200/300?random=1",
-  "https://picsum.photos/200/300?random=2",
-  "https://picsum.photos/200/300?random=3",
-  "https://picsum.photos/200/300?random=4",
-  "https://picsum.photos/200/300?random=5",
-  "https://picsum.photos/200/300?random=6",
-  "https://picsum.photos/200/300?random=7",
-  "https://picsum.photos/200/300?random=8",
-];
-
-function getRandomImage() {
-  return images[Math.floor(Math.random() * images.length)];
-}
+const entries = await contentfulClient.getEntries<work>({
+  content_type: "blogTars",
+});
+const posts = entries.items.map((item) => {
+  const { title, slug, date, headerImg, description } = item.fields;
+  return {
+    title,
+    slug,
+    date,
+    headerImg,
+    description
+  };
+});
 
 const competitions = [
   {
@@ -25,49 +27,47 @@ const competitions = [
       "https://www.spaceagenda.com/wp-content/uploads/2024/07/erc-featured-min-1024x597-1.webp",
     title: "ERC",
     description:
-      "European Rover Challenge (ERC) es una competición internacional de robótica espacial donde equipos de todo el mundo diseñan y construyen rovers para realizar misiones en un entorno simulado de Marte.",
+      "European Rover Challenge (ERC) es una competici\u00F3n internacional de rob\u00F3tica espacial donde equipos de todo el mundo dise\u00F1an y construyen rovers para realizar misiones en un entorno simulado de Marte.",
   },
   {
     image:
       "https://www.eurobot.es/wp-content/uploads/2024/02/Eurobot2024_Cartel-724x1024.png",
     title: "Eurobot",
     description:
-      "Eurobot es una competición internacional de robótica donde equipos de estudiantes y aficionados diseñan, construyen y programan robots autónomos para completar desafíos específicos en un campo de juego.",
+      "Eurobot es una competici\u00F3n internacional de rob\u00F3tica donde equipos de estudiantes y aficionados dise\u00F1an, construyen y programan robots aut\u00F3nomos para completar desaf\u00EDos espec\u00EDficos en un campo de juego.",
   },
   {
     image:
       "https://thumbs.dreamstime.com/b/uav-drone-modern-cityscape-communication-network-concept-telecommunication-smart-city-iot-ict-g-ai-generated-uav-drone-318726787.jpg",
     title: "Drone Inteligente",
     description:
-      "La competición de Drone Inteligente desafía a los equipos a desarrollar drones autónomos capaces de realizar tareas complejas, como navegación, reconocimiento y manipulación de objetos en entornos dinámicos.",
+      "La competici\u00F3n de Drone Inteligente desaf\u00EDa a los equipos a desarrollar drones aut\u00F3nomos capaces de realizar tareas complejas, como navegaci\u00F3n, reconocimiento y manipulaci\u00F3n de objetos en entornos din\u00E1micos.",
   },
   {
     image: "https://battlebots.com/wp-content/uploads/2023/11/IMG_9072.jpg",
     title: "Battlebots",
     description:
-      "Battlebots es una competición de robótica donde equipos diseñan y construyen robots de combate que se enfrentan en una arena, utilizando diversas armas y estrategias para derrotar a sus oponentes.",
+      "Battlebots es una competici\u00F3n de rob\u00F3tica donde equipos dise\u00F1an y construyen robots de combate que se enfrentan en una arena, utilizando diversas armas y estrategias para derrotar a sus oponentes.",
   },
 ];
----
-
 ---
 
 <Layout title="TARS | Innovación y excelencia en robótica competitiva">
   <Header />
   <main>
     <div
-      class="top-0 w-screen h-screen rounded-b-lg -translate-y-6 flex flex-row items-center px-48 relative"
+      class="top-0 w-screen h-screen rounded-b-lg flex flex-row items-center px-48 relative"
     >
       <div class="flex flex-col items-start gap-3 z-20 relative">
         <h1 class="mb-0 text-7xl text-white flex flex-col items-start">
           <span class="opacity-60 text-2xl font-[SourceCodePro] font-medium"
             >somos_</span
-          >TARS
+          ><img src="/img/logo-wordmark.png" class="mt-3 h-16" />
         </h1>
         <p class="mb-6 max-w-[450px] text-2xl text-white/60 font-medium">
           Innovación y excelencia en robótica competitiva
         </p>
-        <Button text="Descubre nuestro proyectos" href="/about" />
+        <Button text="Descubre nuestro proyectos" href="/#about" />
       </div>
       <span
         class="parallax-text bottom-32 -left-[10%] font-[Braille] text-[200px] text-white opacity-5 rotate-90 z-0 absolute"
@@ -83,23 +83,39 @@ const competitions = [
       <div class="left-0 top-0 bg w-screen h-screen min-h-[800px] z-0 absolute">
       </div>
     </div>
-    <div class="w-screen bg-[#121212] -translate-y-6">
+    <div class="w-screen bg-[#121212]">
       <div class="flex flex-row gap-6 px-36 relative">
         {
-          Array.from({ length: 4 }).map((_, i) => (
-            <div class="rounded-lg bg-[#181818] -translate-y-16 hover:-translate-y-20 hover:shadow-md transition-all overflow-hidden">
+          posts.map((post, i) => (
+            <a href={`work/${post.slug}`} class="post w-1/4 rounded-lg bg-[#181818] -translate-y-16 hover:-translate-y-20 hover:shadow-md transition-all overflow-hidden">
               <img
-                src={getRandomImage()}
+                src={post.headerImg?.fields?.file?.url}
                 alt={`Noticia ${i + 1}`}
                 class="w-full h-56 top-0 left-0 object-cover"
               />
               <div class="p-3">
-                <h2 class="font-bold text-2xl text-white">Proyecto {i + 1}</h2>
+                <h2 class="font-bold text-2xl text-white">{post.title}</h2>
                 <p class="mb-3 text-white">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-                  nec dui nec odio.
+                  {post.description ||
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec dui nec odio."}
                 </p>
-                <Button class="mb-6" text="Leer más +" href="/projects" />
+              </div>
+              <div class="more">
+                <div class="w-full h-16 bg-white/5 hover:bg-white/10 text-white text-xl font-semibold flex items-center justify-center transition-all">
+                  Leer más
+                  </div>
+                </div>
+            </a>
+          ))
+        }
+        {
+          Array.from({ length: 4 - posts.length }).map((_, i) => (
+            <div class="w-1/4 rounded-lg bg-[#181818] -translate-y-16 hover:-translate-y-20 hover:shadow-md transition-all overflow-hidden">
+              <div class="w-full h-56 top-0 left-0 object-cover bg-[#181818]" />
+              <div class="p-3">
+                <h2 class="font-bold text-2xl text-transparent">Placeholder</h2>
+                <p class="mb-3 text-transparent">Placeholder description</p>
+                <div class="mb-6" />
               </div>
             </div>
           ))
@@ -110,7 +126,7 @@ const competitions = [
       >
         Últimas noticias_
       </h3>
-      <div class="mt-16 px-36 flex flex-row gap-8 items-center">
+      <div id="about" class="mt-16 px-36 flex flex-row gap-8 items-center">
         <div class="max-w-[800px]">
           <h2 class="font-bold text-4xl text-white">Sobre nosotros</h2>
           <p class="mt-3 mb-6 text-white">
@@ -122,7 +138,7 @@ const competitions = [
             proporcionando a nuestros miembros la oportunidad de desarrollar
             habilidades técnicas y de trabajo en equipo.
           </p>
-          <Button text="Conoce al equipo" href="/about" />
+          <Button text="Conoce al equipo" href="/#team" />
         </div>
         <div class="rover-image w-full h-auto transition-all relative">
           <img
@@ -141,7 +157,6 @@ const competitions = [
           class="mb-6 w-full flex flex-row items-center justify-between gap-6"
         >
           <h2 class="font-bold text-4xl text-white">Nuestros proyectos</h2>
-          <Button text="Saber más" href="/about" />
         </div>
         <div
           class="w-full h-auto bg-[#121212] grid grid-cols-1 md:grid-cols-2 gap-6"
@@ -162,33 +177,42 @@ const competitions = [
                     <p class="text-gray-400">{competition.description}</p>
                   </div>
                 </div>
+                <div class="hover-effect absolute inset-0 -top-full -left-full pointer-events-none" />
               </div>
             ))
           }
         </div>
 
-        <script>
-          document.addEventListener("DOMContentLoaded", () => {
-            const cards = document.querySelectorAll(".card");
-
-            cards.forEach((card) => {
-              card.addEventListener("mousemove", (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                const rotateX = (y - centerY) / 30;
-                const rotateY = (x - centerX) / 30;
-
-                card.querySelector(".card-inner").style.transform =
-                  `rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
-              });
-
-              card.addEventListener("mouseleave", () => {
-                card.querySelector(".card-inner").style.transform =
-                  "rotateY(0deg) rotateX(0deg)";
-              });
+        <script is:inline>
+          document.querySelectorAll(".card").forEach((member) => {
+            member.addEventListener("mousemove", (e) => {
+              const rect = member.getBoundingClientRect();
+              const x = e.clientX - rect.left;
+              const y = e.clientY - rect.top;
+              const hoverEffect = member.querySelector(".hover-effect");
+              hoverEffect.style.setProperty("--x", `${x}px`);
+              hoverEffect.style.setProperty("--y", `${y}px`);
+            });
+        
+            member.addEventListener("mouseleave", () => {
+              const hoverEffect = member.querySelector(".hover-effect");
+              hoverEffect.style.setProperty("--x", `50%`);
+              hoverEffect.style.setProperty("--y", `50%`);
+            });
+          });
+        
+          document.querySelectorAll(".card").forEach((member) => {
+            member.addEventListener("mousemove", (e) => {
+              member.style.transition = "none";
+              const rect = member.getBoundingClientRect();
+              const x = -(rect.width / 2 - (e.clientX - rect.left)) / 500;
+              const y = (rect.height / 2 - (e.clientY - rect.top)) / 100;
+              member.style.transform = `perspective(1000px) rotateX(${y}deg) rotateY(${x}deg)`;
+            });
+        
+            member.addEventListener("mouseleave", () => {
+              member.style.transform = "none";
+              member.style.transition = "transform 0.3s";
             });
           });
         </script>
@@ -197,76 +221,40 @@ const competitions = [
         <div
           class="mb-6 w-full flex flex-row items-center justify-between gap-6"
         >
-          <h2 class="font-bold text-4xl text-white">Nuestro equipo</h2>
+          <h2 id="team" class="font-bold text-4xl text-white">Nuestro equipo</h2>
+          <Button text="Ver a todo el equipo" href="/team" />
         </div>
-        <div
-          class="w-full h-80 bg-[#181818] rounded-lg flex flex-col items-center justify-center"
-        >
-        <h3 class="font-bold text-2xl text-white">Próximamente...</h3>
+        <TeamJson />
       </div>
-      </div>
-      <div class="px-36 mt-36">
+      <div id="contact" class="px-36 mt-36">
         <h2 class="font-bold text-4xl text-white mb-6">Contacto</h2>
-        <div class="w-full flex flex-row gap-8 relative">
-          <form class="w-full bg-[#181818] p-6 rounded-lg shadow-md">
-            <div class="mb-4">
-              <label for="name" class="block text-white text-sm font-bold mb-2"
-                >Nombre</label
-              >
-              <input
-                type="text"
-                id="name"
-                name="name"
-                class="w-full px-3 py-2 text-gray-700 bg-gray-200 rounded-lg focus:outline-none focus:shadow-outline"
-                required
+        <div class="w-full text-white text-2xl text-semibold flex flex-col gap-8 relative">
+          Te gustaría formar parte del equipo o colaborar con nosotros? No dudes en contactarnos!
+          <div class="w-full flex flex-row gap-3">
+            <a href="https://maps.google.com/?q=Universidad Politécnica de Valencia" class="p-3 rounded-l-xl rounded-r-md bg-white/5 hover:bg-white/10 flex items-center text-white mb-3">
+              <img
+                src="/img/pin.svg"
+                alt="Dirección"
+                class="w-8 h-8 mr-3 invert"
               />
-            </div>
-            <div class="mb-4">
-              <label for="email" class="block text-white text-sm font-bold mb-2"
-                >Correo Electrónico</label
-              >
-              <input
-                type="email"
-                id="email"
-                name="email"
-                class="w-full px-3 py-2 text-gray-700 bg-gray-200 rounded-lg focus:outline-none focus:shadow-outline"
-                required
+              Camino de Vera, s/n, 46022 Valencia
+            </a>
+            <a href="phone:+34123456789" class="p-3 rounded-md bg-white/5 hover:bg-white/10 flex items-center text-white mb-3">
+              <img
+                src="/img/phone.svg"
+                alt="Teléfono"
+                class="w-8 h-8 mr-3 invert"
               />
-            </div>
-            <div class="mb-4">
-              <label
-                for="message"
-                class="block text-white text-sm font-bold mb-2">Mensaje</label
-              >
-              <textarea
-                id="message"
-                name="message"
-                rows="4"
-                class="w-full px-3 py-2 text-gray-700 bg-gray-200 rounded-lg focus:outline-none focus:shadow-outline"
-                required></textarea>
-            </div>
-            <div class="flex items-center justify-between">
-              <button
-                type="submit"
-                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                >Enviar</button
-              >
-            </div>
-          </form>
-          <div>
-            <h3 class="text-2xl font-bold text-white mb-4">Información de Contacto</h3>
-            <p class="flex items-center text-white mb-3">
-              <img src="https://img.icons8.com/ios-filled/50/ffffff/marker.png" alt="Dirección" class="w-6 h-6 mr-2" />
-              Dirección: Camino de Vera, s/n, 46022 Valencia
-            </p>
-            <p class="flex items-center text-white mb-3">
-              <img src="https://img.icons8.com/ios-filled/50/ffffff/phone.png" alt="Teléfono" class="w-6 h-6 mr-2" />
-              Teléfono: +34 123 456 789
-            </p>
-            <p class="flex items-center text-white mb-3">
-              <img src="https://img.icons8.com/ios-filled/50/ffffff/email.png" alt="Email" class="w-6 h-6 mr-2" />
-              Email: contacto@tarsupv.com
-            </p>
+              +34 123 456 789
+            </a>
+            <a href="mailto:contacto@tarsupv.com" class="p-3 rounded-l-md rounded-r-2xl bg-white/5 hover:bg-white/10 flex items-center text-white mb-3">
+              <img
+                src="/img/mail.svg"
+                alt="Email"
+                class="w-8 h-8 mr-3 invert"
+              />
+              contacto@tarsupv.com
+            </a>
           </div>
         </div>
       </div>
@@ -317,6 +305,15 @@ const competitions = [
     -webkit-text-fill-color: transparent;
     background-size: 400%;
     background-position: 0%;
+  }
+  .more {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s;
+  }
+  .post:hover .more {
+    height: 64px;
+    transition: height 0.3s;
   }
   .instructions {
     margin-bottom: 2rem;

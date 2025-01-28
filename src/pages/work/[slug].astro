@@ -1,0 +1,278 @@
+---
+import { contentfulClient } from "../../lib/contentful";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import { documentToPlainTextString } from "@contentful/rich-text-plain-text-renderer";
+import type { work } from "../../lib/contentful";
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import Button from "../../components/Button.astro";
+
+export async function getStaticPaths() {
+  const { items } = await contentfulClient.getEntries<work>({
+    content_type: "blogTars",
+  });
+  const pages = items.map((item) => ({
+    params: { slug: item.fields.slug },
+    props: {
+      title: item.fields.title,
+      slug: item.fields.slug,
+      content: item.fields.content,
+      date: item.fields.date,
+      headerImg: item.fields.headerImg,
+    },
+  }));
+  return pages;
+}
+const { content, title, slug, date, headerImg } = Astro.props;
+let options = {
+  renderNode: {
+    "embedded-asset-block": (node: any) => {
+      const file = node.data.target.fields?.file;
+      if (!file || !file.contentType) {
+        return `<p class="flex flex-row items-center gap-3 font-[MGNHumble]"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-10 h-10"> <path d="M3 3h16v2H5v14h14v2H3V3zm18 0h-2v18h2V3zM11 15h2v2h-2v-2zm2-8h-2v6h2V7z" fill="currentColor"/> </svg> Unsupported asset type</p>`;
+      }
+      const mimeType = file.contentType;
+      const url = file.url;
+      if (mimeType.startsWith("image/")) {
+        return `<img class="img-fluid" src="${url}" alt="${node.data.target.fields.title}"/>`;
+      } else if (mimeType.startsWith("video/")) {
+        return `<video class="video-fluid" autoplay loop muted>
+                            <source src="${url}" type="${mimeType}">
+                            Your browser does not support the video tag.
+                        </video>`;
+      } else if (mimeType === "application/pdf") {
+        return `<embed src="${url}" type="application/pdf" width="100%" height="600px" />`;
+      } else {
+        return `<a href="${url}" target="_blank" class="pixel-corners mb-3 border border-white/20 bg-white/5 hover:bg-white/10 hover:text-white text-white flex flex-col items-center justify-between relative"><p class="p-3 w-full flex flex-row items-center justify-between relative" style="margin-bottom:0;"><span class="flex flex-row items-center gap-3"><svg class="w-6 relative" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M21 22H3V2h12v2h2v2h2v2h2v14zM17 6h-2v2h2V6zM5 4v16h14V10h-6V4H5zm8 12H7v2h6v-2zm-6-4h10v2H7v-2zm4-4H7v2h4V8z" fill="currentColor"/> </svg> ${node.data.target.fields.title}</span> <svg class="w-6" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M4 11v2h12v2h2v-2h2v-2h-2V9h-2v2H4zm10-4h2v2h-2V7zm0 0h-2V5h2v2zm0 10h2v-2h-2v2zm0 0h-2v2h2v-2z" fill="currentColor"/> </svg></p></a>`;
+      }
+    },
+  },
+};
+let parsedSEOContent = documentToPlainTextString(content);
+if (parsedSEOContent.length > 60) {
+  parsedSEOContent = parsedSEOContent.slice(0, 160) + "...";
+}
+let bodyHTML = content ? documentToHtmlString(content, options) : "";
+function parseLocalizedContent(html) {
+  const regex =
+    /<p>&lt;begin-localization=&quot;(.*?)&quot;&gt;<\/p>(.*?)<p>&lt;end-localization=&quot;\1&quot;&gt;<\/p>/gs;
+  let match;
+  const localizedContent = [];
+  while ((match = regex.exec(html)) !== null) {
+    localizedContent.push({
+      lang: match[1],
+      content: match[2].trim(),
+    });
+  }
+  return localizedContent;
+}
+function parseFloatTags(html) {
+  const embedRegex =
+    /<p>&lt;embed(.*?)&gt;<\/p>(.*?)<p>&lt;end-embed&gt;<\/p>/gs;
+  const floatRegex =
+    /<p>&lt;float(.*?)&gt;<\/p>(.*?)<p>&lt;end-float&gt;<\/p>/gs;
+  const floatLeftRegex =
+    /<p>&lt;float-left(.*?)&gt;<\/p>(.*?)<p>&lt;end-float-left&gt;<\/p>/gs;
+  const floatRightRegex =
+    /<p>&lt;float-right(.*?)&gt;<\/p>(.*?)<p>&lt;end-float-right&gt;<\/p>/gs;
+  let match;
+  let floatHTML = html;
+  while ((match = floatRegex.exec(html)) !== null) {
+    const styleMatch = match[1].match(/style=&quot;(.*?)&quot;/);
+    const style = styleMatch
+      ? `style="${styleMatch[1]} display:flex; justify-content:space-between; background-color:var(--bg-color); box-shadow: 0 0 0 100vmax var(--bg-color); clip-path: inset(0 -100vmax);"`
+      : 'style="display:flex; justify-content:space-between;"';
+    let content = match[2];
+    const hasFloats =
+      floatLeftRegex.test(content) || floatRightRegex.test(content);
+    if (hasFloats) {
+      const processedContent = content
+        .replace(
+          floatLeftRegex,
+          (m, s, c) =>
+            `<div class="float float-left" ${s.replace(/&quot;/g, "")}">${c}</div>`
+        )
+        .replace(
+          floatRightRegex,
+          (m, s, c) =>
+            `<div class="float float-right" ${s.replace(/&quot;/g, "")}">${c}</div>`
+        );
+      floatHTML = floatHTML.replace(
+        match[0],
+        `<div class="float-container" ${style}>${processedContent}</div>`
+      );
+    } else {
+      floatHTML = floatHTML.replace(
+        match[0],
+        `<div class="float-container" ${style}>${content}</div>`
+      );
+    }
+  }
+  while ((match = embedRegex.exec(html)) !== null) {
+    const styleMatch = match[1].match(/style=&quot;(.*?)&quot;/);
+    const style = styleMatch
+      ? `style="${styleMatch[1]} aspect-ratio: 16/10;"`
+      : 'style="aspect-ratio: 16/10;"';
+    let content = match[2];
+    content = content.replace(/<\/?p>/g, ""); // Remove surrounding <p> tags
+    floatHTML = floatHTML.replace(
+      match[0],
+      `<iframe class="w-full" title="Embed Content" ${style} src="${content}"></iframe>`
+    );
+  }
+  return floatHTML;
+}
+function parseCenterTags(html) {
+  const centerRegex = /<p>&lt;center&gt;<\/p>(.*?)<p>&lt;end-center&gt;<\/p>/gs;
+  let match;
+  let centerHTML = html;
+  while ((match = centerRegex.exec(html)) !== null) {
+    centerHTML = centerHTML.replace(
+      match[0],
+      `<div class="center">${match[1]}</div>`
+    );
+  }
+  return centerHTML;
+}
+const localizedContentArray = parseLocalizedContent(bodyHTML);
+const defaultLanguage = "en";
+const localizedContent = localizedContentArray.find(
+  (item) => item.lang === currentLanguage
+);
+const defaultContent = localizedContentArray.find(
+  (item) => item.lang === defaultLanguage
+);
+bodyHTML = localizedContent?.content || defaultContent?.content || bodyHTML;
+bodyHTML = parseFloatTags(bodyHTML); // Ensure parseFloatTags is called on the localized content
+bodyHTML = parseCenterTags(bodyHTML); // Ensure parseCenterTags is called on the localized content
+---
+
+<Layout title={title}>
+  <Header isWork />
+  <main
+    class="mt-20 p-0 flex flex-col items-center"
+    style="overflow:visible !important;"
+  >
+    <div class="w-full max-w-[1800px] flex flex-col items-center">
+      <div
+        class="w-full flex flex-col items-center justify-between z-10 relative"
+      >
+        {
+          headerImg && (
+            <div
+              class="m-8 expand w-full max-w-[1600px] h-[380px] flex flex-col items-start justify-center gap-3 rounded-2xl relative"
+              style={`background-size:cover; background-position:center; background-image: url('${(headerImg as any)?.fields?.file?.url}')`}
+              transition:name={`work-title-${title}-image`}
+            >
+                <img
+                onclick="window.history.back()"
+                class="ml-16 w-[50px] rotate-90 cursor-pointer hover:scale-105 active:scale-95 transition-all invert z-10 relative"
+    src="https://unpkg.com/pixelarticons@1.8.1/svg/arrow-down.svg"
+    alt="Back Button Link"
+  />
+              <h3
+                class="ml-16 max-w-[400px] font-bold font-[system-ui] text-white text-6xl z-10 relative"
+                transition:name={`work-title-${title}`}
+              >
+                {title}
+              </h3>
+              <span class="ml-16 font-[SourceCodePro] z-10 relative">
+                <Button text={date} />
+              </span>
+              <div
+                class="absolute inset-0"
+                style="background: linear-gradient(to left, transparent, rgba(0, 0, 0, 1));"
+              />
+            </div>
+          )
+        }
+      </div>
+
+      <article class="mt-6 w-full max-w-[1450px] text-white z-10 relative">
+        <div class="prose">
+          <div set:html={bodyHTML} />
+        </div>
+      </article>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<script is:inline>
+  document.addEventListener("astro:page-load", () => {
+    const videos = document.querySelectorAll("video");
+    videos.forEach((video) => {
+      video.load();
+    });
+  });
+</script>
+
+<style is:global>
+  hr {
+    border-width: 3px !important;
+    opacity: 0.2 !important;
+  }
+  .expand {
+    animation: auto linear expand both;
+    animation-timeline: view();
+    animation-range: exit;
+  }
+  @keyframes expand {
+    0% {
+      opacity: 1;
+      transform: translate(0, 0);
+      filter: grayscale(0) blur(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(0, 100px);
+      filter: grayscale(1) blur(5px);
+    }
+  }
+
+  .float-container {
+    gap: 18px;
+    margin-top: 38px;
+    padding-top: 28px;
+    padding-bottom: 28px;
+  }
+
+  .float p {
+    margin: 0 !important;
+  }
+
+  h3,
+  h4 {
+    font-family: "InstrumentSans";
+    font-weight: 550;
+  }
+
+  p {
+    line-height: 1.5;
+  }
+
+  .fadeInScale {
+    animation: auto linear fadeInScale both;
+    animation-timeline: view();
+    animation-range: entry 25% cover 50%;
+  }
+
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .float-container {
+      display: flex;
+      flex-direction: column !important;
+    }
+  }
+</style>
