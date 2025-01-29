@@ -59,7 +59,7 @@ const groupIcons = {
     id="nav-filter"
   >
     <div
-      class="max-w-[1500px] p-4 mx-auto flex gap-4 overflow-x-auto no-scrollbar bg-white/5 backdrop-blur-md rounded-full transition-transform"
+      class="max-w-[1500px] p-4 mx-3 sm:mx-auto flex gap-4 overflow-x-auto no-scrollbar -translate-y-20 bg-white/5 backdrop-blur-md rounded-full transition-transform"
       id="nav-container"
     >
       {
@@ -75,7 +75,7 @@ const groupIcons = {
     </div>
   </nav>
 
-  <main class="max-w-[1600px] mx-auto px-16">
+  <main class="max-w-[1600px] mx-auto px-3 sm:px-16">
     {
       Object.entries(groupedMembers).map(([position, members]) => (
         <section
@@ -88,7 +88,7 @@ const groupIcons = {
           </h2>
           <div class="flex flex-wrap gap-4">
             {members.map((member) => (
-              <div class="team-pill-wrapper relative z-0 hover:z-50">
+              <div class="team-pill-wrapper w-full sm:w-auto relative z-0 hover:z-50">
                 <div
                   class={`team-pill ${
                     member.isCoordinator

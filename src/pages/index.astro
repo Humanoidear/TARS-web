@@ -56,7 +56,7 @@ const competitions = [
   <Header />
   <main>
     <div
-      class="top-0 w-screen h-screen rounded-b-lg flex flex-row items-center px-48 relative"
+      class="top-0 w-screen h-screen rounded-b-lg flex flex-row items-center px-3 sm:px-48 relative"
     >
       <div class="flex flex-col items-start gap-3 z-20 relative">
         <h1 class="mb-0 text-7xl text-white flex flex-col items-start">
@@ -70,7 +70,7 @@ const competitions = [
         <Button text="Descubre nuestro proyectos" href="/#about" />
       </div>
       <span
-        class="parallax-text bottom-32 -left-[10%] font-[Braille] text-[200px] text-white opacity-5 rotate-90 z-0 absolute"
+        class="parallax-text bottom-32 sm:-left-[10%] font-[Braille] text-[200px] text-white opacity-5 rotate-90 z-0 absolute"
         >TARS</span
       >
       <iframe
@@ -84,7 +84,7 @@ const competitions = [
       </div>
     </div>
     <div class="w-screen bg-[#121212]">
-      <div class="flex flex-row gap-6 px-36 relative">
+      <div class="flex flex-row gap-6 sm:px-36 relative">
         {
           posts.map((post, i) => (
             <a href={`work/${post.slug}`} class="post w-1/4 rounded-lg bg-[#181818] -translate-y-16 hover:-translate-y-20 hover:shadow-md transition-all overflow-hidden">
@@ -122,11 +122,11 @@ const competitions = [
         }
       </div>
       <h3
-        class="px-36 -translate-y-12 font-[SourceCodePro] text-white/70 text-xl"
+        class="px-3 sm:px-36 -translate-y-12 font-[SourceCodePro] text-white/70 text-xl"
       >
         Últimas noticias_
       </h3>
-      <div id="about" class="mt-16 px-36 flex flex-row gap-8 items-center">
+      <div id="about" class="mt-16 px-3 sm:px-36 flex flex-col sm:flex-row gap-8 items-center">
         <div class="max-w-[800px]">
           <h2 class="font-bold text-4xl text-white">Sobre nosotros</h2>
           <p class="mt-3 mb-6 text-white">
@@ -152,7 +152,7 @@ const competitions = [
           </div>
         </div>
       </div>
-      <div class="px-36 mt-36">
+      <div class="px-3 sm:px-36 mt-36">
         <div
           class="mb-6 w-full flex flex-row items-center justify-between gap-6"
         >
@@ -162,7 +162,7 @@ const competitions = [
           class="w-full h-auto bg-[#121212] grid grid-cols-1 md:grid-cols-2 gap-6"
         >
           {
-            competitions.map((competition) => (
+            competitions.slice(0, 10).map((competition) => (
               <div class="card">
                 <div class="card-inner rounded-lg bg-[#181818] hover:shadow-lg overflow-hidden">
                   <img
@@ -217,7 +217,7 @@ const competitions = [
           });
         </script>
       </div>
-      <div class="px-36 mt-36">
+      <div class="px-3 sm:px-36 mt-36">
         <div
           class="mb-6 w-full flex flex-row items-center justify-between gap-6"
         >
@@ -226,12 +226,12 @@ const competitions = [
         </div>
         <TeamJson />
       </div>
-      <div id="contact" class="px-36 mt-36">
+      <div id="contact" class="px-3 sm:px-36 mt-36">
         <h2 class="font-bold text-4xl text-white mb-6">Contacto</h2>
         <div class="w-full text-white text-2xl text-semibold flex flex-col gap-8 relative">
           Te gustaría formar parte del equipo o colaborar con nosotros? No dudes en contactarnos!
-          <div class="w-full flex flex-row gap-3">
-            <a href="https://maps.google.com/?q=Universidad Politécnica de Valencia" class="p-3 rounded-l-xl rounded-r-md bg-white/5 hover:bg-white/10 flex items-center text-white mb-3">
+          <div class="w-full flex flex-col sm:flex-row gap-3">
+            <a href="https://maps.google.com/?q=Universidad Politécnica de Valencia" class="p-3 rounded-md sm:rounded-l-xl bg-white/5 hover:bg-white/10 flex items-center text-white mb-3">
               <img
                 src="/img/pin.svg"
                 alt="Dirección"
@@ -247,7 +247,7 @@ const competitions = [
               />
               +34 123 456 789
             </a>
-            <a href="mailto:contacto@tarsupv.com" class="p-3 rounded-l-md rounded-r-2xl bg-white/5 hover:bg-white/10 flex items-center text-white mb-3">
+            <a href="mailto:contacto@tarsupv.com" class="p-3 rounded-md sm:rounded-r-2xl bg-white/5 hover:bg-white/10 flex items-center text-white mb-3">
               <img
                 src="/img/mail.svg"
                 alt="Email"
