@@ -209,7 +209,8 @@
   {
       "name": "Juan Palou de Comasema Jaume",
       "position": "Imagen",
-      "pfp": "https://picsum.photos/200/200?random=21",
+      "pfp1": "/img/blackangrybird.png",
+      "pfp": "/img/abbg.png",
       "links": {
           "LinkedIn": "https://linkedin.com/in/juanpaloudecomasemajaume",
           "GitHub": "https://github.com/juanpaloudecomasemajaume",

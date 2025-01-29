@@ -99,7 +99,7 @@ const groupIcons = {
                 >
                   <span>
                     <img
-                      src="/img/person.png"
+                      src={ member.pfp1 ? member.pfp1 : "/img/person.png" }
                       alt={member.name}
                       class={`${position === "Presidencia" && member.coordinator ? "w-20 h-20" : "w-12 h-12"} rounded-full z-10 absolute`}
                       transition:name={`team-image-${member.name}`}
@@ -149,12 +149,12 @@ const groupIcons = {
                 >
                   <span class="block relative" id="parallax-container">
                     <img
-                      src="/img/person.png"
+                      src={ member.pfp1 ? member.pfp1 : "/img/person.png" }
                       alt={member.name}
                       class="bottom-0 w-48 z-10 absolute transition-transform duration-300 ease-out person-image"
                       transition:name={`team-image-${member.name}`}
                     />
-                    <div class="px-4 bottom-0 left-0 w-full py-3 rounded-b-lg z-20 absolute bg-gradient-to-t from-[#484848] to-transparent">
+                    <div class="px-4 bottom-0 left-0 w-full py-3 rounded-b-lg z-20 absolute bg-gradient-to-t from-[#383838] to-transparent">
                       <h3
                         class="text-xl font-bold text-white"
                         transition:name={`team-name-${member.name}`}
@@ -256,16 +256,24 @@ const groupIcons = {
     pointer-events: none;
   }
 
-  .team-pill-wrapper:hover .expanded-content {
-    opacity: 1;
-    pointer-events: auto;
-    transform: scale(1.2);
-  }
-
   .expanded-content {
     transform: scale(0.8);
     transform-origin: center;
     min-width: 300px;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .team-pill-wrapper:hover .expanded-content {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+  }
+
+  @media (min-width: 640px) {
+    .expanded-content {
+      width: 400px;
+    }
   }
 
   ::view-transition-old(root),
