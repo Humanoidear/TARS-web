@@ -59,7 +59,7 @@ const groupIcons = {
     id="nav-filter"
   >
     <div
-      class="max-w-[1500px] p-4 mx-3 sm:mx-auto flex gap-4 overflow-x-auto no-scrollbar -translate-y-20 bg-white/5 backdrop-blur-md rounded-full transition-transform"
+      class="max-w-[1500px] p-4 mx-3 sm:mx-auto flex gap-4 overflow-x-auto no-scrollbar -translate-y-20 backdrop-blur-md rounded-full transition-transform"
       id="nav-container"
     >
       {
@@ -87,130 +87,133 @@ const groupIcons = {
             {position}
           </h2>
           <div class="flex flex-wrap gap-4">
-            {members.map((member) => (
-              <div class="team-pill-wrapper w-full sm:w-auto relative z-0 hover:z-50">
-                <div
-                  class={`team-pill ${
-                    member.isCoordinator
-                      ? "bg-amber-500/20 hover:bg-amber-500/30"
-                      : "bg-white/5 hover:bg-white/10"
-                  } rounded-full p-3 pr-8 flex items-center gap-4 transition-all cursor-pointer z-0`}
-                  transition:name={`team-pill-${member.name}`}
-                >
-                  <span>
-                    <img
-                      src={ member.pfp1 ? member.pfp1 : "/img/person.png" }
-                      alt={member.name}
-                      class={`${position === "Presidencia" && member.coordinator ? "w-20 h-20" : "w-12 h-12"} rounded-full z-10 absolute`}
-                      transition:name={`team-image-${member.name}`}
-                    />
-                    <img
-                      src={member.pfp}
-                      alt={member.name}
-                      class={`${position === "Presidencia" && member.coordinator ? "w-20 h-20" : "w-12 h-12"} rounded-full`}
-                      transition:name={`team-image-${member.name}`}
-                    />
-                  </span>
-                  <div transition:name={`team-content-${member.name}`}>
-                    <h3
-                      class={`${position === "Presidencia" && member.coordinator ? "text-2xl" : "text-xl"} text-white font-semibold`}
-                      transition:name={`team-name-${member.name}`}
-                    >
-                      {member.name}
-                      {position === "Presidencia" && member.coordinator && (
-                        <p class="mb-2 text-white/60 font-normal text-[17px]">
-                          {member.coordinator}
-                        </p>
-                      )}
-                    </h3>
-                    <div
-                      class="flex gap-2 mt-1"
-                      transition:name={`team-socials-${member.name}`}
-                    >
-                      {Object.entries(member.links).map(([platform, url]) => (
-                        <a
-                          href={url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          class={`${position === "Presidencia" && member.coordinator ? "w-6 h-6" : "w-4 h-4"} invert text-white/60 hover:text-white transition-colors`}
-                          set:html={socialLogos[platform]}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class={`expanded-content ${
-                    member.isCoordinator
-                      ? "border-[#535518] bg-[#535518]"
-                      : "border-[#181818] bg-[#181818]"
-                  } opacity-0 pointer-events-none absolute top-0 left-0 border-4 rounded-[1.6rem] transition-all duration-300 z-50`}
-                  transition:name={`expanded-content-${member.name}`}
-                >
-                  <span class="block relative" id="parallax-container">
-                    <img
-                      src={ member.pfp1 ? member.pfp1 : "/img/person.png" }
-                      alt={member.name}
-                      class="bottom-0 w-48 z-10 absolute transition-transform duration-300 ease-out person-image"
-                      transition:name={`team-image-${member.name}`}
-                    />
-                    <div class="px-4 bottom-0 left-0 w-full py-3 rounded-b-lg z-20 absolute bg-gradient-to-t from-[#383838] to-transparent">
+            {members.map((member) => {
+              const defaultBgNum = Math.floor(Math.random() * 5) + 1;
+              return (
+                <div class="team-pill-wrapper w-full sm:w-auto relative z-0 hover:z-50">
+                  <div
+                    class={`team-pill ${
+                      member.isCoordinator
+                        ? "bg-white/20 hover:bg-white/30"
+                        : "bg-white/5 hover:bg-white/10"
+                    } rounded-full p-3 pr-8 flex items-center gap-4 transition-all cursor-pointer z-0`}
+                    transition:name={`team-pill-${member.name}`}
+                  >
+                    <span>
+                      <img
+                        src={ member.pfp1 ? member.pfp1 : "/img/mascot_png.png" }
+                        alt={member.name}
+                        class={`${position === "Presidencia" && member.coordinator ? "w-20 h-20" : "w-12 h-12"} rounded-full z-10 absolute`}
+                        transition:name={`team-image-${member.name}`}
+                      />
+                      <img
+                        src={member.pfp ? member.pfp : `/img/defaultbg${defaultBgNum}.png`}
+                        alt={member.name}
+                        class={`${position === "Presidencia" && member.coordinator ? "w-20 h-20" : "w-12 h-12"} rounded-full aspect-square object-cover`}
+                        transition:name={`team-image-${member.name}`}
+                      />
+                    </span>
+                    <div transition:name={`team-content-${member.name}`}>
                       <h3
-                        class="text-xl font-bold text-white"
+                        class={`${position === "Presidencia" && member.coordinator ? "text-2xl" : "text-xl"} text-white font-semibold`}
                         transition:name={`team-name-${member.name}`}
                       >
                         {member.name}
-                        <p class="text-white/60 font-normal text-sm">
-                          {member.isCoordinator ? "Líder del equipo de" : ""}{" "}
-                          {member.coordinator && (
-                            <span>{member.coordinator} · </span>
-                          )}
-                          {member.position}
-                        </p>
+                        {position === "Presidencia" && member.coordinator && (
+                          <p class="mb-2 text-white/60 font-normal text-[17px]">
+                            {member.coordinator}
+                          </p>
+                        )}
                       </h3>
-                    </div>
-                    <div class="w-full h-32 rounded-t-3xl rounded-b-lg mb-1 transition-all duration-300 ease-out overflow-hidden">
-                      <img
-                        src={member.pfp}
-                        alt={member.name}
-                        class="w-[120%] max-w-[120%] background-image"
-                        transition:name={`team-image-${member.name}`}
-                      />
-                    </div>
-                  </span>
-                  <div
-                    class="grid auto-cols-fr grid-flow-col gap-1"
-                    transition:name={`team-socials-${member.name}`}
-                    style={`grid-template-columns: repeat(${Object.keys(member.links).length}, 1fr);`}
-                  >
-                    {Object.entries(member.links).map(
-                      ([platform, url], index, array) => (
-                        <a
-                          href={url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          class={`social-link flex items-center justify-center transition-colors bg-white/5 p-2 ${
-                            array.length === 1
-                              ? "rounded-b-3xl rounded-lg"
-                              : index === 0
-                                ? "rounded-bl-3xl rounded-lg"
-                                : index === array.length - 1
-                                  ? "rounded-br-3xl rounded-lg"
-                                  : "rounded-lg"
-                          }`}
-                          data-platform={platform}
-                        >
-                          <div
-                            class="w-5 social-logo invert"
+                      <div
+                        class="flex gap-2 mt-1"
+                        transition:name={`team-socials-${member.name}`}
+                      >
+                        {Object.entries(member.links).map(([platform, url]) => (
+                          <a
+                            href={url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class={`${position === "Presidencia" && member.coordinator ? "w-6 h-6" : "w-4 h-4"} invert text-white/60 hover:text-white transition-colors`}
                             set:html={socialLogos[platform]}
                           />
-                        </a>
-                      )
-                    )}
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class={`expanded-content ${
+                      member.isCoordinator
+                        ? "border-[#383838] bg-[#383838]"
+                        : "border-[#181818] bg-[#181818]"
+                    } opacity-0 pointer-events-none absolute top-0 left-0 border-4 rounded-[1.6rem] transition-all duration-300 z-50`}
+                    transition:name={`expanded-content-${member.name}`}
+                  >
+                    <span class="block relative" id="parallax-container">
+                      <img
+                        src={ member.pfp1 ? member.pfp1 : "/img/mascot_png.png" }
+                        alt={member.name}
+                        class="bottom-0 w-56 z-10 absolute transition-transform duration-300 ease-out person-image"
+                        transition:name={`team-image-${member.name}`}
+                      />
+                      <div class="px-4 bottom-0 left-0 w-full py-3 rounded-b-lg z-20 absolute bg-gradient-to-t from-[#383838] to-transparent">
+                        <h3
+                          class="text-xl font-bold text-white"
+                          transition:name={`team-name-${member.name}`}
+                        >
+                          {member.name}
+                          <p class="text-white/60 font-normal text-sm">
+                            {member.isCoordinator ? "Líder del equipo de" : ""}{" "}
+                            {member.coordinator && (
+                              <span>{member.coordinator} · </span>
+                            )}
+                            {member.position}
+                          </p>
+                        </h3>
+                      </div>
+                      <div class="w-full h-32 rounded-t-3xl rounded-b-lg mb-1 transition-all duration-300 ease-out overflow-hidden">
+                        <img
+                          src={member.pfp ? member.pfp : `/img/defaultbg${defaultBgNum}.png`}
+                          alt={member.name}
+                          class="w-[120%] max-w-[120%] background-image"
+                          transition:name={`team-image-${member.name}`}
+                        />
+                      </div>
+                    </span>
+                    <div
+                      class="grid auto-cols-fr grid-flow-col gap-1"
+                      transition:name={`team-socials-${member.name}`}
+                      style={`grid-template-columns: repeat(${Object.keys(member.links).length}, 1fr);`}
+                    >
+                      {Object.entries(member.links).map(
+                        ([platform, url], index, array) => (
+                          <a
+                            href={url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class={`social-link flex items-center justify-center transition-colors bg-white/5 p-2 ${
+                              array.length === 1
+                                ? "rounded-b-3xl rounded-lg"
+                                : index === 0
+                                  ? "rounded-bl-3xl rounded-lg"
+                                  : index === array.length - 1
+                                    ? "rounded-br-3xl rounded-lg"
+                                    : "rounded-lg"
+                            }`}
+                            data-platform={platform}
+                          >
+                            <div
+                              class="w-5 social-logo invert"
+                              set:html={socialLogos[platform]}
+                            />
+                          </a>
+                        )
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
       ))

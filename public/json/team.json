@@ -4,7 +4,7 @@
     "position": "",
     "isCoordinator": 0,
     "coordinator": "Presidente",
-    "pfp": "https://picsum.photos/200/200?random=1",
+    "remove": "https://picsum.photos/200/200?random=1",
     "links": {
         "LinkedIn": "https://linkedin.com/in/joanalbertorti"
     }
@@ -12,7 +12,7 @@
   {
       "name": "Joan Albert Ortí",
       "position": "Electronica",
-      "pfp": "https://picsum.photos/200/200?random=1",
+      "remove": "https://picsum.photos/200/200?random=1",
       "links": {
           "LinkedIn": "https://linkedin.com/in/joanalbertorti"
       }
@@ -20,7 +20,7 @@
   {
       "name": "Óscar Domínguez Correa",
       "position": "Electronica",
-      "pfp": "https://picsum.photos/200/200?random=2",
+      "remove": "https://picsum.photos/200/200?random=2",
       "links": {
           "GitHub": "https://github.com/oscardominguezcorrea"
       }
@@ -28,7 +28,7 @@
   {
       "name": "Vicente Burdeus Sánchez",
       "position": "Electronica",
-      "pfp": "https://picsum.photos/200/200?random=3",
+      "remove": "https://picsum.photos/200/200?random=3",
       "links": {
           "Twitter": "https://twitter.com/vicenteburdeussanchez"
       }
@@ -36,7 +36,7 @@
   {
       "name": "Saúl Sanchis Juan",
       "position": "Electronica",
-      "pfp": "https://picsum.photos/200/200?random=4",
+      "remove": "https://picsum.photos/200/200?random=4",
       "links": {
           "LinkedIn": "https://linkedin.com/in/saulsanchisjuan",
           "GitHub": "https://github.com/saulsanchisjuan",
@@ -46,7 +46,7 @@
   {
       "name": "Enric Talens Miralles",
       "position": "Electronica",
-      "pfp": "https://picsum.photos/200/200?random=5",
+      "remove": "https://picsum.photos/200/200?random=5",
       "links": {
           "LinkedIn": "https://linkedin.com/in/enrictalensmiralles",
           "GitHub": "https://github.com/enrictalensmiralles",
@@ -56,7 +56,7 @@
   {
       "name": "Raquel Montoliu Balaguer",
       "position": "Electronica",
-      "pfp": "https://picsum.photos/200/200?random=6",
+      "remove": "https://picsum.photos/200/200?random=6",
       "links": {
           "LinkedIn": "https://linkedin.com/in/raquelmontoliubalaguer",
           "GitHub": "https://github.com/raquelmontoliubalaguer",
@@ -66,7 +66,7 @@
   {
       "name": "Ian Francisco García Ruiz",
       "position": "Electronica",
-      "pfp": "https://picsum.photos/200/200?random=7",
+      "remove": "https://picsum.photos/200/200?random=7",
       "links": {
           "LinkedIn": "https://linkedin.com/in/ianfranciscogarciaruiz",
           "GitHub": "https://github.com/ianfranciscogarciaruiz",
@@ -77,7 +77,7 @@
       "name": "Rosa María Hernández Valero",
       "position": "Electronica",
       "isCoordinator": 1,
-      "pfp": "https://picsum.photos/200/200?random=8",
+      "remove": "https://picsum.photos/200/200?random=8",
       "links": {
           "LinkedIn": "https://linkedin.com/in/rosamariahernandezvalero",
           "GitHub": "https://github.com/rosamariahernandezvalero",
@@ -87,7 +87,7 @@
   {
       "name": "Iván Guillardini Montés",
       "position": "Electronica",
-      "pfp": "https://picsum.photos/200/200?random=9",
+      "remove": "https://picsum.photos/200/200?random=9",
       "links": {
           "LinkedIn": "https://linkedin.com/in/ivanguillardinimontes",
           "GitHub": "https://github.com/ivanguillardinimontes",
@@ -97,7 +97,7 @@
   {
       "name": "María Rodríguez Hernández",
       "position": "Electronica",
-      "pfp": "https://picsum.photos/200/200?random=10",
+      "remove": "https://picsum.photos/200/200?random=10",
       "links": {
           "LinkedIn": "https://linkedin.com/in/mariarodriguezhernandez",
           "GitHub": "https://github.com/mariarodriguezhernandez",
@@ -107,7 +107,7 @@
   {
       "name": "Marcos Sellés Solà",
       "position": "Electronica",
-      "pfp": "https://picsum.photos/200/200?random=11",
+      "remove": "https://picsum.photos/200/200?random=11",
       "links": {
           "LinkedIn": "https://linkedin.com/in/marcossellessolà",
           "GitHub": "https://github.com/marcossellessolà",
@@ -117,7 +117,7 @@
   {
       "name": "Elena Clofent Muñoz",
       "position": "Electronica",
-      "pfp": "https://picsum.photos/200/200?random=12",
+      "remove": "https://picsum.photos/200/200?random=12",
       "links": {
           "LinkedIn": "https://linkedin.com/in/elenaclofentmunoz",
           "GitHub": "https://github.com/elenaclofentmunoz",
@@ -127,7 +127,7 @@
   {
       "name": "Gabriel Arnedo Espinosa",
       "position": "Finanzas",
-      "pfp": "https://picsum.photos/200/200?random=13",
+      "remove": "https://picsum.photos/200/200?random=13",
       "links": {
           "LinkedIn": "https://linkedin.com/in/gabrielarnedoespinosa",
           "GitHub": "https://github.com/gabrielarnedoespinosa",
@@ -138,7 +138,7 @@
       "name": "Ricardo Casasnovas Martin",
       "position": "Finanzas",
       "isCoordinator": 1,
-      "pfp": "https://picsum.photos/200/200?random=14",
+      "remove": "https://picsum.photos/200/200?random=14",
       "links": {
           "LinkedIn": "https://linkedin.com/in/ricardocasasnovasmartin",
           "GitHub": "https://github.com/ricardocasasnovasmartin",
@@ -148,7 +148,7 @@
   {
       "name": "Marco Robert Valverde",
       "position": "Finanzas",
-      "pfp": "https://picsum.photos/200/200?random=15",
+      "remove": "https://picsum.photos/200/200?random=15",
       "links": {
           "LinkedIn": "https://linkedin.com/in/marcorobertvalverde",
           "GitHub": "https://github.com/marcorobertvalverde",
@@ -158,7 +158,7 @@
   {
       "name": "Carla Hidalgo Aroca",
       "position": "Finanzas",
-      "pfp": "https://picsum.photos/200/200?random=16",
+      "remove": "https://picsum.photos/200/200?random=16",
       "links": {
           "LinkedIn": "https://linkedin.com/in/carlahidalgoaroca",
           "GitHub": "https://github.com/carlahidalgoaroca",
@@ -168,7 +168,7 @@
   {
       "name": "Angela Espert Cornejo",
       "position": "Finanzas",
-      "pfp": "https://picsum.photos/200/200?random=17",
+      "remove": "https://picsum.photos/200/200?random=17",
       "links": {
           "LinkedIn": "https://linkedin.com/in/angelaespertcornejo",
           "GitHub": "https://github.com/angelaespertcornejo",
@@ -178,7 +178,7 @@
   {
       "name": "Mario Martinez Carneros",
       "position": "Finanzas",
-      "pfp": "https://picsum.photos/200/200?random=18",
+      "remove": "https://picsum.photos/200/200?random=18",
       "links": {
           "LinkedIn": "https://linkedin.com/in/mariomartinezcarneros",
           "GitHub": "https://github.com/mariomartinezcarneros",
@@ -189,7 +189,7 @@
       "name": "Jorge Márquez Morales",
       "position": "Imagen",
       "isCoordinator": 1,
-      "pfp": "https://picsum.photos/200/200?random=19",
+      "remove": "https://picsum.photos/200/200?random=19",
       "links": {
           "LinkedIn": "https://linkedin.com/in/jorgemarquezmorales",
           "GitHub": "https://github.com/jorgemarquezmorales",
@@ -199,7 +199,7 @@
   {
       "name": "Sandra Villora Parra",
       "position": "Imagen",
-      "pfp": "https://picsum.photos/200/200?random=20",
+      "remove": "https://picsum.photos/200/200?random=20",
       "links": {
           "LinkedIn": "https://linkedin.com/in/sandravilloraparra",
           "GitHub": "https://github.com/sandravilloraparra",
@@ -209,7 +209,7 @@
   {
       "name": "Juan Palou de Comasema Jaume",
       "position": "Imagen",
-      "pfp1": "/img/blackangrybird.png",
+      "pfp1": "/img/person.png",
       "pfp": "/img/abbg.png",
       "links": {
           "LinkedIn": "https://linkedin.com/in/juanpaloudecomasemajaume",
@@ -220,7 +220,7 @@
   {
       "name": "Tongxin Pan Du",
       "position": "Imagen",
-      "pfp": "https://picsum.photos/200/200?random=22",
+      "remove": "https://picsum.photos/200/200?random=22",
       "links": {
           "LinkedIn": "https://linkedin.com/in/tongxinpandu",
           "GitHub": "https://github.com/tongxinpandu",
@@ -230,7 +230,7 @@
   {
       "name": "Pedro Diaz Masa Valencia",
       "position": "Imagen",
-      "pfp": "https://picsum.photos/200/200?random=23",
+      "remove": "https://picsum.photos/200/200?random=23",
       "links": {
           "LinkedIn": "https://linkedin.com/in/pedrodiazmasavalencia",
           "GitHub": "https://github.com/pedrodiazmasavalencia",
@@ -240,7 +240,7 @@
   {
       "name": "Antonio Ros Otero",
       "position": "Mecanica",
-      "pfp": "https://picsum.photos/200/200?random=24",
+      "remove": "https://picsum.photos/200/200?random=24",
       "links": {
           "LinkedIn": "https://linkedin.com/in/antoniorosotero",
           "GitHub": "https://github.com/antoniorosotero",
@@ -252,7 +252,7 @@
       "position": "Mecanica",
       "isCoordinator": 0,
       "coordinator": "Coordinadora RoboChallenge",
-      "pfp": "https://picsum.photos/200/200?random=25",
+      "remove": "https://picsum.photos/200/200?random=25",
       "links": {
           "LinkedIn": "https://linkedin.com/in/mariadoloresmunozgarcia",
           "GitHub": "https://github.com/mariadoloresmunozgarcia",
@@ -262,7 +262,7 @@
   {
       "name": "Carlos Caballer Ruiz",
       "position": "Mecanica",
-      "pfp": "https://picsum.photos/200/200?random=26",
+      "remove": "https://picsum.photos/200/200?random=26",
       "links": {
           "LinkedIn": "https://linkedin.com/in/carloscaballerruiz",
           "GitHub": "https://github.com/carloscaballerruiz",
@@ -273,7 +273,7 @@
       "name": "Alejandro Guerrero Huaigua",
       "position": "Mecanica",
       "isCoordinator": 1,
-      "pfp": "https://picsum.photos/200/200?random=27",
+      "remove": "https://picsum.photos/200/200?random=27",
       "links": {
           "LinkedIn": "https://linkedin.com/in/alejandroguerrerohuaigua",
           "GitHub": "https://github.com/alejandroguerrerohuaigua",
@@ -283,7 +283,7 @@
   {
       "name": "Ana Parrilla Bouaiche",
       "position": "Mecanica",
-      "pfp": "https://picsum.photos/200/200?random=28",
+      "remove": "https://picsum.photos/200/200?random=28",
       "links": {
           "LinkedIn": "https://linkedin.com/in/anaparrillabouaiche",
           "GitHub": "https://github.com/anaparrillabouaiche",
@@ -295,7 +295,7 @@
       "position": "Mecanica",
       "isCoordinator": 0,
       "coordinator": "Coordinadora ERC",
-      "pfp": "https://picsum.photos/200/200?random=29",
+      "remove": "https://picsum.photos/200/200?random=29",
       "links": {
           "LinkedIn": "https://linkedin.com/in/manarselham",
           "GitHub": "https://github.com/manarselham",
@@ -305,7 +305,7 @@
   {
       "name": "Elizabeth Turley",
       "position": "Mecanica",
-      "pfp": "https://picsum.photos/200/200?random=30",
+      "remove": "https://picsum.photos/200/200?random=30",
       "links": {
           "LinkedIn": "https://linkedin.com/in/elizabethturley",
           "GitHub": "https://github.com/elizabethturley",
@@ -315,7 +315,7 @@
   {
       "name": "Carmelo Nicolas Estelles Pardo",
       "position": "Mecanica",
-      "pfp": "https://picsum.photos/200/200?random=31",
+      "remove": "https://picsum.photos/200/200?random=31",
       "links": {
           "LinkedIn": "https://linkedin.com/in/carmelonicolasestellespardo",
           "GitHub": "https://github.com/carmelonicolasestellespardo",
@@ -325,7 +325,7 @@
   {
       "name": "Ali Abdelhamid Salmi",
       "position": "Software",
-      "pfp": "https://picsum.photos/200/200?random=32",
+      "remove": "https://picsum.photos/200/200?random=32",
       "links": {
           "LinkedIn": "https://linkedin.com/in/aliabdelhamidsalmi",
           "GitHub": "https://github.com/aliabdelhamidsalmi",
@@ -335,7 +335,7 @@
   {
       "name": "David Bernad López",
       "position": "Software",
-      "pfp": "https://picsum.photos/200/200?random=33",
+      "remove": "https://picsum.photos/200/200?random=33",
       "links": {
           "LinkedIn": "https://linkedin.com/in/davidbernadlopez",
           "GitHub": "https://github.com/davidbernadlopez",
@@ -345,7 +345,7 @@
   {
       "name": "Javier Veyrat Zaragozá",
       "position": "Software",
-      "pfp": "https://picsum.photos/200/200?random=34",
+      "remove": "https://picsum.photos/200/200?random=34",
       "links": {
           "LinkedIn": "https://linkedin.com/in/javierveyratzaragoza",
           "GitHub": "https://github.com/javierveyratzaragoza",
@@ -355,7 +355,7 @@
   {
       "name": "Jose Nicolas Mollá Eid-Macheh",
       "position": "Software",
-      "pfp": "https://picsum.photos/200/200?random=35",
+      "remove": "https://picsum.photos/200/200?random=35",
       "links": {
           "LinkedIn": "https://linkedin.com/in/josenicolasmollaeid-macheh",
           "GitHub": "https://github.com/josenicolasmollaeid-macheh",
@@ -365,7 +365,7 @@
   {
       "name": "Sebastian Ballester Pirchmoser",
       "position": "Software",
-      "pfp": "https://picsum.photos/200/200?random=36",
+      "remove": "https://picsum.photos/200/200?random=36",
       "links": {
           "LinkedIn": "https://linkedin.com/in/sebastianballesterpirchmoser",
           "GitHub": "https://github.com/sebastianballesterpirchmoser",
@@ -376,7 +376,7 @@
       "name": "Jose Luis Galán Avilés",
       "position": "Software",
       "isCoordinator": 1,
-      "pfp": "https://picsum.photos/200/200?random=37",
+      "remove": "https://picsum.photos/200/200?random=37",
       "links": {
           "LinkedIn": "https://linkedin.com/in/joseluisgalanaviles",
           "GitHub": "https://github.com/joseluisgalanaviles",
@@ -386,7 +386,7 @@
   {
       "name": "Rubén Darío Argaez Urrego",
       "position": "Software",
-      "pfp": "https://picsum.photos/200/200?random=38",
+      "remove": "https://picsum.photos/200/200?random=38",
       "links": {
           "LinkedIn": "https://linkedin.com/in/rubendarioargaezurrego",
           "GitHub": "https://github.com/rubendarioargaezurrego",
@@ -396,7 +396,7 @@
   {
       "name": "Ernesto Martínez Gómez",
       "position": "Software",
-      "pfp": "https://picsum.photos/200/200?random=39",
+      "remove": "https://picsum.photos/200/200?random=39",
       "links": {
           "LinkedIn": "https://linkedin.com/in/ernestomartinezgomez",
           "GitHub": "https://github.com/ernestomartinezgomez",
@@ -406,7 +406,7 @@
   {
       "name": "Joan Mallasén Rodríguez",
       "position": "Software",
-      "pfp": "https://picsum.photos/200/200?random=40",
+      "remove": "https://picsum.photos/200/200?random=40",
       "links": {
           "LinkedIn": "https://linkedin.com/in/joanmallasenrodriguez",
           "GitHub": "https://github.com/joanmallasenrodriguez",
@@ -416,7 +416,7 @@
   {
       "name": "Lorenzo Severini",
       "position": "Software",
-      "pfp": "https://picsum.photos/200/200?random=41",
+      "remove": "https://picsum.photos/200/200?random=41",
       "links": {
           "LinkedIn": "https://linkedin.com/in/lorenzoseverini",
           "GitHub": "https://github.com/lorenzoseverini",
@@ -426,7 +426,7 @@
   {
       "name": "Diego Jiménez Romero",
       "position": "Software",
-      "pfp": "https://picsum.photos/200/200?random=42",
+      "remove": "https://picsum.photos/200/200?random=42",
       "links": {
           "LinkedIn": "https://linkedin.com/in/diegojimenezromero",
           "GitHub": "https://github.com/diegojimenezromero",
@@ -436,7 +436,7 @@
   {
       "name": "José Vidal Lima",
       "position": "Software",
-      "pfp": "https://picsum.photos/200/200?random=43",
+      "remove": "https://picsum.photos/200/200?random=43",
       "links": {
           "LinkedIn": "https://linkedin.com/in/josevidallima",
           "GitHub": "https://github.com/josevidallima",
@@ -446,7 +446,7 @@
   {
       "name": "Ana Asenjo Madrigal",
       "position": "Software",
-      "pfp": "https://picsum.photos/200/200?random=44",
+      "remove": "https://picsum.photos/200/200?random=44",
       "links": {
           "LinkedIn": "https://linkedin.com/in/anaasenjomadrigal",
           "GitHub": "https://github.com/anaasenjomadrigal",
@@ -456,7 +456,7 @@
   {
       "name": "Alejandro González de la Santa Cruz",
       "position": "Software",
-      "pfp": "https://picsum.photos/200/200?random=45",
+      "remove": "https://picsum.photos/200/200?random=45",
       "links": {
           "LinkedIn": "https://linkedin.com/in/alejandrogonzalezdelasantacruz",
           "GitHub": "https://github.com/alejandrogonzalezdelasantacruz",
@@ -466,7 +466,7 @@
   {
       "name": "Andreu Martínez Cabrera",
       "position": "Software",
-      "pfp": "https://picsum.photos/200/200?random=46",
+      "remove": "https://picsum.photos/200/200?random=46",
       "links": {
           "LinkedIn": "https://linkedin.com/in/andreumartinezcabrera",
           "GitHub": "https://github.com/andreumartinezcabrera",
@@ -476,7 +476,7 @@
   {
       "name": "Lucas Carrizo Ruggeri",
       "position": "Software",
-      "pfp": "https://picsum.photos/200/200?random=47",
+      "remove": "https://picsum.photos/200/200?random=47",
       "links": {
           "LinkedIn": "https://linkedin.com/in/lucascarrizoruggeri",
           "GitHub": "https://github.com/lucascarrizoruggeri",
@@ -486,7 +486,7 @@
   {
       "name": "Francisco Nortes Novikov",
       "position": "Software",
-      "pfp": "https://picsum.photos/200/200?random=48",
+      "remove": "https://picsum.photos/200/200?random=48",
       "links": {
           "LinkedIn": "https://linkedin.com/in/francisconortesnovikov",
           "GitHub": "https://github.com/francisconortesnovikov",
@@ -496,7 +496,7 @@
   {
       "name": "Adrián Escudero García",
       "position": "Software",
-      "pfp": "https://picsum.photos/200/200?random=49",
+      "remove": "https://picsum.photos/200/200?random=49",
       "links": {
           "LinkedIn": "https://linkedin.com/in/adrianescuderogarcia",
           "GitHub": "https://github.com/adrianescuderogarcia",
@@ -506,7 +506,7 @@
   {
       "name": "Jesús París Navarro",
       "position": "Software",
-      "pfp": "https://picsum.photos/200/200?random=50",
+      "remove": "https://picsum.photos/200/200?random=50",
       "links": {
           "LinkedIn": "https://linkedin.com/in/jesusparisnavarro",
           "GitHub": "https://github.com/jesusparisnavarro",
@@ -516,7 +516,7 @@
   {
       "name": "Daniel Mirón Vidal",
       "position": "Software",
-      "pfp": "https://picsum.photos/200/200?random=51",
+      "remove": "https://picsum.photos/200/200?random=51",
       "links": {
           "LinkedIn": "https://linkedin.com/in/danielmironvidal",
           "GitHub": "https://github.com/danielmironvidal",
@@ -526,7 +526,7 @@
   {
       "name": "Maria Bolumar García",
       "position": "Software",
-      "pfp": "https://picsum.photos/200/200?random=52",
+      "remove": "https://picsum.photos/200/200?random=52",
       "links": {
           "LinkedIn": "https://linkedin.com/in/mariabolumargarcia",
           "GitHub": "https://github.com/mariabolumargarcia",
@@ -536,7 +536,7 @@
   {
       "name": "Lucía Alba Torres",
       "position": "Software",
-      "pfp": "https://picsum.photos/200/200?random=53",
+      "remove": "https://picsum.photos/200/200?random=53",
       "links": {
           "LinkedIn": "https://linkedin.com/in/luciaalbatorres",
           "GitHub": "https://github.com/luciaalbatorres",
@@ -546,7 +546,7 @@
   {
       "name": "Francesc Loeches Nogués",
       "position": "Software",
-      "pfp": "https://picsum.photos/200/200?random=54",
+      "remove": "https://picsum.photos/200/200?random=54",
       "links": {
           "LinkedIn": "https://linkedin.com/in/francescloechesnogues",
           "GitHub": "https://github.com/francescloechesnogues",
@@ -556,7 +556,7 @@
   {
       "name": "Kai Aoiz Canillas",
       "position": "Software",
-      "pfp": "https://picsum.photos/200/200?random=55",
+      "remove": "https://picsum.photos/200/200?random=55",
       "links": {
           "LinkedIn": "https://linkedin.com/in/kaiaoizcanillas",
           "GitHub": "https://github.com/kaiaoizcanillas",
@@ -566,7 +566,7 @@
   {
       "name": "Sergio Real Gonzalvo",
       "position": "Software",
-      "pfp": "https://picsum.photos/200/200?random=56",
+      "remove": "https://picsum.photos/200/200?random=56",
       "links": {
           "LinkedIn": "https://linkedin.com/in/sergiorealgonzalvo",
           "GitHub": "https://github.com/sergiorealgonzalvo",
@@ -576,7 +576,7 @@
   {
       "name": "Ángela Ferré Pérez",
       "position": "Software",
-      "pfp": "https://picsum.photos/200/200?random=57",
+      "remove": "https://picsum.photos/200/200?random=57",
       "links": {
           "LinkedIn": "https://linkedin.com/in/angelaferreperez",
           "GitHub": "https://github.com/angelaferreperez",
@@ -586,7 +586,7 @@
   {
       "name": "Marcos Mérida Bustamante",
       "position": "Software",
-      "pfp": "https://picsum.photos/200/200?random=58",
+      "remove": "https://picsum.photos/200/200?random=58",
       "links": {
           "LinkedIn": "https://linkedin.com/in/marcosmeridabustamante",
           "GitHub": "https://github.com/marcosmeridabustamante",
@@ -596,7 +596,7 @@
   {
       "name": "Thalia Mara Pereira Ben Abdelouahab",
       "position": "Software",
-      "pfp": "https://picsum.photos/200/200?random=59",
+      "remove": "https://picsum.photos/200/200?random=59",
       "links": {
           "LinkedIn": "https://linkedin.com/in/thaliamarapereirabenabdelouahab",
           "GitHub": "https://github.com/thaliamarapereirabenabdelouahab",
@@ -606,7 +606,7 @@
   {
       "name": "Adolfo Fornás García",
       "position": "Software",
-      "pfp": "https://picsum.photos/200/200?random=60",
+      "remove": "https://picsum.photos/200/200?random=60",
       "links": {
           "LinkedIn": "https://linkedin.com/in/adolfofornasgarcia",
           "GitHub": "https://github.com/adolfofornasgarcia",
