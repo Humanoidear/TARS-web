@@ -70,7 +70,7 @@ const competitions = [
         <Button text="Descubre nuestro proyectos" href="/#about" />
       </div>
       <span
-        class="parallax-text bottom-32 sm:-left-[10%] font-[Braille] text-[200px] text-white opacity-5 rotate-90 z-0 absolute"
+        class="parallax-text bottom-32 -left-[60%] sm:-left-[10%] font-[Braille] text-[200px] text-white opacity-5 rotate-90 z-0 absolute"
         >TARS</span
       >
       <iframe
@@ -84,10 +84,10 @@ const competitions = [
       </div>
     </div>
     <div class="w-screen bg-[#121212]">
-      <div class="flex flex-row gap-6 sm:px-36 relative">
+      <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6 px-6 sm:px-36 relative">
         {
           posts.map((post, i) => (
-            <a href={`work/${post.slug}`} class="post w-1/4 rounded-lg bg-[#181818] -translate-y-16 hover:-translate-y-20 hover:shadow-md transition-all overflow-hidden">
+            <a href={`work/${post.slug}`} class="post w-full rounded-lg bg-[#181818] -translate-y-16 hover:-translate-y-20 hover:shadow-md transition-all overflow-hidden">
               <img
                 src={post.headerImg && 'fields' in post.headerImg ? post.headerImg.fields.file.url : ''}
                 alt={`Noticia ${i + 1}`}
@@ -110,7 +110,7 @@ const competitions = [
         }
         {
           Array.from({ length: 4 - posts.length }).map((_, i) => (
-            <div class="w-1/4 rounded-lg bg-[#181818] -translate-y-16 hover:-translate-y-20 hover:shadow-md transition-all overflow-hidden">
+            <div class="w-full rounded-lg bg-[#181818] -translate-y-16 hover:-translate-y-20 hover:shadow-md transition-all overflow-hidden hidden lg:block">
               <div class="w-full h-56 top-0 left-0 object-cover bg-[#181818]" />
               <div class="p-3">
                 <h2 class="font-bold text-2xl text-transparent">Placeholder</h2>

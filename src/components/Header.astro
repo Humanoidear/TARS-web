@@ -1,43 +1,3 @@
-<style>
-  .header::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 150%;
-    backdrop-filter: blur(20px);
-    mask-image: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 1),
-      rgba(0, 0, 0, 0.4)
-    );
-    -webkit-mask-image: linear-gradient(to bottom, black, transparent);
-    pointer-events: none;
-    z-index: -1;
-  }
-
-  .link {
-    padding: 8px 20px;
-    border-radius: 8px;
-    font-weight: 500;
-    display:flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .link svg {
-    width: 20px;
-    height: 20px;
-  }
-  
-  .link:hover {
-    background-color: #6363633e;
-    font-weight: 700;
-  }
-</style>
-
 <header
   class="top-0 header w-screen h-20 bg-opacity-50 px-2 sm:px-10 flex flex-row gap-6 items-center justify-between z-50 fixed"
 >
@@ -77,7 +37,148 @@
       class="link text-white transition-all"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M20 2H2v20h2V4h16v12H6v2H4v2h2v-2h16V2h-2z" fill="currentColor"/> </svg> Contact</a
     >
   </nav>
+  <div class="sm:hidden flex items-center">
+    <button class="btn" id="hamburgerMenu" onclick="toggleMobileMenu();">
+      <img
+        src="https://unpkg.com/pixelarticons@1.8.1/svg/menu.svg"
+        alt="Menu"
+        class="invert w-10 h-10 transition-all"
+      />
+    </button>
+  </div>
 </header>
+
+
+<div
+  id="mobileMenu"
+  class="opacity w-screen h-[100dvh] inset-0 bg-black bg-opacity-90 z-50 hidden flex flex-col items-center justify-between fixed"
+>
+  <div
+    class="animate-slide top-0 left-0 w-[calc(100vw-67px)] translate-x-6 mt-5 flex flex-col items-end justify-between gap-3 relative"
+  >
+    <button
+      id="closebtn"
+      class="btn"
+      style="transition: 0.3s cubic-bezier(0, 0, 0, 1);"
+      onclick="toggleMobileMenu();"
+    >
+      <img
+        src="https://unpkg.com/pixelarticons@1.8.1/svg/close.svg"
+        alt="Close"
+        class="invert w-10 h-10 transition-all"
+      />
+    </button>
+    <span
+      style="opacity:0; animation: fadeslide 0.3s 0ms cubic-bezier(0, 0, 0, 1) forwards;"
+    >
+    <a
+    onmouseover="followMouse('/')"
+    onmouseleave="removeMov('/')"
+    href="/"
+    class="text-3xl link text-white transition-all"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M14 2h-4v2H8v2H6v2H4v2H2v2h2v10h7v-6h2v6h7V12h2v-2h-2V8h-2V6h-2V4h-2V2zm0 2v2h2v2h2v2h2v2h-2v8h-3v-6H9v6H6v-8H4v-2h2V8h2V6h2V4h4z" fill="currentColor"/> </svg> Home</a
+  >
+  </span>
+    <span
+      style="opacity:0; animation: fadeslide 0.3s 200ms cubic-bezier(0, 0, 0, 1) forwards;"
+    >
+    <a
+    onmouseover="followMouse('/#about')"
+    onmouseleave="removeMov('/#about')"
+    href="/#about"
+    class="text-3xl link text-white transition-all"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M3 3h2v18H3V3zm16 0H5v2h14v14H5v2h16V3h-2zm-8 6h2V7h-2v2zm2 8h-2v-6h2v6z" fill="currentColor"/> </svg> About</a
+  >
+  </span>
+    <span
+      style="opacity:0; animation: fadeslide 0.3s 400ms cubic-bezier(0, 0, 0, 1) forwards;"
+    >
+    <a
+    onmouseover="followMouse('/team')"
+    onmouseleave="removeMov('/team')"
+    href="/team"
+    class="text-3xl link text-white transition-all"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M11 0H5v2H3v6h2v2h6V8H5V2h6V0zm0 2h2v6h-2V2zM0 14h2v4h12v2H0v-6zm2 0h12v-2H2v2zm14 0h-2v6h2v-6zM15 0h4v2h-4V0zm4 8h-4v2h4V8zm0-6h2v6h-2V2zm5 12h-2v4h-4v2h6v-6zm-6-2h4v2h-4v-2z" fill="currentColor"/> </svg> Team</a
+  >
+    </span>
+    <span
+      style="opacity:0; animation: fadeslide 0.3s 600ms cubic-bezier(0, 0, 0, 1) forwards;"
+    >
+    <a
+    onmouseover="followMouse('/work')"
+    onmouseleave="removeMov('/work')"
+    href="/work"
+    class="text-3xl link text-white transition-all"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M7 0h16v20H5V0h2zm14 18V2H7v16h14zM9 4h10v2H9V4zm10 4H9v2h10V8zM9 12h7v2H9v-2zm10 10H3V4H1v20h18v-2z" fill="currentColor"/> </svg> News</a
+  >
+    </span>
+    <span
+      style="opacity:0; animation: fadeslide 0.3s 800ms cubic-bezier(0, 0, 0, 1) forwards;"
+    >
+    <a
+    onmouseover="followMouse('/#contact')"
+    onmouseleave="removeMov('/#contact')"
+    href="/#contact"
+    class="text-3xl link text-white transition-all"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M20 2H2v20h2V4h16v12H6v2H4v2h2v-2h16V2h-2z" fill="currentColor"/> </svg> Contact</a
+  >
+    </span>
+  </div>
+  <div
+    class="w-[calc(100vw-67px)] m-8 flex flex-row items-center justify-between gap-6 relative"
+  >
+    <a
+      href="https://x.com/alexmalvehy"
+      class="opacity-0 transition-all fade-in2"
+      style="animation-delay: 0s"
+    >
+      <img
+        src="/img/twitter.svg"
+        alt="Twitter logo"
+        class="h-6 invert"
+      />
+    </a>
+    <a
+      href="https://www.behance.net/alexmalvehy"
+      class="opacity-0 transition-all fade-in2"
+      style="animation-delay: 0.1s"
+    >
+      <img
+        src="/img/behance.svg"
+        alt="Behance logo"
+        class="h-6 invert"
+      />
+    </a>
+    <a
+      href="https://www.youtube.com/c/Al3xitu"
+      class="opacity-0 transition-all fade-in2"
+      style="animation-delay: 0.2s"
+    >
+      <img
+        src="/img/youtube.svg"
+        alt="YouTube logo"
+        class="h-6 invert"
+      />
+    </a>
+    <a
+      href="https://www.instagram.com/alexmalvehy/"
+      class="opacity-0 transition-all fade-in2"
+      style="animation-delay: 0.3s"
+    >
+      <img
+        src="/img/instagram.svg"
+        alt="Instagram logo"
+        class="h-6 invert"
+      />
+    </a>
+    <a
+      href="https://www.linkedin.com/in/alexmalvehy/"
+      class="opacity-0 transition-all fade-in2"
+      style="animation-delay: 0.4s"
+    >
+      <img
+        src="/img/linkedin.svg"
+        alt="LinkedIn logo"
+        class="h-6 invert"
+      />
+    </a>
+  </div>
+</div>
 
 <script is:inline>
   function followMouse(element) {
@@ -120,3 +221,274 @@
     }
   });
 </script>
+
+<script is:inline>
+  function toggleMobileMenu() {
+    const hamburgerMenu = document.getElementById("hamburgerMenu");
+
+    if (mobileMenu.classList.contains("hidden")) {
+      document.getElementById("closebtn").style.transform = "rotate(0deg)";
+      mobileMenu.classList.remove("fadeout");
+      mobileMenu.classList.toggle("hidden");
+      hamburgerMenu.style.transform = "rotate(-90deg)";
+      hamburgerMenu.style.opacity = "0";
+      hamburgerMenu.style.transition = "0.3s cubic-bezier(0, 0, 0, 1)";
+    } else {
+      document.getElementById("closebtn").style.transform = "rotate(90deg)";
+      mobileMenu.classList.add("fadeout");
+      hamburgerMenu.style.transform = "rotate(0deg)";
+      hamburgerMenu.style.opacity = "1";
+      hamburgerMenu.style.transition = "0.3s cubic-bezier(0, 0, 0, 1)";
+      setTimeout(() => {
+        mobileMenu.classList.toggle("hidden");
+      }, 200);
+    }
+  }
+
+  function toggleDropdown() {
+    const dropdown = document.getElementById("dropdown");
+    const links = dropdown.querySelectorAll("a");
+    const menuIcon = document.getElementById("menuIcon");
+
+    if (dropdown.classList.contains("hidden")) {
+      dropdown.classList.remove("hidden");
+      dropdown.classList.remove("pointer-events-none");
+      menuIcon.style.transform = "rotate(90deg)";
+
+      links.forEach((link, index) => {
+        setTimeout(() => {
+          link.style.opacity = "1";
+          link.style.transform = "translateY(0)";
+        }, index * 100);
+      });
+    } else {
+      links.forEach((link, index) => {
+        setTimeout(() => {
+          link.style.opacity = "0";
+          link.style.transform = "translateY(-20px)";
+        }, index * 100);
+      });
+
+      setTimeout(() => {
+        dropdown.classList.add("hidden");
+        dropdown.classList.add("pointer-events-none");
+        menuIcon.style.transform = "rotate(0deg)";
+      }, links.length * 100);
+    }
+  }
+</script>
+
+<style>
+   .header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150%;
+    backdrop-filter: blur(20px);
+    mask-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, 0.4)
+    );
+    -webkit-mask-image: linear-gradient(to bottom, black, transparent);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .link {
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .link svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .link:hover {
+    background-color: #6363633e;
+    font-weight: 700;
+  }
+
+  header.with-before::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.6) 50%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    filter: blur(4px);
+    transform: scale(150%);
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  header.with-before::before {
+    animation: fadeIn 0.5s forwards;
+  }
+
+  header:not(.with-before)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.6) 50%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    filter: blur(4px);
+    transform: scale(150%);
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  header:not(.with-before)::before {
+    animation: fadeOut 0.5s forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  a:hover div {
+    transform: translate(0px, 0);
+    opacity: 1;
+    transition: 0.2s;
+  }
+  a:hover img {
+    opacity: 1;
+    transition: opacity 0.2s;
+  }
+  a div {
+    transform: translate(20px, 0);
+    opacity: 0;
+    transition: 0.2s;
+  }
+  #dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  #dropdown a {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  #dropdown.show a {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .animate-slide button {
+    animation: rotatefade 0.3s cubic-bezier(0, 0, 0, 1);
+    animation-delay: 0s;
+  }
+  @keyframes rotatefade {
+    0% {
+      opacity: 0;
+      transform: rotate(90deg);
+    }
+    100% {
+      opacity: 1;
+      transform: rotate(0deg);
+    }
+  }
+  @keyframes fadeslide {
+    0% {
+      opacity: 0;
+      transform: translate(20px, 0);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0px, 0);
+    }
+  }
+  .opacity {
+    animation: fadein 0.3s cubic-bezier(0, 0, 0, 1);
+  }
+  @keyframes fadein {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .fade-in2 {
+    animation: fadeIn2 0.5s cubic-bezier(0, 0, 0, 1) forwards;
+    transition: 0.2s;
+  }
+  .fade-in2:hover {
+    opacity: 1 !important;
+    transition: 0.2s;
+  }
+  @keyframes fadeIn2 {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 0.6;
+      transform: translateY(0);
+    }
+  }
+  .fadeout {
+    animation: fadeout 0.2 forwards;
+  }
+  @keyframes fadeout {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .animatein {
+    animation: auto linear animatein both;
+    animation-timeline: view();
+    animation-range: exit;
+  }
+  @keyframes animatein {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
