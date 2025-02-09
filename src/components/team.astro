@@ -41,7 +41,7 @@ const groupIcons = {
 ---
 
 <nav id="nav-filter">
-  <div class="flex gap-4 overflow-scroll">
+  <div class="flex gap-4 overflow-scroll no-scrollbar">
     {
       positions.map((position, index) => (
         <a
@@ -103,20 +103,22 @@ const groupIcons = {
                         </p>
                       )}
                     </h3>
-                    <div
-                      class="flex gap-2 mt-1"
-                      transition:name={`team-socials-${member.name}`}
-                    >
-                      {Object.entries(member.links).map(([platform, url]) => (
-                        <a
-                          href={url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          class={`${position === "Presidencia" && member.coordinator ? "w-6 h-6" : "w-4 h-4"} invert text-white/60 hover:text-white transition-colors`}
-                          set:html={socialLogos[platform]}
-                        />
-                      ))}
-                    </div>
+                    {member.links && Object.keys(member.links).length > 0 && (
+                      <div 
+                        class="flex gap-2 mt-1"
+                        transition:name={`team-socials-${member.name}`}
+                      >
+                        {Object.entries(member.links).map(([platform, url]) => (
+                          <a
+                            href={url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class={`${position === "Presidencia" && member.coordinator ? "w-6 h-6" : "w-4 h-4"} invert text-white/60 hover:text-white transition-colors`}
+                            set:html={socialLogos[platform]}
+                          />
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
                 <div
@@ -134,7 +136,7 @@ const groupIcons = {
                       class="bottom-0 w-56 z-10 absolute transition-transform duration-300 ease-out person-image"
                       transition:name={`team-image-${member.name}`}
                     />
-                    <div class="px-4 bottom-0 left-0 w-full py-3 rounded-b-lg z-20 absolute bg-gradient-to-t from-[#383838] to-transparent">
+                   <div class={`px-4 bottom-0 left-0 w-full py-3 ${member.links ? "rounded-b-lg" : "rounded-b-3xl"} z-20 absolute bg-gradient-to-t from-[#383838] to-transparent`}>
                       <h3
                         class="text-xl font-bold text-white"
                         transition:name={`team-name-${member.name}`}
@@ -149,7 +151,7 @@ const groupIcons = {
                         </p>
                       </h3>
                     </div>
-                    <div class="w-full h-32 rounded-t-3xl rounded-b-lg mb-1 transition-all duration-300 ease-out overflow-hidden">
+                    <div class={`w-full h-32 rounded-t-3xl ${member.links ? "rounded-b-lg mb-1" : "rounded-b-3xl"} transition-all duration-300 ease-out overflow-hidden`}>
                       <img
                         src={member.pfp ? member.pfp : `/img/defaultbg${defaultBgNum}.png`}
                         alt={member.name}
@@ -158,36 +160,37 @@ const groupIcons = {
                       />
                     </div>
                   </span>
-                  <div
-                    class="grid auto-cols-fr grid-flow-col gap-1"
-                    transition:name={`team-socials-${member.name}`}
-                    style={`grid-template-columns: repeat(${Object.keys(member.links).length}, 1fr);`}
-                  >
-                    {Object.entries(member.links).map(
-                      ([platform, url], index, array) => (
-                        <a
-                          href={url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          class={`social-link flex items-center justify-center transition-colors bg-white/5 p-2 ${
-                            array.length === 1
-                              ? "rounded-b-3xl rounded-lg"
-                              : index === 0
-                                ? "rounded-bl-3xl rounded-lg"
-                                : index === array.length - 1
-                                  ? "rounded-br-3xl rounded-lg"
-                                  : "rounded-lg"
-                          }`}
-                          data-platform={platform}
-                        >
-                          <div
-                            class="w-5 social-logo invert"
-                            set:html={socialLogos[platform]}
-                          />
-                        </a>
-                      )
-                    )}
-                  </div>
+                  {
+                    member.links && 
+                    <div
+                        class="grid auto-cols-fr grid-flow-col gap-1"
+                        transition:name={`team-socials-${member.name}`}
+                        style={`grid-template-columns: repeat(${Object.keys(member.links).length}, 1fr);`}
+                      >
+                        {Object.entries(member.links).map(([platform, url], index, array) => (
+                          <a
+                            href={url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class={`social-link flex items-center justify-center transition-colors bg-white/5 p-2 ${
+                              array.length === 1
+                                ? "rounded-b-3xl rounded-lg"
+                                : index === 0
+                                  ? "rounded-bl-3xl rounded-lg"
+                                  : index === array.length - 1
+                                    ? "rounded-br-3xl rounded-lg"
+                                    : "rounded-lg"
+                            }`}
+                            data-platform={platform}
+                          >
+                            <div
+                              class="w-5 social-logo invert"
+                              set:html={socialLogos[platform]}
+                            />
+                          </a>
+                        ))}
+                      </div>
+                  }
                 </div>
               </div>
             );

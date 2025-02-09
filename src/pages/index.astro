@@ -6,6 +6,7 @@ import Button from "../components/Button.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import TeamJson from "../components/team.astro";
+import Competitions from "../../public/json/competitions.json";
 
 const entries = await contentfulClient.getEntries<work>({
   content_type: "blogTars",
@@ -20,36 +21,6 @@ const posts = entries.items.map((item) => {
     description
   };
 });
-
-const competitions = [
-  {
-    image:
-      "https://www.spaceagenda.com/wp-content/uploads/2024/07/erc-featured-min-1024x597-1.webp",
-    title: "ERC",
-    description:
-      "European Rover Challenge (ERC) es una competici\u00F3n internacional de rob\u00F3tica espacial donde equipos de todo el mundo dise\u00F1an y construyen rovers para realizar misiones en un entorno simulado de Marte.",
-  },
-  {
-    image:
-      "https://www.eurobot.es/wp-content/uploads/2024/02/Eurobot2024_Cartel-724x1024.png",
-    title: "Eurobot",
-    description:
-      "Eurobot es una competici\u00F3n internacional de rob\u00F3tica donde equipos de estudiantes y aficionados dise\u00F1an, construyen y programan robots aut\u00F3nomos para completar desaf\u00EDos espec\u00EDficos en un campo de juego.",
-  },
-  {
-    image:
-      "https://thumbs.dreamstime.com/b/uav-drone-modern-cityscape-communication-network-concept-telecommunication-smart-city-iot-ict-g-ai-generated-uav-drone-318726787.jpg",
-    title: "Drone Inteligente",
-    description:
-      "La competici\u00F3n de Drone Inteligente desaf\u00EDa a los equipos a desarrollar drones aut\u00F3nomos capaces de realizar tareas complejas, como navegaci\u00F3n, reconocimiento y manipulaci\u00F3n de objetos en entornos din\u00E1micos.",
-  },
-  {
-    image: "https://battlebots.com/wp-content/uploads/2023/11/IMG_9072.jpg",
-    title: "Battlebots",
-    description:
-      "Battlebots es una competici\u00F3n de rob\u00F3tica donde equipos dise\u00F1an y construyen robots de combate que se enfrentan en una arena, utilizando diversas armas y estrategias para derrotar a sus oponentes.",
-  },
-];
 ---
 
 <Layout title="TARS | Innovación y excelencia en robótica competitiva">
@@ -67,7 +38,7 @@ const competitions = [
         <p class="mb-6 max-w-[450px] text-2xl text-white/60 font-medium">
           Innovación y excelencia en robótica competitiva
         </p>
-        <Button text="Descubre nuestro proyectos" href="/#about" />
+        <Button text="Descubre nuestros proyectos" href="/#about" />
       </div>
       <span
         class="parallax-text bottom-32 -left-[60%] sm:-left-[10%] font-[Braille] text-[200px] text-white opacity-5 rotate-90 z-0 absolute"
@@ -162,7 +133,7 @@ const competitions = [
           class="w-full h-auto bg-[#121212] grid grid-cols-1 md:grid-cols-2 gap-6"
         >
           {
-            competitions.slice(0, 10).map((competition) => (
+            Competitions.competitions.slice(0, 10).map((competition) => (
               <div class="card">
                 <div class="card-inner rounded-lg bg-[#181818] hover:shadow-lg overflow-hidden">
                   <img
@@ -174,7 +145,12 @@ const competitions = [
                     <h2 class="text-xl font-semibold text-white mb-2">
                       {competition.title}
                     </h2>
-                    <p class="text-gray-400">{competition.description}</p>
+                    <p class="mb-3 text-gray-400">{competition.description}</p>
+                    {
+                      competition.link && (
+                        <Button text="Más información" href={competition.link} />
+                      )
+                    }
                   </div>
                 </div>
                 <div class="hover-effect absolute inset-0 -top-full -left-full pointer-events-none" />
@@ -230,16 +206,18 @@ const competitions = [
         <h2 class="font-bold text-4xl text-white mb-6">Contacto</h2>
         <div class="w-full text-white text-2xl text-semibold flex flex-col gap-8 relative">
           Te gustaría formar parte del equipo o colaborar con nosotros? No dudes en contactarnos!
-          <div class="w-full flex flex-col sm:flex-row gap-3">
-            <a href="https://maps.google.com/?q=Universidad Politécnica de Valencia" class="p-3 rounded-md sm:rounded-l-xl bg-white/5 hover:bg-white/10 flex items-center text-white mb-3">
+          <div class="w-full flex flex-col md:flex-row sm:flex-row gap-3">
+            <iframe class="rounded-xl w-full md:w-1/2 h-64" src="https://www.openstreetmap.org/export/embed.html?bbox=-0.34337371587753296%2C39.47991812377764%2C-0.34047693014144903%2C39.48158673031113&amp;layer=mapnik&amp;marker=39.48075243204821%2C-0.34192532300949097" style="border: 1px solid black"></iframe>
+            <div class="flex-col">
+            <a href="https://maps.google.com/?q=Universidad Politécnica de Valencia" class="p-3 rounded-t-xl rounded-b-md bg-white/5 hover:bg-white/10 flex items-center text-white mb-3">
               <img
                 src="/img/pin.svg"
                 alt="Dirección"
                 class="w-8 h-8 mr-3 invert"
               />
-              Camino de Vera, s/n, 46022 Valencia
+              Garaje Casa de l'Alumne, Camino de Vera, s/n, 46022 Valencia
             </a>
-            <a href="phone:+34123456789" class="p-3 rounded-md bg-white/5 hover:bg-white/10 flex items-center text-white mb-3">
+            <!-- <a href="phone:+34123456789" class="p-3 rounded-md bg-white/5 hover:bg-white/10 flex items-center text-white mb-3">
               <img
                 src="/img/phone.svg"
                 alt="Teléfono"
@@ -247,7 +225,8 @@ const competitions = [
               />
               +34 123 456 789
             </a>
-            <a href="mailto:contacto@tarsupv.com" class="p-3 rounded-md sm:rounded-r-2xl bg-white/5 hover:bg-white/10 flex items-center text-white mb-3">
+             -->
+            <a href="mailto:contacto@tarsupv.com" class="p-3 rounded-md rounded-b-xl bg-white/5 hover:bg-white/10 flex items-center text-white mb-3">
               <img
                 src="/img/mail.svg"
                 alt="Email"
@@ -255,6 +234,7 @@ const competitions = [
               />
               contacto@tarsupv.com
             </a>
+          </div>
           </div>
         </div>
       </div>

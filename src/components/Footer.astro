@@ -2,6 +2,7 @@
 import { contentfulClient } from "../lib/contentful";
 import type { work } from "../lib/contentful";
 import Button from "./Button.astro";
+import Competitions from "../../public/json/competitions.json";
 
 let currentYear = new Date().getFullYear();
 
@@ -18,36 +19,6 @@ const posts = entries.items.map((item) => {
     description,
   };
 });
-
-const competitions = [
-  {
-    image:
-      "https://www.spaceagenda.com/wp-content/uploads/2024/07/erc-featured-min-1024x597-1.webp",
-    title: "ERC",
-    description:
-      "European Rover Challenge (ERC) es una competici\u00F3n internacional de rob\u00F3tica espacial donde equipos de todo el mundo dise\u00F1an y construyen rovers para realizar misiones en un entorno simulado de Marte.",
-  },
-  {
-    image:
-      "https://www.eurobot.es/wp-content/uploads/2024/02/Eurobot2024_Cartel-724x1024.png",
-    title: "Eurobot",
-    description:
-      "Eurobot es una competici\u00F3n internacional de rob\u00F3tica donde equipos de estudiantes y aficionados dise\u00F1an, construyen y programan robots aut\u00F3nomos para completar desaf\u00EDos espec\u00EDficos en un campo de juego.",
-  },
-  {
-    image:
-      "https://thumbs.dreamstime.com/b/uav-drone-modern-cityscape-communication-network-concept-telecommunication-smart-city-iot-ict-g-ai-generated-uav-drone-318726787.jpg",
-    title: "Drone Inteligente",
-    description:
-      "La competici\u00F3n de Drone Inteligente desaf\u00EDa a los equipos a desarrollar drones aut\u00F3nomos capaces de realizar tareas complejas, como navegaci\u00F3n, reconocimiento y manipulaci\u00F3n de objetos en entornos din\u00E1micos.",
-  },
-  {
-    image: "https://battlebots.com/wp-content/uploads/2023/11/IMG_9072.jpg",
-    title: "Battlebots",
-    description:
-      "Battlebots es una competici\u00F3n de rob\u00F3tica donde equipos dise\u00F1an y construyen robots de combate que se enfrentan en una arena, utilizando diversas armas y estrategias para derrotar a sus oponentes.",
-  },
-];
 ---
 
 <div
@@ -58,7 +29,7 @@ const competitions = [
       <span class="flex flex-row items-center gap-6">
         <span class="flex flex-row items-center gap-3">
           <img src="/img/logo-isotype.png" id="isotype" class="w-14 h-14" />
-          <img src="/img/logo-wordmark.png" id="wordmark" class="h-6" />
+          <img src="/img/logo-wordmark.png" id="wordmark" class="h-6 w-28" />
         </span>
         <div class="w-[2px] h-10 bg-white/30"></div>
         <img
@@ -73,14 +44,18 @@ const competitions = [
     </span>
     <span class="flex flex-row gap-3">
       <Button icon="/img/user.svg" href="/about" text="Únete" white />
-      <Button icon="/img/money.svg" href="/contact" text="Patrocinar" />
+          <Button 
+        icon="/img/money.svg" 
+        href="mailto:contacto@tarsupv.com?subject=Petici%C3%B3n%20de%20patrocinio" 
+        text="Patrocinar" 
+      />
     </span>
     <p class="mt-6">
       &copy; {currentYear} TARS UPV. Todos los derechos reservados.
     </p>
     <div class="invert flex flex-row items-center gap-6">
       <a
-        href="https://twitter.com"
+        href="https://x.com/Tars_UPV"
         target="_blank"
         rel="noopener noreferrer"
         class="opacity-60 hover:opacity-100"
@@ -88,7 +63,7 @@ const competitions = [
         <img src="/img/twitter.svg" alt="Twitter" class="w-6 h-6" />
       </a>
       <a
-        href="https://linkedin.com"
+        href="https://www.linkedin.com/company/105258034/admin/dashboard/"
         target="_blank"
         rel="noopener noreferrer"
         class="opacity-60 hover:opacity-100"
@@ -96,17 +71,25 @@ const competitions = [
         <img src="/img/linkedin.svg" alt="Facebook" class="w-8 h-8" />
       </a>
       <a
-        href="https://instagram.com"
+        href="https://www.instagram.com/tars.upv"
         target="_blank"
         rel="noopener noreferrer"
         class="opacity-60 hover:opacity-100"
       >
         <img src="/img/instagram.svg" alt="Instagram" class="w-6 h-6" />
       </a>
+      <a
+        href="https://www.youtube.com/@TARSupv?sub_confirmation=1"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="opacity-60 hover:opacity-100"
+      >
+        <img src="/img/youtube.svg" alt="YouTube" class="w-6 h-6" />
+      </a>
     </div>
   </span>
 
-  <span class="flex flex-row gap-6 z-50">
+  <span class="hidden lg:flex flex-row gap-6 z-50">
     <div class="max-w-[300px] flex flex-col gap-3">
       <h2 class="md:text-right font-extrabold text-2xl">
         Últimas publicaciones
@@ -136,9 +119,9 @@ const competitions = [
         </svg></a
       >
     </div>
-    <div class="flex flex-col gap-3">
+    <div class="flex flex-row sm:flex-col gap-3">
       {
-        competitions.map((competition) => (
+        Competitions.competitions.map((competition) => (
           <img
             src={competition.image}
             alt={competition.title}

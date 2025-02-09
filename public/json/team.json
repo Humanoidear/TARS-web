@@ -4,26 +4,17 @@
     "position": "",
     "isCoordinator": 0,
     "coordinator": "Presidente",
-    "remove": "https://picsum.photos/200/200?random=1",
-    "links": {
-        "LinkedIn": "https://linkedin.com/in/joanalbertorti"
-    }
+    "remove": "https://picsum.photos/200/200?random=1"
 },
   {
       "name": "Joan Albert Ortí",
       "position": "Electronica",
-      "remove": "https://picsum.photos/200/200?random=1",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/joanalbertorti"
-      }
+      "remove": "https://picsum.photos/200/200?random=1"
   },
   {
       "name": "Óscar Domínguez Correa",
       "position": "Electronica",
-      "remove": "https://picsum.photos/200/200?random=2",
-      "links": {
-          "GitHub": "https://github.com/oscardominguezcorrea"
-      }
+      "remove": "https://picsum.photos/200/200?random=2"
   },
   {
       "name": "Vicente Burdeus Sánchez",
@@ -252,12 +243,7 @@
       "position": "Mecanica",
       "isCoordinator": 0,
       "coordinator": "Coordinadora RoboChallenge",
-      "remove": "https://picsum.photos/200/200?random=25",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/mariadoloresmunozgarcia",
-          "GitHub": "https://github.com/mariadoloresmunozgarcia",
-          "Twitter": "https://twitter.com/mariadoloresmunozgarcia"
-      }
+      "remove": "https://picsum.photos/200/200?random=25"
   },
   {
       "name": "Carlos Caballer Ruiz",
@@ -295,12 +281,7 @@
       "position": "Mecanica",
       "isCoordinator": 0,
       "coordinator": "Coordinadora ERC",
-      "remove": "https://picsum.photos/200/200?random=29",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/manarselham",
-          "GitHub": "https://github.com/manarselham",
-          "Twitter": "https://twitter.com/manarselham"
-      }
+      "remove": "https://picsum.photos/200/200?random=29"
   },
   {
       "name": "Elizabeth Turley",

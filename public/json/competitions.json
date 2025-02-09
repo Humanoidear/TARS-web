@@ -1,0 +1,21 @@
+{
+  "competitions": [
+    {
+      "image": "https://www.spaceagenda.com/wp-content/uploads/2024/07/erc-featured-min-1024x597-1.webp",
+      "title": "ERC",
+      "description": "European Rover Challenge (ERC) es una competición internacional de robótica espacial donde equipos de todo el mundo diseñan y construyen rovers para realizar misiones en un entorno simulado de Marte.",
+      "link": "https://roverchallenge.eu/"
+    },
+    {
+      "image": "https://thumbs.dreamstime.com/b/uav-drone-modern-cityscape-communication-network-concept-telecommunication-smart-city-iot-ict-g-ai-generated-uav-drone-318726787.jpg",
+      "title": "Drone Inteligente (ERC)",
+      "description": "La competición de Drone Inteligente desafía a los equipos a desarrollar drones autónomos capaces de realizar tareas complejas, como navegación, reconocimiento y manipulación de objetos en entornos dinámicos."
+    },
+    {
+      "image": "https://battlebots.com/wp-content/uploads/2023/11/IMG_9072.jpg",
+      "title": "Robochallenge",
+      "description": "Robochallenge es una competición de robótica donde equipos diseñan y construyen robots de combate que se enfrentan en una arena, utilizando diversas armas y estrategias para derrotar a sus oponentes.",
+      "link": "https://robochallenge.ro/"
+    }
+  ]
+}
