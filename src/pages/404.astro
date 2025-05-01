@@ -1,0 +1,38 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import HeadTitle from "../components/HeadTitle.astro";
+import Button from "../components/Button.astro";
+---
+
+<Layout title="404 - Página no encontrada | TARS Robotics">
+  <Header />
+  <HeadTitle/>
+
+  <main class="flex items-center justify-cente pb-20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-2xl mx-auto text-center">
+        <div class="mb-8 relative">
+          <h1 class="text-9xl font-bold text-white opacity-90">404</h1>
+        </div>
+        
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+          Página no encontrada
+        </h2>
+        
+        <p class="text-xl text-white/70 mb-8">
+          Lo sentimos, la página que estás buscando no existe o ha sido movida.
+        </p>
+        
+       <Button 
+          text="Volver a la página principal"
+          href="/"
+          class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+        />
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
