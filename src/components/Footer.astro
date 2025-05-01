@@ -46,7 +46,7 @@ const posts = entries.items.map((item) => {
       <Button icon="/img/user.svg" href="/about" text="Únete" white />
           <Button 
         icon="/img/money.svg" 
-        href="mailto:contacto@tarsupv.com?subject=Petici%C3%B3n%20de%20patrocinio" 
+        href="mailto:contacto@tarsupv.com?subject=Patrocinio" 
         text="Patrocinar" 
       />
     </span>
@@ -96,7 +96,7 @@ const posts = entries.items.map((item) => {
       </h2>
       {
         posts.slice(0, 2).map((post) => (
-          <a href={`/blog/${post.slug}`} class="hover:text-[#883aeb]">
+          <a href={`/work/${post.slug}`} class="hover:text-[#883aeb]">
             <h3 class="md:text-right font-medium text-xl">{post.title}</h3>
             <p class="md:text-right text-white/60 line-clamp-2">
               {post.description}

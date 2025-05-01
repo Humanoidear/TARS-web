@@ -19,224 +19,114 @@
   {
       "name": "Vicente Burdeus Sánchez",
       "position": "Electronica",
-      "remove": "https://picsum.photos/200/200?random=3",
-      "links": {
-          "Twitter": "https://twitter.com/vicenteburdeussanchez"
-      }
+      "remove": "https://picsum.photos/200/200?random=3"
   },
   {
       "name": "Saúl Sanchis Juan",
       "position": "Electronica",
-      "remove": "https://picsum.photos/200/200?random=4",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/saulsanchisjuan",
-          "GitHub": "https://github.com/saulsanchisjuan",
-          "Twitter": "https://twitter.com/saulsanchisjuan"
-      }
+      "remove": "https://picsum.photos/200/200?random=4"
   },
   {
       "name": "Enric Talens Miralles",
       "position": "Electronica",
-      "remove": "https://picsum.photos/200/200?random=5",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/enrictalensmiralles",
-          "GitHub": "https://github.com/enrictalensmiralles",
-          "Twitter": "https://twitter.com/enrictalensmiralles"
-      }
+      "remove": "https://picsum.photos/200/200?random=5"
   },
   {
       "name": "Raquel Montoliu Balaguer",
       "position": "Electronica",
-      "remove": "https://picsum.photos/200/200?random=6",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/raquelmontoliubalaguer",
-          "GitHub": "https://github.com/raquelmontoliubalaguer",
-          "Twitter": "https://twitter.com/raquelmontoliubalaguer"
-      }
+      "remove": "https://picsum.photos/200/200?random=6"
   },
   {
       "name": "Ian Francisco García Ruiz",
       "position": "Electronica",
-      "remove": "https://picsum.photos/200/200?random=7",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/ianfranciscogarciaruiz",
-          "GitHub": "https://github.com/ianfranciscogarciaruiz",
-          "Twitter": "https://twitter.com/ianfranciscogarciaruiz"
-      }
+      "remove": "https://picsum.photos/200/200?random=7"
   },
   {
       "name": "Rosa María Hernández Valero",
       "position": "Electronica",
       "isCoordinator": 1,
-      "remove": "https://picsum.photos/200/200?random=8",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/rosamariahernandezvalero",
-          "GitHub": "https://github.com/rosamariahernandezvalero",
-          "Twitter": "https://twitter.com/rosamariahernandezvalero"
-      }
+      "remove": "https://picsum.photos/200/200?random=8"
   },
   {
       "name": "Iván Guillardini Montés",
       "position": "Electronica",
-      "remove": "https://picsum.photos/200/200?random=9",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/ivanguillardinimontes",
-          "GitHub": "https://github.com/ivanguillardinimontes",
-          "Twitter": "https://twitter.com/ivanguillardinimontes"
-      }
+      "remove": "https://picsum.photos/200/200?random=9"
   },
   {
       "name": "María Rodríguez Hernández",
       "position": "Electronica",
-      "remove": "https://picsum.photos/200/200?random=10",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/mariarodriguezhernandez",
-          "GitHub": "https://github.com/mariarodriguezhernandez",
-          "Twitter": "https://twitter.com/mariarodriguezhernandez"
-      }
+      "remove": "https://picsum.photos/200/200?random=10"
   },
   {
       "name": "Marcos Sellés Solà",
       "position": "Electronica",
-      "remove": "https://picsum.photos/200/200?random=11",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/marcossellessolà",
-          "GitHub": "https://github.com/marcossellessolà",
-          "Twitter": "https://twitter.com/marcossellessolà"
-      }
+      "remove": "https://picsum.photos/200/200?random=11"
   },
   {
       "name": "Elena Clofent Muñoz",
       "position": "Electronica",
-      "remove": "https://picsum.photos/200/200?random=12",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/elenaclofentmunoz",
-          "GitHub": "https://github.com/elenaclofentmunoz",
-          "Twitter": "https://twitter.com/elenaclofentmunoz"
-      }
+      "remove": "https://picsum.photos/200/200?random=12"
   },
   {
       "name": "Gabriel Arnedo Espinosa",
       "position": "Finanzas",
-      "remove": "https://picsum.photos/200/200?random=13",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/gabrielarnedoespinosa",
-          "GitHub": "https://github.com/gabrielarnedoespinosa",
-          "Twitter": "https://twitter.com/gabrielarnedoespinosa"
-      }
+      "remove": "https://picsum.photos/200/200?random=13"
   },
   {
       "name": "Ricardo Casasnovas Martin",
       "position": "Finanzas",
       "isCoordinator": 1,
-      "remove": "https://picsum.photos/200/200?random=14",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/ricardocasasnovasmartin",
-          "GitHub": "https://github.com/ricardocasasnovasmartin",
-          "Twitter": "https://twitter.com/ricardocasasnovasmartin"
-      }
+      "remove": "https://picsum.photos/200/200?random=14"
   },
   {
       "name": "Marco Robert Valverde",
       "position": "Finanzas",
-      "remove": "https://picsum.photos/200/200?random=15",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/marcorobertvalverde",
-          "GitHub": "https://github.com/marcorobertvalverde",
-          "Twitter": "https://twitter.com/marcorobertvalverde"
-      }
+      "remove": "https://picsum.photos/200/200?random=15"
   },
   {
       "name": "Carla Hidalgo Aroca",
       "position": "Finanzas",
-      "remove": "https://picsum.photos/200/200?random=16",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/carlahidalgoaroca",
-          "GitHub": "https://github.com/carlahidalgoaroca",
-          "Twitter": "https://twitter.com/carlahidalgoaroca"
-      }
+      "remove": "https://picsum.photos/200/200?random=16"
   },
   {
       "name": "Angela Espert Cornejo",
       "position": "Finanzas",
-      "remove": "https://picsum.photos/200/200?random=17",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/angelaespertcornejo",
-          "GitHub": "https://github.com/angelaespertcornejo",
-          "Twitter": "https://twitter.com/angelaespertcornejo"
-      }
+      "remove": "https://picsum.photos/200/200?random=17"
   },
   {
       "name": "Mario Martinez Carneros",
       "position": "Finanzas",
-      "remove": "https://picsum.photos/200/200?random=18",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/mariomartinezcarneros",
-          "GitHub": "https://github.com/mariomartinezcarneros",
-          "Twitter": "https://twitter.com/mariomartinezcarneros"
-      }
+      "remove": "https://picsum.photos/200/200?random=18"
   },
   {
       "name": "Jorge Márquez Morales",
       "position": "Imagen",
       "isCoordinator": 1,
-      "remove": "https://picsum.photos/200/200?random=19",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/jorgemarquezmorales",
-          "GitHub": "https://github.com/jorgemarquezmorales",
-          "Twitter": "https://twitter.com/jorgemarquezmorales"
-      }
+      "remove": "https://picsum.photos/200/200?random=19"
   },
   {
       "name": "Sandra Villora Parra",
       "position": "Imagen",
-      "remove": "https://picsum.photos/200/200?random=20",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/sandravilloraparra",
-          "GitHub": "https://github.com/sandravilloraparra",
-          "Twitter": "https://twitter.com/sandravilloraparra"
-      }
+      "remove": "https://picsum.photos/200/200?random=20"
   },
   {
       "name": "Juan Palou de Comasema Jaume",
-      "position": "Imagen",
-      "pfp1": "/img/person.png",
-      "pfp": "/img/abbg.png",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/juanpaloudecomasemajaume",
-          "GitHub": "https://github.com/juanpaloudecomasemajaume",
-          "Twitter": "https://twitter.com/juanpaloudecomasemajaume"
-      }
+      "position": "Imagen"
   },
   {
       "name": "Tongxin Pan Du",
       "position": "Imagen",
-      "remove": "https://picsum.photos/200/200?random=22",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/tongxinpandu",
-          "GitHub": "https://github.com/tongxinpandu",
-          "Twitter": "https://twitter.com/tongxinpandu"
-      }
+      "remove": "https://picsum.photos/200/200?random=22"
   },
   {
       "name": "Pedro Diaz Masa Valencia",
       "position": "Imagen",
-      "remove": "https://picsum.photos/200/200?random=23",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/pedrodiazmasavalencia",
-          "GitHub": "https://github.com/pedrodiazmasavalencia",
-          "Twitter": "https://twitter.com/pedrodiazmasavalencia"
-      }
+      "remove": "https://picsum.photos/200/200?random=23"
   },
   {
       "name": "Antonio Ros Otero",
       "position": "Mecanica",
-      "remove": "https://picsum.photos/200/200?random=24",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/antoniorosotero",
-          "GitHub": "https://github.com/antoniorosotero",
-          "Twitter": "https://twitter.com/antoniorosotero"
-      }
+      "remove": "https://picsum.photos/200/200?random=24"
   },
   {
       "name": "María Dolores Muñoz García",
@@ -248,33 +138,18 @@
   {
       "name": "Carlos Caballer Ruiz",
       "position": "Mecanica",
-      "remove": "https://picsum.photos/200/200?random=26",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/carloscaballerruiz",
-          "GitHub": "https://github.com/carloscaballerruiz",
-          "Twitter": "https://twitter.com/carloscaballerruiz"
-      }
+      "remove": "https://picsum.photos/200/200?random=26"
   },
   {
       "name": "Alejandro Guerrero Huaigua",
       "position": "Mecanica",
       "isCoordinator": 1,
-      "remove": "https://picsum.photos/200/200?random=27",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/alejandroguerrerohuaigua",
-          "GitHub": "https://github.com/alejandroguerrerohuaigua",
-          "Twitter": "https://twitter.com/alejandroguerrerohuaigua"
-      }
+      "remove": "https://picsum.photos/200/200?random=27"
   },
   {
       "name": "Ana Parrilla Bouaiche",
       "position": "Mecanica",
-      "remove": "https://picsum.photos/200/200?random=28",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/anaparrillabouaiche",
-          "GitHub": "https://github.com/anaparrillabouaiche",
-          "Twitter": "https://twitter.com/anaparrillabouaiche"
-      }
+      "remove": "https://picsum.photos/200/200?random=28"
   },
   {
       "name": "Manar Selham",
@@ -286,312 +161,157 @@
   {
       "name": "Elizabeth Turley",
       "position": "Mecanica",
-      "remove": "https://picsum.photos/200/200?random=30",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/elizabethturley",
-          "GitHub": "https://github.com/elizabethturley",
-          "Twitter": "https://twitter.com/elizabethturley"
-      }
+      "remove": "https://picsum.photos/200/200?random=30"
   },
   {
       "name": "Carmelo Nicolas Estelles Pardo",
       "position": "Mecanica",
-      "remove": "https://picsum.photos/200/200?random=31",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/carmelonicolasestellespardo",
-          "GitHub": "https://github.com/carmelonicolasestellespardo",
-          "Twitter": "https://twitter.com/carmelonicolasestellespardo"
-      }
+      "remove": "https://picsum.photos/200/200?random=31"
   },
   {
       "name": "Ali Abdelhamid Salmi",
       "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=32",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/aliabdelhamidsalmi",
-          "GitHub": "https://github.com/aliabdelhamidsalmi",
-          "Twitter": "https://twitter.com/aliabdelhamidsalmi"
-      }
+      "remove": "https://picsum.photos/200/200?random=32"
   },
   {
       "name": "David Bernad López",
       "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=33",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/davidbernadlopez",
-          "GitHub": "https://github.com/davidbernadlopez",
-          "Twitter": "https://twitter.com/davidbernadlopez"
-      }
+      "remove": "https://picsum.photos/200/200?random=33"
   },
   {
       "name": "Javier Veyrat Zaragozá",
       "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=34",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/javierveyratzaragoza",
-          "GitHub": "https://github.com/javierveyratzaragoza",
-          "Twitter": "https://twitter.com/javierveyratzaragoza"
-      }
+      "remove": "https://picsum.photos/200/200?random=34"
   },
   {
       "name": "Jose Nicolas Mollá Eid-Macheh",
       "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=35",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/josenicolasmollaeid-macheh",
-          "GitHub": "https://github.com/josenicolasmollaeid-macheh",
-          "Twitter": "https://twitter.com/josenicolasmollaeid-macheh"
-      }
+      "remove": "https://picsum.photos/200/200?random=35"
   },
   {
       "name": "Sebastian Ballester Pirchmoser",
       "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=36",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/sebastianballesterpirchmoser",
-          "GitHub": "https://github.com/sebastianballesterpirchmoser",
-          "Twitter": "https://twitter.com/sebastianballesterpirchmoser"
-      }
+      "remove": "https://picsum.photos/200/200?random=36"
   },
   {
       "name": "Jose Luis Galán Avilés",
       "position": "Software",
       "isCoordinator": 1,
-      "remove": "https://picsum.photos/200/200?random=37",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/joseluisgalanaviles",
-          "GitHub": "https://github.com/joseluisgalanaviles",
-          "Twitter": "https://twitter.com/joseluisgalanaviles"
-      }
+      "remove": "https://picsum.photos/200/200?random=37"
   },
   {
       "name": "Rubén Darío Argaez Urrego",
       "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=38",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/rubendarioargaezurrego",
-          "GitHub": "https://github.com/rubendarioargaezurrego",
-          "Twitter": "https://twitter.com/rubendarioargaezurrego"
-      }
+      "remove": "https://picsum.photos/200/200?random=38"
   },
   {
       "name": "Ernesto Martínez Gómez",
       "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=39",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/ernestomartinezgomez",
-          "GitHub": "https://github.com/ernestomartinezgomez",
-          "Twitter": "https://twitter.com/ernestomartinezgomez"
-      }
+      "remove": "https://picsum.photos/200/200?random=39"
   },
   {
       "name": "Joan Mallasén Rodríguez",
       "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=40",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/joanmallasenrodriguez",
-          "GitHub": "https://github.com/joanmallasenrodriguez",
-          "Twitter": "https://twitter.com/joanmallasenrodriguez"
-      }
+      "remove": "https://picsum.photos/200/200?random=40"
   },
   {
       "name": "Lorenzo Severini",
       "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=41",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/lorenzoseverini",
-          "GitHub": "https://github.com/lorenzoseverini",
-          "Twitter": "https://twitter.com/lorenzoseverini"
-      }
+      "remove": "https://picsum.photos/200/200?random=41"
   },
   {
       "name": "Diego Jiménez Romero",
       "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=42",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/diegojimenezromero",
-          "GitHub": "https://github.com/diegojimenezromero",
-          "Twitter": "https://twitter.com/diegojimenezromero"
-      }
+      "remove": "https://picsum.photos/200/200?random=42"
   },
   {
       "name": "José Vidal Lima",
       "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=43",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/josevidallima",
-          "GitHub": "https://github.com/josevidallima",
-          "Twitter": "https://twitter.com/josevidallima"
-      }
+      "remove": "https://picsum.photos/200/200?random=43"
   },
   {
       "name": "Ana Asenjo Madrigal",
       "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=44",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/anaasenjomadrigal",
-          "GitHub": "https://github.com/anaasenjomadrigal",
-          "Twitter": "https://twitter.com/anaasenjomadrigal"
-      }
+      "remove": "https://picsum.photos/200/200?random=44"
   },
   {
       "name": "Alejandro González de la Santa Cruz",
       "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=45",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/alejandrogonzalezdelasantacruz",
-          "GitHub": "https://github.com/alejandrogonzalezdelasantacruz",
-          "Twitter": "https://twitter.com/alejandrogonzalezdelasantacruz"
-      }
+      "remove": "https://picsum.photos/200/200?random=45"
   },
   {
       "name": "Andreu Martínez Cabrera",
       "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=46",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/andreumartinezcabrera",
-          "GitHub": "https://github.com/andreumartinezcabrera",
-          "Twitter": "https://twitter.com/andreumartinezcabrera"
-      }
+      "remove": "https://picsum.photos/200/200?random=46"
   },
   {
       "name": "Lucas Carrizo Ruggeri",
       "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=47",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/lucascarrizoruggeri",
-          "GitHub": "https://github.com/lucascarrizoruggeri",
-          "Twitter": "https://twitter.com/lucascarrizoruggeri"
-      }
+      "remove": "https://picsum.photos/200/200?random=47"
   },
   {
       "name": "Francisco Nortes Novikov",
       "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=48",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/francisconortesnovikov",
-          "GitHub": "https://github.com/francisconortesnovikov",
-          "Twitter": "https://twitter.com/francisconortesnovikov"
-      }
+      "remove": "https://picsum.photos/200/200?random=48"
   },
   {
       "name": "Adrián Escudero García",
       "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=49",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/adrianescuderogarcia",
-          "GitHub": "https://github.com/adrianescuderogarcia",
-          "Twitter": "https://twitter.com/adrianescuderogarcia"
-      }
+      "remove": "https://picsum.photos/200/200?random=49"
   },
   {
       "name": "Jesús París Navarro",
       "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=50",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/jesusparisnavarro",
-          "GitHub": "https://github.com/jesusparisnavarro",
-          "Twitter": "https://twitter.com/jesusparisnavarro"
-      }
+      "remove": "https://picsum.photos/200/200?random=50"
   },
   {
       "name": "Daniel Mirón Vidal",
       "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=51",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/danielmironvidal",
-          "GitHub": "https://github.com/danielmironvidal",
-          "Twitter": "https://twitter.com/danielmironvidal"
-      }
+      "remove": "https://picsum.photos/200/200?random=51"
   },
   {
       "name": "Maria Bolumar García",
       "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=52",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/mariabolumargarcia",
-          "GitHub": "https://github.com/mariabolumargarcia",
-          "Twitter": "https://twitter.com/mariabolumargarcia"
-      }
+      "remove": "https://picsum.photos/200/200?random=52"
   },
   {
       "name": "Lucía Alba Torres",
       "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=53",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/luciaalbatorres",
-          "GitHub": "https://github.com/luciaalbatorres",
-          "Twitter": "https://twitter.com/luciaalbatorres"
-      }
+      "remove": "https://picsum.photos/200/200?random=53"
   },
   {
       "name": "Francesc Loeches Nogués",
       "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=54",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/francescloechesnogues",
-          "GitHub": "https://github.com/francescloechesnogues",
-          "Twitter": "https://twitter.com/francescloechesnogues"
-      }
+      "remove": "https://picsum.photos/200/200?random=54"
   },
   {
       "name": "Kai Aoiz Canillas",
       "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=55",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/kaiaoizcanillas",
-          "GitHub": "https://github.com/kaiaoizcanillas",
-          "Twitter": "https://twitter.com/kaiaoizcanillas"
-      }
+      "remove": "https://picsum.photos/200/200?random=55"
   },
   {
       "name": "Sergio Real Gonzalvo",
       "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=56",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/sergiorealgonzalvo",
-          "GitHub": "https://github.com/sergiorealgonzalvo",
-          "Twitter": "https://twitter.com/sergiorealgonzalvo"
-      }
+      "remove": "https://picsum.photos/200/200?random=56"
   },
   {
       "name": "Ángela Ferré Pérez",
       "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=57",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/angelaferreperez",
-          "GitHub": "https://github.com/angelaferreperez",
-          "Twitter": "https://twitter.com/angelaferreperez"
-      }
+      "remove": "https://picsum.photos/200/200?random=57"
   },
   {
       "name": "Marcos Mérida Bustamante",
       "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=58",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/marcosmeridabustamante",
-          "GitHub": "https://github.com/marcosmeridabustamante",
-          "Twitter": "https://twitter.com/marcosmeridabustamante"
-      }
+      "remove": "https://picsum.photos/200/200?random=58"
   },
   {
       "name": "Thalia Mara Pereira Ben Abdelouahab",
       "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=59",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/thaliamarapereirabenabdelouahab",
-          "GitHub": "https://github.com/thaliamarapereirabenabdelouahab",
-          "Twitter": "https://twitter.com/thaliamarapereirabenabdelouahab"
-      }
+      "remove": "https://picsum.photos/200/200?random=59"
   },
   {
       "name": "Adolfo Fornás García",
       "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=60",
-      "links": {
-          "LinkedIn": "https://linkedin.com/in/adolfofornasgarcia",
-          "GitHub": "https://github.com/adolfofornasgarcia",
-          "Twitter": "https://twitter.com/adolfofornasgarcia"
-      }
+      "remove": "https://picsum.photos/200/200?random=60"
   }
 ]

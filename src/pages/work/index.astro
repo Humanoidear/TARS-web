@@ -5,57 +5,199 @@ import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import HeadTitle from "../../components/HeadTitle.astro";
+import { format } from "date-fns";
+import { es } from "date-fns/locale";
 
 const entries = await contentfulClient.getEntries<work>({
-    content_type: "blogTars",
+  content_type: "blogTars",
+  order: "-fields.date", // Sort by date, newest first
+  limit: 12, // Limit to 12 posts
 });
+
 const posts = entries.items.map((item) => {
-    const { title, slug, date, headerImg, description } = item.fields;
-    return {
-        title,
-        slug,
-        date,
-        headerImg,
-        description,
-    };
+  const { title, slug, date, headerImg, description, category, readTime } =
+    item.fields;
+  return {
+    title,
+    slug,
+    date: date ? new Date(date) : new Date(),
+    headerImg,
+    description,
+    category: category || "Noticias",
+    readTime: readTime || "5",
+  };
 });
+
+// Featured post is the first post
+const featuredPost = posts.length > 0 ? posts[0] : null;
+// Regular posts are all posts except the featured one
+const regularPosts = posts.length > 1 ? posts.slice(1) : [];
 ---
 
 <Layout title="Noticias | TARS Innovación y excelencia en robótica competitiva">
-    <Header isWork />
-    <HeadTitle icon="/img/news.svg" text="Noticias" description="Consulta las noticias y avances más recientes del equipo!" />
-    <main
-      class="flex flex-col items-center justify-center relative"
-    >
-      <section class="max-w-[1400px] w-[95%] relative">
-        <ul
-          class="w-full mt-3 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 grid-rows-2 sm:gap-16 gap-6"
-        >
-          {
-            posts.map((post, i) => (
-            <a href={`work/${post.slug}`} class="post w-full rounded-lg bg-[#181818] -translate-y-16 hover:-translate-y-20 hover:shadow-md transition-all overflow-hidden">
-              <img
-                src={post.headerImg && 'fields' in post.headerImg ? post.headerImg.fields.file.url : ''}
-                alt={`Noticia ${i + 1}`}
-                class="w-full h-56 top-0 left-0 object-cover"
-              />
-              <div class="p-3">
-                <h2 class="font-bold text-2xl text-white">{post.title}</h2>
-                <p class="mb-3 text-white">
-                  {post.description ||
+  <Header isWork />
+  <HeadTitle
+    icon="/img/news.svg"
+    text="Noticias"
+    description="Consulta las noticias y avances más recientes del equipo!"
+  />
+
+  <main class="-translate-y-[30px] flex flex-col items-center justify-center relative">
+    <section class="max-w-[1400px] w-[95%] relative">
+      <!-- Featured Post -->
+      {
+        featuredPost && (
+          <div class="w-full mb-16">
+            <a
+              href={`work/${featuredPost.slug}`}
+              class="group grid lg:grid-cols-2 gap-6 bg-gradient-to-br from-[#202020] to-[#181818] rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-zinc-800/30"
+            >
+              <div class="relative overflow-hidden h-[350px] lg:h-auto">
+                <div class="absolute top-4 left-4 z-10 bg-gradient-to-r from-orange-500 to-red-500 text-white text-sm font-medium px-3 py-1 rounded-full">
+                  Destacado
+                </div>
+                <img
+                  src={
+                    featuredPost.headerImg && "fields" in featuredPost.headerImg
+                      ? featuredPost.headerImg.fields.file.url
+                      : ""
+                  }
+                  alt={featuredPost.title}
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+              <div class="p-6 flex flex-col justify-center">
+                <div class="flex items-center space-x-3 mb-3">
+                  <span class="text-orange-500 text-sm font-medium">
+                    {featuredPost.category}
+                  </span>
+                  <span class="w-1 h-1 rounded-full bg-gray-400" />
+                  <span class="text-gray-400 text-sm">
+                    {format(featuredPost.date, "d 'de' MMMM, yyyy", {
+                      locale: es,
+                    })}
+                  </span>
+                  <span class="w-1 h-1 rounded-full bg-gray-400" />
+                  <span class="text-gray-400 text-sm">
+                    {featuredPost.readTime} min de lectura
+                  </span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 group-hover:text-blue-500 transition-colors">
+                  {featuredPost.title}
+                </h2>
+                <p class="text-gray-300 text-lg mb-6 line-clamp-3">
+                  {featuredPost.description ||
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec dui nec odio."}
                 </p>
+                <div class="mt-auto">
+                  <span class="inline-flex items-center text-blue-500 font-medium group-hover:translate-x-1 transition-transform">
+                    Leer más
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-5 w-5 ml-1"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
-              <div class="more">
-                <div class="w-full h-16 bg-white/5 hover:bg-white/10 text-white text-xl font-semibold flex items-center justify-center transition-all">
-                  Leer más
+            </a>
+          </div>
+        )
+      }
+
+      <!-- Regular Posts Grid -->
+      <div class="w-full">
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8"
+        >
+          {
+            regularPosts.map((post) => (
+              <a
+                href={`work/${post.slug}`}
+                class="group flex flex-col rounded-xl bg-[#181818] hover:-translate-y-2 hover:shadow-lg transition-all duration-300 overflow-hidden border border-zinc-800/30"
+              >
+                <div class="relative">
+                  <div class="absolute top-3 left-3 z-10 bg-black/70 backdrop-blur-sm text-white text-xs font-medium px-2 py-1 rounded-md">
+                    {post.category}
+                  </div>
+                  <img
+                    src={
+                      post.headerImg && "fields" in post.headerImg
+                        ? post.headerImg.fields.file.url
+                        : ""
+                    }
+                    alt={post.title}
+                    class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div class="p-5 flex-grow flex flex-col">
+                  <div class="text-gray-400 text-xs flex items-center mb-2">
+                    <span>
+                      {format(post.date, "d MMM, yyyy", { locale: es })}
+                    </span>
+                    <span class="mx-2">•</span>
+                    <span>{post.readTime} min</span>
+                  </div>
+                  <h2 class="font-bold text-xl text-white mb-2 group-hover:text-blue-500 transition-colors line-clamp-2">
+                    {post.title}
+                  </h2>
+                  <p class="text-gray-300 text-sm mb-4 line-clamp-3">
+                    {post.description ||
+                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec dui nec odio."}
+                  </p>
+                  <div class="mt-auto pt-3 border-t border-zinc-700/50">
+                    <span class="text-sm text-blue-500 font-medium flex items-center group-hover:translate-x-1 transition-transform">
+                      Leer artículo
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-4 w-4 ml-1"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H3a1 1 0 110-2h9.586l-2.293-2.293a1 1 0 010-1.414z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
                   </div>
                 </div>
-            </a>
+              </a>
             ))
           }
-        </ul>
-      </section>
-    </main>
-    <Footer />
+        </div>
+      </div>
+
+      <!-- No posts message -->
+      {
+        posts.length === 0 && (
+          <div class="w-full py-16 text-center">
+            <h3 class="text-2xl font-bold text-white mb-4">
+              Próximamente nuevas publicaciones
+            </h3>
+            <p class="text-gray-400">
+              Estamos trabajando en crear contenido interesante para ti.
+            </p>
+          </div>
+        )
+      }
+    </section>
+  </main>
+  <Footer />
 </Layout>
+
+<style>
+  .post:hover {
+    box-shadow:
+      0 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+</style>

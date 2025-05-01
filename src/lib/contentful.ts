@@ -9,6 +9,11 @@ export interface work {
     headerImg: EntryFieldTypes.AssetLink;
     description: EntryFieldTypes.Text;
     content: EntryFieldTypes.RichText;
+    category: EntryFieldTypes.Text;
+    readTime: EntryFieldTypes.Number;
+    author: EntryFieldTypes.Text;
+    authorImage: EntryFieldTypes.AssetLink;
+    tags: EntryFieldTypes.Array<EntryFieldTypes.Text>;
   };
 }
 

@@ -6,101 +6,179 @@ import Button from "../components/Button.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import TeamJson from "../components/team.astro";
+import Threejs from "../components/threejs.astro";
 import Competitions from "../../public/json/competitions.json";
+import { format } from "date-fns";
+import { es } from "date-fns/locale";
 
+// Get latest blog posts
 const entries = await contentfulClient.getEntries<work>({
   content_type: "blogTars",
+  order: "-fields.date", // Sort by date, newest first
+  limit: 6, // Get more posts for flexibility
 });
+
 const posts = entries.items.map((item) => {
-  const { title, slug, date, headerImg, description } = item.fields;
+  const { title, slug, date, headerImg, description, category, readTime } =
+    item.fields;
   return {
     title,
     slug,
-    date,
+    date: date ? new Date(date) : null,
     headerImg,
-    description
+    description,
+    category: category || "Noticias",
+    readTime: readTime || "5",
   };
 });
+
+const regularPosts = posts.slice(0, 4) || [];
+
+// Get upcoming competitions (could be from Contentful as well)
+const upcomingCompetitions = Competitions.competitions.slice(0, 3);
 ---
 
 <Layout title="TARS | Innovación y excelencia en robótica competitiva">
   <Header />
   <main>
+    <!-- Hero Section -->
     <div
-      class="top-0 w-screen h-screen rounded-b-lg flex flex-row items-center px-3 sm:px-48 relative"
+      class="bg top-0 w-screen h-screen rounded-b-lg flex flex-row items-center px-3 sm:px-48 relative overflow-hidden"
     >
       <div class="flex flex-col items-start gap-3 z-20 relative">
         <h1 class="mb-0 text-7xl text-white flex flex-col items-start">
           <span class="opacity-60 text-2xl font-[SourceCodePro] font-medium"
             >somos_</span
-          ><img src="/img/logo-wordmark.png" class="mt-3 h-16" />
+          >
+          <img src="/img/logo-wordmark.png" class="mt-3 h-16" />
         </h1>
         <p class="mb-6 max-w-[450px] text-2xl text-white/60 font-medium">
           Innovación y excelencia en robótica competitiva
         </p>
         <Button text="Descubre nuestros proyectos" href="/#about" />
       </div>
+
       <span
         class="parallax-text bottom-32 -left-[60%] sm:-left-[10%] font-[Braille] text-[200px] text-white opacity-5 rotate-90 z-0 absolute"
         >TARS</span
       >
+
       <iframe
         src="/html/particles.html"
         class="top-0 left-0 opacity-60 w-screen h-screen absolute"></iframe>
+
       <div
-        class="left-0 top-0 hero w-screen h-screen min-h-[800px] z-10 absolute"
+        class="left-0 top-0 hero w-screen h-screen min-h-[800px] -z-10 absolute"
       >
       </div>
-      <div class="left-0 top-0 bg w-screen h-screen min-h-[800px] z-0 absolute">
-      </div>
+
+      <Threejs />
     </div>
-    <div class="w-screen bg-[#121212]">
-      <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6 px-6 sm:px-36 relative">
-        {
-          posts.map((post, i) => (
-            <a href={`work/${post.slug}`} class="post w-full rounded-lg bg-[#181818] -translate-y-16 hover:-translate-y-20 hover:shadow-md transition-all overflow-hidden">
-              <img
-                src={post.headerImg && 'fields' in post.headerImg ? post.headerImg.fields.file.url : ''}
-                alt={`Noticia ${i + 1}`}
-                class="w-full h-56 top-0 left-0 object-cover"
-              />
-              <div class="p-3">
-                <h2 class="font-bold text-2xl text-white">{post.title}</h2>
-                <p class="mb-3 text-white">
-                  {post.description ||
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec dui nec odio."}
-                </p>
-              </div>
-              <div class="more">
-                <div class="w-full h-16 bg-white/5 hover:bg-white/10 text-white text-xl font-semibold flex items-center justify-center transition-all">
-                  Leer más
+
+    <div class="w-screen bg-gradient-to-b from-[#121212] to-[#0a0a0a]">
+      <!-- Featured News Section -->
+      <div class="px-6 sm:px-36 relative">
+        <div
+          class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 -translate-y-16"
+        >
+          {
+            regularPosts.map((post) => (
+              <a
+                href={`work/${post.slug}`}
+                class="post bg-[#181818] rounded-xl overflow-hidden hover:-translate-y-2 hover:shadow-lg transition-all duration-300 group border border-zinc-800/30"
+              >
+                <div class="relative">
+                  <div class="absolute top-3 left-3 z-10 bg-black/70 backdrop-blur-sm text-white text-xs font-medium px-2 py-1 rounded-md">
+                    {post.category}
+                  </div>
+                  <img
+                    src={
+                      post.headerImg && "fields" in post.headerImg
+                        ? post.headerImg.fields.file.url
+                        : ""
+                    }
+                    alt={post.title}
+                    class="w-full h-[220px] object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div class="p-5">
+                  <div class="text-gray-400 text-xs flex items-center mb-2">
+                    <span>
+                      {post.date
+                        ? format(post.date, "d MMM, yyyy", { locale: es })
+                        : ""}
+                    </span>
+                    <span class="mx-2">•</span>
+                    <span>{post.readTime} min</span>
+                  </div>
+                  <h2 class="font-bold text-xl text-white group-hover:text-blue-500 transition-colors line-clamp-2">
+                    {post.title}
+                  </h2>
+                  <p class="mb-6 text-white/70 line-clamp-3">
+                    {post.description ||
+                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec dui nec odio."}
+                  </p>
+                  <div class="more">
+                    <div class="w-full h-12 rounded-md bg-white/5 hover:bg-white/10 text-white text-base font-semibold flex items-center justify-center transition-all">
+                      Leer artículo
+                    </div>
                   </div>
                 </div>
-            </a>
-          ))
-        }
-        {
-          Array.from({ length: 4 - posts.length }).map((_, i) => (
-            <div class="w-full rounded-lg bg-[#181818] -translate-y-16 hover:-translate-y-20 hover:shadow-md transition-all overflow-hidden hidden lg:block">
-              <div class="w-full h-56 top-0 left-0 object-cover bg-[#181818]" />
-              <div class="p-3">
-                <h2 class="font-bold text-2xl text-transparent">Placeholder</h2>
-                <p class="mb-3 text-transparent">Placeholder description</p>
-                <div class="mb-6" />
-              </div>
-            </div>
-          ))
-        }
+              </a>
+            ))
+          }
+
+          {
+            regularPosts.length < 3 &&
+              Array.from({ length: 3 - regularPosts.length }).map((_, i) => (
+                <div class="post bg-[#181818] rounded-xl overflow-hidden border border-zinc-800/30 opacity-30">
+                  <div class="relative bg-[#222222] h-[220px]" />
+                  <div class="p-5">
+                    <div class="w-1/3 h-3 bg-[#222222] rounded-full mb-2" />
+                    <div class="w-full h-6 bg-[#222222] rounded-lg mb-2" />
+                    <div class="w-full h-4 bg-[#222222] rounded-lg mb-2" />
+                    <div class="w-2/3 h-4 bg-[#222222] rounded-lg mb-6" />
+                  </div>
+                </div>
+              ))
+          }
+        </div>
+
+        <div class="flex justify-between -translate-y-8">
+          <h3 class="font-[SourceCodePro] text-white/70 text-xl">
+            Últimas noticias_
+          </h3>
+          <a
+            href="/work"
+            class="inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors"
+          >
+            Ver todas las noticias
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </a>
+        </div>
       </div>
-      <h3
-        class="px-3 sm:px-36 -translate-y-12 font-[SourceCodePro] text-white/70 text-xl"
+
+      <!-- About Section -->
+      <div
+        id="about"
+        class="mt-36 px-6 sm:px-36 flex flex-col sm:flex-row gap-8 items-center"
       >
-        Últimas noticias_
-      </h3>
-      <div id="about" class="mt-16 px-3 sm:px-36 flex flex-col sm:flex-row gap-8 items-center">
         <div class="max-w-[800px]">
+          <span class="inline-block text-blue-500 text-sm font-medium mb-2"
+            >EQUIPO TARS</span
+          >
           <h2 class="font-bold text-4xl text-white">Sobre nosotros</h2>
-          <p class="mt-3 mb-6 text-white">
+          <p class="mt-6 mb-6 text-white/80 text-lg leading-relaxed">
             En TARS UPV, somos apasionados por la robótica y la tecnología. Como
             grupo universitario de la Universidad Politécnica de Valencia, nos
             dedicamos a diseñar, construir y programar robots para competir en
@@ -112,45 +190,66 @@ const posts = entries.items.map((item) => {
           <Button text="Conoce al equipo" href="/#team" />
         </div>
         <div class="rover-image w-full h-auto transition-all relative">
+          <div
+            class="absolute inset-0 bg-gradient-to-tr from-indigo-800/30 to-transparent mix-blend-overlay rounded-xl opacity-80"
+          >
+          </div>
           <img
             src="https://www.tarsupv.com/images/robot.jpg"
             alt="Robot"
-            class="w-full h-auto rounded-lg bg-[#181818]"
+            class="w-full h-auto rounded-xl shadow-xl"
           />
           <div
-            class="bg-tilt top-0 w-full h-full rounded-lg rotate-6 bg-[#18181830] transition-all absolute"
+            class="bg-tilt top-0 w-full h-full rounded-xl rotate-6 bg-[#18181830] transition-all absolute"
           >
           </div>
         </div>
       </div>
-      <div class="px-3 sm:px-36 mt-36">
+
+      <!-- Upcoming Competitions Section -->
+      <div class="px-6 sm:px-36 mt-24 mb-12">
+        <span class="inline-block text-blue-500 text-sm font-medium mb-2"
+          >PRÓXIMOS EVENTOS</span
+        >
         <div
           class="mb-6 w-full flex flex-row items-center justify-between gap-6"
         >
-          <h2 class="font-bold text-4xl text-white">Nuestros proyectos</h2>
+          <h2 class="font-bold text-4xl text-white">
+            Competiciones destacadas
+          </h2>
         </div>
-        <div
-          class="w-full h-auto bg-[#121212] grid grid-cols-1 md:grid-cols-2 gap-6"
-        >
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
           {
-            Competitions.competitions.slice(0, 10).map((competition) => (
-              <div class="card">
-                <div class="card-inner rounded-lg bg-[#181818] hover:shadow-lg overflow-hidden">
+            upcomingCompetitions.map((competition, index) => (
+              <div class="card bg-[#181818] rounded-xl overflow-hidden border border-zinc-800/30 relative group">
+                <div class="card-inner">
+                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/60 to-transparent z-10" />
                   <img
                     src={competition.image}
                     alt={competition.title}
-                    class="w-full h-56 top-0 left-0 object-cover"
+                    class="w-full h-[250px] object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div class="p-4">
-                    <h2 class="text-xl font-semibold text-white mb-2">
-                      {competition.title}
-                    </h2>
-                    <p class="mb-3 text-gray-400">{competition.description}</p>
-                    {
-                      competition.link && (
-                        <Button text="Más información" href={competition.link} />
-                      )
-                    }
+                  <div class="absolute top-0 left-0 w-full h-full z-10 p-6 flex flex-col">
+                    <div class="mt-auto">
+                      <span class="inline-block px-3 py-1 bg-blue-500/80 text-white text-xs rounded-full mb-3">
+                        {`Reto ${index + 1}`}
+                      </span>
+                      <h3 class="text-2xl font-bold text-white mb-2">
+                        {competition.title}
+                      </h3>
+                      <p class="text-white/70 mb-4 line-clamp-2">
+                        {competition.description}
+                      </p>
+                      {competition.link && (
+                        <a
+                          href={competition.link}
+                          class="inline-block mt-2 backdrop-blur-md bg-white/10 hover:bg-white/20 px-4 py-2 rounded-md text-white text-sm transition-colors"
+                        >
+                          Más información
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
                 <div class="hover-effect absolute inset-0 -top-full -left-full pointer-events-none" />
@@ -158,83 +257,106 @@ const posts = entries.items.map((item) => {
             ))
           }
         </div>
-
-        <script is:inline>
-          document.querySelectorAll(".card").forEach((member) => {
-            member.addEventListener("mousemove", (e) => {
-              const rect = member.getBoundingClientRect();
-              const x = e.clientX - rect.left;
-              const y = e.clientY - rect.top;
-              const hoverEffect = member.querySelector(".hover-effect");
-              hoverEffect.style.setProperty("--x", `${x}px`);
-              hoverEffect.style.setProperty("--y", `${y}px`);
-            });
-        
-            member.addEventListener("mouseleave", () => {
-              const hoverEffect = member.querySelector(".hover-effect");
-              hoverEffect.style.setProperty("--x", `50%`);
-              hoverEffect.style.setProperty("--y", `50%`);
-            });
-          });
-        
-          document.querySelectorAll(".card").forEach((member) => {
-            member.addEventListener("mousemove", (e) => {
-              member.style.transition = "none";
-              const rect = member.getBoundingClientRect();
-              const x = -(rect.width / 2 - (e.clientX - rect.left)) / 500;
-              const y = (rect.height / 2 - (e.clientY - rect.top)) / 100;
-              member.style.transform = `perspective(1000px) rotateX(${y}deg) rotateY(${x}deg)`;
-            });
-        
-            member.addEventListener("mouseleave", () => {
-              member.style.transform = "none";
-              member.style.transition = "transform 0.3s";
-            });
-          });
-        </script>
       </div>
-      <div class="px-3 sm:px-36 mt-36">
+
+      <!-- Team Section -->
+      <div class="px-6 sm:px-36 mt-36">
+        <span class="inline-block text-blue-500 text-sm font-medium mb-2"
+          >QUIÉNES SOMOS</span
+        >
         <div
           class="mb-6 w-full flex flex-row items-center justify-between gap-6"
         >
-          <h2 id="team" class="font-bold text-4xl text-white">Nuestro equipo</h2>
+          <h2 id="team" class="font-bold text-4xl text-white">
+            Nuestro equipo
+          </h2>
           <Button text="Ver a todo el equipo" href="/team" />
         </div>
         <TeamJson />
       </div>
-      <div id="contact" class="px-3 sm:px-36 mt-36">
+
+      <!-- Contact Section -->
+      <div id="contact" class="px-6 sm:px-36 mt-36 pb-24">
+        <span class="inline-block text-blue-500 text-sm font-medium mb-2"
+          >ESCRÍBENOS</span
+        >
         <h2 class="font-bold text-4xl text-white mb-6">Contacto</h2>
-        <div class="w-full text-white text-2xl text-semibold flex flex-col gap-8 relative">
-          Te gustaría formar parte del equipo o colaborar con nosotros? No dudes en contactarnos!
-          <div class="w-full flex flex-col md:flex-row sm:flex-row gap-3">
-            <iframe class="rounded-xl w-full md:w-1/2 h-64" src="https://www.openstreetmap.org/export/embed.html?bbox=-0.34337371587753296%2C39.47991812377764%2C-0.34047693014144903%2C39.48158673031113&amp;layer=mapnik&amp;marker=39.48075243204821%2C-0.34192532300949097" style="border: 1px solid black"></iframe>
-            <div class="flex-col">
-            <a href="https://maps.google.com/?q=Universidad Politécnica de Valencia" class="p-3 rounded-t-xl rounded-b-md bg-white/5 hover:bg-white/10 flex items-center text-white mb-3">
-              <img
-                src="/img/pin.svg"
-                alt="Dirección"
-                class="w-8 h-8 mr-3 invert"
-              />
-              Garaje Casa de l'Alumne, Camino de Vera, s/n, 46022 Valencia
-            </a>
-            <!-- <a href="phone:+34123456789" class="p-3 rounded-md bg-white/5 hover:bg-white/10 flex items-center text-white mb-3">
-              <img
-                src="/img/phone.svg"
-                alt="Teléfono"
-                class="w-8 h-8 mr-3 invert"
-              />
-              +34 123 456 789
-            </a>
-             -->
-            <a href="mailto:contacto@tarsupv.com" class="p-3 rounded-md rounded-b-xl bg-white/5 hover:bg-white/10 flex items-center text-white mb-3">
-              <img
-                src="/img/mail.svg"
-                alt="Email"
-                class="w-8 h-8 mr-3 invert"
-              />
-              contacto@tarsupv.com
-            </a>
-          </div>
+        <div
+          class="w-full text-white text-2xl font-semibold flex flex-col gap-8 relative"
+        >
+          <p class="text-white/70 text-lg">
+            ¿Te gustaría formar parte del equipo o colaborar con nosotros? No
+            dudes en contactarnos!
+          </p>
+
+          <div class="w-full flex flex-col md:flex-row gap-6 mt-4">
+            <div
+              class="w-full md:w-1/2 bg-[#181818] rounded-xl overflow-hidden border border-zinc-800/30"
+            >
+              <iframe
+                class="w-full h-80"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-0.34337371587753296%2C39.47991812377764%2C-0.34047693014144903%2C39.48158673031113&layer=mapnik&marker=39.48075243204821%2C-0.34192532300949097"
+                style="border: none;"
+              >
+              </iframe>
+            </div>
+
+            <div class="w-full md:w-1/2 flex flex-col gap-4">
+              <a
+                href="https://maps.google.com/?q=Universidad Politécnica de Valencia"
+                class="p-6 rounded-xl bg-[#181818] hover:bg-[#1e1e1e] flex items-center text-white border border-zinc-800/30 transition-colors group"
+              >
+                <div
+                  class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center mr-4 group-hover:bg-blue-500/20 transition-colors"
+                >
+                  <img
+                    src="/img/pin.svg"
+                    alt="Dirección"
+                    class="w-6 h-6 invert"
+                  />
+                </div>
+                <div>
+                  <h3 class="text-sm text-white/50 mb-1">DIRECCIÓN</h3>
+                  <p class="text-base">
+                    Garaje Casa de l'Alumne, Camino de Vera, s/n, 46022 Valencia
+                  </p>
+                </div>
+              </a>
+
+              <a
+                href="phone:+34672441782"
+                class="p-6 rounded-xl bg-[#181818] hover:bg-[#1e1e1e] flex items-center text-white border border-zinc-800/30 transition-colors group"
+              >
+                <div
+                  class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center mr-4 group-hover:bg-blue-500/20 transition-colors"
+                >
+                  <img
+                    src="/img/phone.svg"
+                    alt="Teléfono"
+                    class="w-6 h-6 invert"
+                  />
+                </div>
+                <div>
+                  <h3 class="text-sm text-white/50 mb-1">TELÉFONO</h3>
+                  <p class="text-base">+34 672 441 782</p>
+                </div>
+              </a>
+
+              <a
+                href="mailto:contacto@tarsupv.com"
+                class="p-6 rounded-xl bg-[#181818] hover:bg-[#1e1e1e] flex items-center text-white border border-zinc-800/30 transition-colors group"
+              >
+                <div
+                  class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center mr-4 group-hover:bg-blue-500/20 transition-colors"
+                >
+                  <img src="/img/mail.svg" alt="Email" class="w-6 h-6 invert" />
+                </div>
+                <div>
+                  <h3 class="text-sm text-white/50 mb-1">EMAIL</h3>
+                  <p class="text-base">contacto@tarsupv.com</p>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -246,7 +368,9 @@ const posts = entries.items.map((item) => {
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const parallaxText = document.querySelector(".parallax-text") as HTMLElement;
+    const parallaxText = document.querySelector(
+      ".parallax-text"
+    ) as HTMLElement;
 
     window.addEventListener("scroll", () => {
       const scrollPosition = window.scrollY;
@@ -265,6 +389,7 @@ const posts = entries.items.map((item) => {
     mask-image: radial-gradient(circle, white 0%, transparent 70%);
     -webkit-mask-image: radial-gradient(circle, white 0%, transparent 70%);
   }
+
   .bg {
     background: linear-gradient(
       45deg,
@@ -273,12 +398,34 @@ const posts = entries.items.map((item) => {
       rgba(173, 216, 230, 0)
     );
   }
+
+  .featured-post {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .featured-post::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      45deg,
+      rgba(245, 95, 0, 0.03),
+      rgba(240, 74, 42, 0)
+    );
+    pointer-events: none;
+  }
+
   h1 {
     font-size: 4rem;
     font-weight: 700;
     line-height: 1;
     text-align: center;
   }
+
   .text-gradient {
     background-image: var(--accent-gradient);
     -webkit-background-clip: text;
@@ -286,49 +433,79 @@ const posts = entries.items.map((item) => {
     background-size: 400%;
     background-position: 0%;
   }
+
   .more {
     height: 0;
     overflow: hidden;
     transition: height 0.3s;
   }
+
   .post:hover .more {
-    height: 64px;
+    height: 48px;
     transition: height 0.3s;
   }
-  .instructions {
-    margin-bottom: 2rem;
-    border: 1px solid rgba(var(--accent-light), 25%);
-    background: linear-gradient(
-      rgba(var(--accent-dark), 66%),
-      rgba(var(--accent-dark), 33%)
-    );
-    padding: 1.5rem;
-    border-radius: 8px;
-  }
-  .instructions code {
-    font-size: 0.8em;
-    font-weight: bold;
-    background: rgba(var(--accent-light), 12%);
-    color: rgb(var(--accent-light));
-    border-radius: 4px;
-    padding: 0.3em 0.4em;
-  }
-  .instructions strong {
-    color: rgb(var(--accent-light));
-  }
-  .link-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-    gap: 2rem;
-    padding: 0;
+
+  .rover-image {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 15px 25px -12px rgba(0, 0, 0, 0.4);
+    transition: all 0.5s ease;
   }
 
   .rover-image:hover {
-    transform: scale(1.05);
-    background-color: #101010;
+    transform: scale(1.03) translateY(-10px);
   }
+
   .rover-image:hover .bg-tilt {
     transform: rotate(-6deg);
     opacity: 0.6;
+  }
+
+  /* Card hover effect */
+  .card {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.3s;
+  }
+
+  .hover-effect {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    z-index: 1;
+    background: radial-gradient(
+      circle at var(--x) var(--y),
+      rgba(255, 69, 0, 0.1),
+      transparent 20%
+    );
+    mix-blend-mode: soft-light;
+    pointer-events: none;
+    transition: background 0.5s;
+  }
+
+  /* Animations */
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(255, 69, 0, 0.4);
+    }
+    70% {
+      box-shadow: 0 0 0 20px rgba(255, 69, 0, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(255, 69, 0, 0);
+    }
   }
 </style>

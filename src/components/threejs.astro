@@ -1,0 +1,165 @@
+<div
+  id="threejs-container"
+  class="w-full min-h-[800px] z-0 hidden lg:block relative"
+>
+</div>
+
+<script>
+  import * as THREE from "three";
+  import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+  import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const container = document.getElementById("threejs-container");
+
+    // Scene
+    const scene = new THREE.Scene();
+
+    // Camera
+    const camera = new THREE.PerspectiveCamera(
+      75,
+      container.clientWidth / container.clientHeight,
+      0.1,
+      1000
+    );
+    camera.position.z = 5;
+
+    // Renderer
+    const renderer = new THREE.WebGLRenderer({ alpha: true });
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    container.appendChild(renderer.domElement);
+
+    // Orbit Controls
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.25;
+    controls.enableZoom = false; // Disable zooming
+    controls.enablePan = false; // Disable panning
+
+    // Add Ambient Light
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // Soft white light
+    scene.add(ambientLight);
+
+    // Add Directional Light
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+    directionalLight.position.set(5, 10, 7.5); // Position the light
+    scene.add(directionalLight);
+
+    // Add Spotlight
+    const spotLight = new THREE.SpotLight(0x0088ff, 1.5); // Blue-ish spotlight
+    spotLight.position.set(0, 5, 5); // Position above and in front
+    spotLight.angle = Math.PI / 6; // 30 degrees
+    spotLight.penumbra = 0.3; // Soft edge
+    spotLight.decay = 2;
+    spotLight.distance = 50;
+    spotLight.castShadow = true;
+    scene.add(spotLight);
+
+    // Create a target for the spotlight
+    const spotLightTarget = new THREE.Object3D();
+    spotLightTarget.position.set(0, 0, 0); // Center of scene
+    scene.add(spotLightTarget);
+    spotLight.target = spotLightTarget;
+
+    // Fire particle streams
+    const particleCount = 30; // Reduced particle count
+    const particleGeometry = new THREE.BufferGeometry();
+    const particlePositions = new Float32Array(particleCount * 3);
+
+    for (let i = 0; i < particleCount; i++) {
+      particlePositions[i * 3] = (Math.random() - 0.5) * 0.4; // X position
+      particlePositions[i * 3 + 1] = Math.random() * 0.5; // Y position
+      particlePositions[i * 3 + 2] = (Math.random() - 0.5) * 0.4; // Z position
+    }
+
+    particleGeometry.setAttribute(
+      "position",
+      new THREE.BufferAttribute(particlePositions, 3)
+    );
+
+    const particleMaterial = new THREE.PointsMaterial({
+      color: 0xff4500, // Fire color
+      size: 0.2, // Bigger particle size
+      transparent: true,
+      opacity: 0.8,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false, // Prevent particles from being occluded
+    });
+
+    const fireStream1 = new THREE.Points(particleGeometry, particleMaterial);
+    const fireStream2 = new THREE.Points(particleGeometry, particleMaterial);
+
+    // Position the fire streams
+    fireStream1.position.set(-0.8, -2, 0); // Adjust position of stream 1
+    fireStream2.position.set(0.8, -2.1, 0); // Adjust position of stream 2
+
+    fireStream1.rotation.set(THREE.MathUtils.degToRad(-3), 0, 0);
+    fireStream2.rotation.set(THREE.MathUtils.degToRad(3), 0, 0);
+
+    // Load GLTF model
+    const loader = new GLTFLoader();
+    loader.load("/models/model.glb", (gltf) => {
+      const model = gltf.scene;
+      scene.add(model);
+
+      // Scale and center the model
+      model.scale.set(0.7, 0.7, 0.7); // Increased scale value
+      const box = new THREE.Box3().setFromObject(model);
+      const center = box.getCenter(new THREE.Vector3());
+      model.position.sub(center);
+
+      // Add fire streams as children of the model
+      model.add(fireStream1);
+      model.add(fireStream2);
+
+      // Animation variables
+      let bobbingSpeed = 0.002; // Slower bobbing
+      let bobbingRange = 0.8; // More pronounced bobbing
+      let bobbingDirection = 1;
+
+      // Render loop with spinning and bobbing
+      function animate() {
+        requestAnimationFrame(animate);
+
+        // Spin the model
+        model.rotation.y += 0.01; // Adjust rotation speed
+
+        // Bob the model up and down
+        model.position.y += bobbingSpeed * bobbingDirection;
+        if (
+          model.position.y > bobbingRange ||
+          model.position.y < -bobbingRange
+        ) {
+          bobbingDirection *= -1; // Reverse direction
+        }
+
+        // Update particles and controls
+        updateParticles();
+        controls.update();
+
+        // Render the scene
+        renderer.render(scene, camera);
+      }
+      animate();
+    });
+
+    // Update particles to simulate fire movement
+    function updateParticles() {
+      const positions = particleGeometry.attributes.position.array;
+      for (let i = 0; i < particleCount; i++) {
+        positions[i * 3 + 1] -= 0.02; // Move particles downward
+        if (positions[i * 3 + 1] < -0.1) {
+          positions[i * 3 + 1] = 0.5; // Reset particle position to the top
+        }
+      }
+      particleGeometry.attributes.position.needsUpdate = true;
+    }
+
+    // Resize handling
+    window.addEventListener("resize", () => {
+      camera.aspect = container.clientWidth / container.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(container.clientWidth, container.clientHeight);
+    });
+  });
+</script>
