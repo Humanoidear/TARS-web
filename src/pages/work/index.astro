@@ -10,7 +10,7 @@ import { es } from "date-fns/locale";
 
 const entries = await contentfulClient.getEntries<work>({
   content_type: "blogTars",
-  order: "-fields.date", // Sort by date, newest first
+  order: ["-fields.date"], // Sort by date, newest first
   limit: 12, // Limit to 12 posts
 });
 

@@ -14,7 +14,7 @@ import { es } from "date-fns/locale";
 // Get latest blog posts
 const entries = await contentfulClient.getEntries<work>({
   content_type: "blogTars",
-  order: "-fields.date", // Sort by date, newest first
+  order: ["-fields.date"], // Sort by date, newest first
   limit: 6, // Get more posts for flexibility
 });
 
@@ -228,7 +228,7 @@ const upcomingCompetitions = Competitions.competitions.slice(0, 3);
                   <img
                     src={competition.image}
                     alt={competition.title}
-                    class="w-full h-[250px] object-cover transition-transform duration-500 group-hover:scale-110"
+                    class="w-full h-[250px] object-cover blur-sm brightness-70 transition-transform duration-500 group-hover:scale-110"
                   />
                   <div class="absolute top-0 left-0 w-full h-full z-10 p-6 flex flex-col">
                     <div class="mt-auto">

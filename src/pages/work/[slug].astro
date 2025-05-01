@@ -6,14 +6,36 @@ import type { work } from "../../lib/contentful";
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
-import Button from "../../components/Button.astro";
+// Removed unused Button import
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
+
+interface BlogProps {
+  title: string;
+  slug: string;
+  content: any;
+  date: string;
+  headerImg: any;
+  category: string;
+  readTime: string;
+  author: string;
+  authorImage?: any;
+  tags: string[];
+  relatedPosts: RelatedPost[] | null;
+}
+
+interface RelatedPost {
+  params: {
+    slug: string;
+  };
+  props: BlogProps;
+}
 
 export async function getStaticPaths() {
   const { items } = await contentfulClient.getEntries<work>({
     content_type: "blogTars",
   });
+  
   const pages = items.map((item) => ({
     params: { slug: item.fields.slug },
     props: {
@@ -28,18 +50,20 @@ export async function getStaticPaths() {
       authorImage: item.fields.authorImage,
       tags: item.fields.tags || [],
       relatedPosts: null, // Will be populated below
-    },
+    } as BlogProps,
   }));
 
   // Add related posts to each page
   for (let page of pages) {
+    const pageTags = page.props.tags || [];
+    
     const relatedPosts = pages
       .filter((p) => p.params.slug !== page.params.slug) // Filter out current post
       .filter(
-        (p) =>
-          p.props.tags &&
-          page.props.tags &&
-          p.props.tags.some((tag) => page.props.tags.includes(tag))
+        (p) => {
+          const postTags = p.props.tags || [];
+          return postTags.some((tag) => pageTags.includes(tag));
+        }
       ) // Match by tags
       .sort(() => Math.random() - 0.5) // Randomize selection
       .slice(0, 3); // Take up to 3 related posts
@@ -59,14 +83,15 @@ export async function getStaticPaths() {
 const {
   content,
   title,
+  // Keep slug, even though it's not directly used, to match the interface
   slug,
   date,
   headerImg,
   category,
-  readTime,
+  readTime: initialReadTime,
   author,
   authorImage,
-  tags,
+  tags = [], // Default to empty array
   relatedPosts,
 } = Astro.props;
 
@@ -112,11 +137,11 @@ if (parsedSEOContent.length > 60) {
 }
 let bodyHTML = content ? documentToHtmlString(content, options) : "";
 
-function parseLocalizedContent(html) {
+function parseLocalizedContent(html: string) {
   const regex =
     /<p>&lt;begin-localization=&quot;(.*?)&quot;&gt;<\/p>(.*?)<p>&lt;end-localization=&quot;\1&quot;&gt;<\/p>/gs;
-  let match;
-  const localizedContent = [];
+  let match: RegExpExecArray | null;
+  const localizedContent: { lang: string; content: string }[] = [];
   while ((match = regex.exec(html)) !== null) {
     localizedContent.push({
       lang: match[1],
@@ -126,7 +151,7 @@ function parseLocalizedContent(html) {
   return localizedContent;
 }
 
-function parseFloatTags(html) {
+function parseFloatTags(html: string) {
   const embedRegex =
     /<p>&lt;embed(.*?)&gt;<\/p>(.*?)<p>&lt;end-embed&gt;<\/p>/gs;
   const floatRegex =
@@ -135,7 +160,7 @@ function parseFloatTags(html) {
     /<p>&lt;float-left(.*?)&gt;<\/p>(.*?)<p>&lt;end-float-left&gt;<\/p>/gs;
   const floatRightRegex =
     /<p>&lt;float-right(.*?)&gt;<\/p>(.*?)<p>&lt;end-float-right&gt;<\/p>/gs;
-  let match;
+  let match: RegExpExecArray | null;
   let floatHTML = html;
   while ((match = floatRegex.exec(html)) !== null) {
     const styleMatch = match[1].match(/style=&quot;(.*?)&quot;/);
@@ -149,12 +174,12 @@ function parseFloatTags(html) {
       const processedContent = content
         .replace(
           floatLeftRegex,
-          (m, s, c) =>
+          (_m: string, s: string, c: string) =>
             `<div class="float float-left" ${s.replace(/&quot;/g, "")}">${c}</div>`
         )
         .replace(
           floatRightRegex,
-          (m, s, c) =>
+          (_m: string, s: string, c: string) =>
             `<div class="float float-right" ${s.replace(/&quot;/g, "")}">${c}</div>`
         );
       floatHTML = floatHTML.replace(
@@ -183,9 +208,9 @@ function parseFloatTags(html) {
   return floatHTML;
 }
 
-function parseCenterTags(html) {
+function parseCenterTags(html: string) {
   const centerRegex = /<p>&lt;center&gt;<\/p>(.*?)<p>&lt;end-center&gt;<\/p>/gs;
-  let match;
+  let match: RegExpExecArray | null;
   let centerHTML = html;
   while ((match = centerRegex.exec(html)) !== null) {
     centerHTML = centerHTML.replace(
@@ -209,6 +234,8 @@ bodyHTML = localizedContent?.content || defaultContent?.content || bodyHTML;
 bodyHTML = parseFloatTags(bodyHTML);
 bodyHTML = parseCenterTags(bodyHTML);
 
+// Use let for readTime since we'll modify it
+let readTime = initialReadTime;
 if (!readTime && parsedSEOContent) {
   const wordsPerMinute = 225;
   const words = parsedSEOContent.trim().split(/\s+/).length;
@@ -360,7 +387,7 @@ if (!readTime && parsedSEOContent) {
                 <div class="mb-6 pt-6 border-t border-zinc-800/50">
                   <h3 class="text-white text-lg font-bold mb-4">Etiquetas</h3>
                   <div class="flex flex-wrap gap-2">
-                    {tags.map((tag) => (
+                    {tags.map((tag: string) => (
                       <span class="inline-block px-3 py-1 rounded-md bg-[#2B2B2B] text-sm text-gray-300">
                         {tag}
                       </span>
@@ -468,7 +495,7 @@ if (!readTime && parsedSEOContent) {
                 <div class="bg-[#181818] rounded-xl p-6 border border-zinc-800/30">
                   <h3 class="text-white text-lg font-bold mb-4">Etiquetas</h3>
                   <div class="flex flex-wrap gap-2">
-                    {tags.map((tag) => (
+                    {tags.map((tag: string) => (
                       <span class="inline-block px-3 py-1 rounded-md bg-[#2B2B2B] text-sm text-gray-300">
                         {tag}
                       </span>
@@ -534,7 +561,7 @@ if (!readTime && parsedSEOContent) {
               Artículos relacionados
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {relatedPosts.map((post) => (
+              {relatedPosts.map((post: RelatedPost) => (
                 <a
                   href={`/work/${post.params.slug}`}
                   class="group bg-[#181818] rounded-xl overflow-hidden border border-zinc-800/30 hover:-translate-y-1 transition-transform duration-300"

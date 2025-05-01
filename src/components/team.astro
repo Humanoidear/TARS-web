@@ -1,335 +1,191 @@
 ---
-import teamjson from "../../public/json/team.json";
+import TeamData from "../../public/json/team.json";
 
+// Define proper types to match your JSON structure
+interface TeamMember {
+  name: string;
+  position: string;
+  isCoordinator?: number;
+  coordinator?: string;
+  remove?: string;
+  pfp?: string;
+  pfp1?: string;
+  links?: Record<string, string>; // Ensure links is explicitly typed as Record<string, string>
+}
 
-const groupedMembers = {
-  Presidencia: teamjson.filter((member) => member.isCoordinator === 0),
+interface TeamDataInterface {
+  members: TeamMember[];
+}
+
+const typedTeamData = { members: TeamData } as TeamDataInterface;
+const filteredMembers = typedTeamData.members;
+
+// Select 14 random members
+const shuffleArray = (array: any[]) => {
+  const newArray = [...array];
+  for (let i = newArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+  }
+  return newArray;
 };
 
-teamjson
-  .filter((member) => member.position && member.position.trim() !== "")
-  .reduce((acc, member) => {
-    const position = member.position;
-    if (!acc[position]) {
-      acc[position] = [];
-    }
-    acc[position].push(member);
-    return acc;
-  }, groupedMembers);
+const randomMembers = shuffleArray(filteredMembers).slice(0, 14);
 
-const positions = Object.keys(groupedMembers).filter(
-  (pos) => pos.trim() !== "" && groupedMembers[pos].length > 0
-);
+// Generate unique background number for each member
+const getRandomBgNum = () => Math.floor(Math.random() * 5) + 1;
+const memberBgNums = randomMembers.map(() => getRandomBgNum());
 
-const socialLogos = {
-  LinkedIn: `<?xml version="1.0" ?><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g><path d="M0 0h24v24H0z" fill="none"/><path d="M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z" fill-rule="nonzero"/></g></svg>`,
-  GitHub: `<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg height="100%" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><style type="text/css"><![CDATA[
-    .st0{fill-rule:evenodd;clip-rule:evenodd;}
-]]></style><g><path class="st0" d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/></g></svg>`,
-  Twitter: `<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg height="100%" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;" version="1.1" viewBox="0 0 512 512" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:serif="http://www.serif.com/" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M161.014,464.013c193.208,0 298.885,-160.071 298.885,-298.885c0,-4.546 0,-9.072 -0.307,-13.578c20.558,-14.871 38.305,-33.282 52.408,-54.374c-19.171,8.495 -39.51,14.065 -60.334,16.527c21.924,-13.124 38.343,-33.782 46.182,-58.102c-20.619,12.235 -43.18,20.859 -66.703,25.498c-19.862,-21.121 -47.602,-33.112 -76.593,-33.112c-57.682,0 -105.145,47.464 -105.145,105.144c0,8.002 0.914,15.979 2.722,23.773c-84.418,-4.231 -163.18,-44.161 -216.494,-109.752c-27.724,47.726 -13.379,109.576 32.522,140.226c-16.715,-0.495 -33.071,-5.005 -47.677,-13.148l0,1.331c0.014,49.814 35.447,93.111 84.275,102.974c-15.464,4.217 -31.693,4.833 -47.431,1.802c13.727,42.685 53.311,72.108 98.14,72.95c-37.19,29.227 -83.157,45.103 -130.458,45.056c-8.358,-0.016 -16.708,-0.522 -25.006,-1.516c48.034,30.825 103.94,47.18 161.014,47.104" style="fill-rule:nonzero;"/></svg>`,
-  Dribbble: `<?xml version="1.0" ?><svg data-name="Layer 2" id="Layer_2" viewBox="0 0 35 35" xmlns="http://www.w3.org/2000/svg"><path d="M17.5,34.75A17.25,17.25,0,1,1,34.75,17.5,17.27,17.27,0,0,1,17.5,34.75Zm0-32A14.75,14.75,0,1,0,32.25,17.5,14.77,14.77,0,0,0,17.5,2.75Z"/><path d="M9.51,17.17a22.17,22.17,0,0,1-8.17-1.55,1.25,1.25,0,1,1,.91-2.32,20.1,20.1,0,0,0,17-1.17,19.81,19.81,0,0,0,7.52-7.46,1.25,1.25,0,0,1,1.7-.47,1.26,1.26,0,0,1,.47,1.71,22.37,22.37,0,0,1-8.46,8.4A22.42,22.42,0,0,1,9.51,17.17Z"/><path d="M7.6,31.32a1.32,1.32,0,0,1-.54-.12,1.25,1.25,0,0,1-.58-1.67A22.38,22.38,0,0,1,33.82,18.06,1.25,1.25,0,1,1,33,20.42,19.87,19.87,0,0,0,8.73,30.61,1.25,1.25,0,0,1,7.6,31.32Z"/><path d="M22.81,33.84l-.3,0a1.25,1.25,0,0,1-.92-1.51,24.78,24.78,0,0,0,.66-5.72A24.87,24.87,0,0,0,21.06,19a24.16,24.16,0,0,0-2.29-5.1A25,25,0,0,0,9.13,4.62a1.25,1.25,0,1,1,1.19-2.2,27.51,27.51,0,0,1,10.6,10.16,26.61,26.61,0,0,1,2.53,5.62,27.58,27.58,0,0,1,1.3,8.38,27,27,0,0,1-.73,6.3A1.26,1.26,0,0,1,22.81,33.84Z"/></svg>`,
-};
-
-const groupIcons = {
-  Presidencia: `<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M8 2h2v2h2v2h-2v10H8V6H6V4h2V2zM4 8V6h2v2H4zm2 10v2H4v2H2V8h2v10h2zm0 0h2v-2H6v2zm6 0h-2v-2h2v2zm2-10V6h-2v2h2zm2 0h-2v10h-2v2h2v2h2v-2h2v-2h2v-2h2V2h-2v2h-2v2h-2v2zm0 0h2V6h2v10h-2v2h-2V8z" fill="currentColor"/> </svg>`,
-  Electronica: `<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M4 5H2v14h18v-4h2V9h-2V5H4zm14 2v10H4V7h14z" fill="currentColor"/> </svg>`,
-  Finanzas: `<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M16 4H2v12h4v4h16V8h-4V4h-2zm0 2v2H6v6H4V6h12zm-8 4h12v8H8v-8zm8 2h-4v4h4v-4z" fill="currentColor"/> </svg>`,
-  Imagen: `<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M24 2H4v16h20V2zM6 16V4h16v12H6zM2 4H0v18h20v-2H2V4zm12 2h2v2h-2V6zm-2 4V8h2v2h-2zm-2 2v-2h2v2h-2zm0 0v2H8v-2h2zm8-2h-2V8h2v2zm0 0h2v2h-2v-2zM8 6h2v2H8V6z" fill="currentColor"/> </svg>`,
-  Mecanica: `<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M17 4H7v2H5v2H3v12h4v-2h10v2h4V8h-2V6h-2V4zm0 2v2h2v2H5V8h2V6h10zm2 10H5v-4h14v4zm-2-3h-2v2h2v-2zM7 13h2v2H7v-2z" fill="currentColor"/> </svg>`,
-  Software: `<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M8 5h2v2H8V5zM6 7h2v2H6V7zM4 9h2v2H4V9zm-2 2h2v2H2v-2zm2 2h2v2H4v-2zm2 2h2v2H6v-2zm2 2h2v2H8v-2zm8-12h-2v2h2V5zm2 2h-2v2h2V7zm2 2h-2v2h2V9zm2 2h-2v2h2v-2zm-2 2h-2v2h2v-2zm-2 2h-2v2h2v-2zm-2 2h-2v2h2v-2z" fill="currentColor"/> </svg>`,
-};
+// Calculate how many more members are not shown
+const remainingMembers = filteredMembers.length - 14;
 ---
 
-<nav id="nav-filter">
-  <div class="flex gap-4 overflow-scroll no-scrollbar">
+<div class="max-w-[1600px] mx-auto">
+  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
     {
-      positions.map((position, index) => (
-        <a
-          data-position={position}
-          class={`position px-4 py-2 whitespace-nowrap transition-colors rounded-full flex flex-row items-center gap-3 ${
-            index === 0 ? "text-white bg-white/10" : "text-white/60 bg-white/5 hover:bg-white/10"
-          }`}
-        >
-          <span class="w-5 h-5" set:html={groupIcons[position]} /> {position}
-        </a>
+      randomMembers.map((member, index) => (
+        <div class="team-member relative group">
+          <a 
+            href={`/team/${member.name.toLowerCase().replace(/\s+/g, "-")}`}
+            class="block rounded-2xl overflow-hidden bg-gradient-to-br from-zinc-800/60 to-zinc-900 border border-zinc-700/10 shadow-xl hover:shadow-2xl transition-all duration-300 h-full"
+          >
+            <div class="relative h-40 overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-b from-blue-500/20 to-purple-600/20 mix-blend-overlay opacity-60"></div>
+              <img
+                src={member.pfp ? member.pfp : `/img/defaultbg${memberBgNums[index]}.png`}
+                alt={`${member.name} background`}
+                class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700 ease-out"
+              />
+              <div class="absolute bottom-0 left-0 w-full h-2/3 bg-gradient-to-t from-zinc-900 to-transparent"></div>
+            </div>
+            
+            <div class="relative -mt-16 px-5 pb-5 text-center">
+              <div class="mb-3 flex justify-center">
+                <img
+                  src={member.pfp1 ? member.pfp1 : "/img/mascot_png.png"}
+                  alt={member.name}
+                  class="w-24 h-24 rounded-full object-cover border-4 border-zinc-900 shadow-lg group-hover:scale-105 transition-all duration-300 ease-out"
+                  transition:name={`team-image-${member.name}`}
+                />
+              </div>
+              
+              <h3 
+                class="text-xl font-bold text-white mb-1 group-hover:text-blue-400 transition-colors duration-300"
+                transition:name={`team-name-${member.name}`}
+              >
+                {member.name}
+              </h3>
+              
+              <p class="text-zinc-400 text-sm">
+                {member.position}
+              </p>
+              
+              {member.links && Object.keys(member.links).length > 0 && (
+                <div class="mt-4 pt-4 border-t border-zinc-700/30 flex justify-center gap-3 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                  {Object.entries(member.links).slice(0, 3).map(([platform, url]) => (
+                    <a
+                      href={url as string} // Explicitly cast url to string
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="w-8 h-8 flex items-center justify-center rounded-full bg-zinc-800 hover:bg-zinc-700 text-white text-xs transition-colors duration-200"
+                      aria-label={platform}
+                    >
+                      {platform.charAt(0).toUpperCase()}
+                    </a>
+                  ))}
+                  {Object.keys(member.links).length > 3 && (
+                    <span class="w-8 h-8 flex items-center justify-center rounded-full bg-zinc-800 text-white text-xs">
+                      +{Object.keys(member.links).length - 3}
+                    </span>
+                  )}
+                </div>
+              )}
+            </div>
+            
+            <div class="absolute inset-0 rounded-2xl border border-blue-400/0 group-hover:border-blue-400/30 pointer-events-none transition-all duration-500"></div>
+          </a>
+        </div>
       ))
     }
-  </div>
-</nav>
 
-<main class="max-w-[1600px] mx-auto">
-  {
-    Object.entries(groupedMembers).map(([position, members], index) => (
-      <section
-        id={position.replace(/\s+/g, "-").toLowerCase()}
-        class={`mt-10 mb-12 transition-opacity duration-300 ${index === 0 ? "opacity-100" : "opacity-0 hidden"}`}
-      >
-        <div class="flex flex-wrap gap-4">
-          {members.map((member) => {
-            const defaultBgNum = Math.floor(Math.random() * 5) + 1;
-            return (
-              <div class="team-pill-wrapper w-full sm:w-auto relative z-0 hover:z-50">
-                <div
-                  class={`team-pill ${
-                    member.isCoordinator
-                      ? "bg-white/20 hover:bg-white/30"
-                      : "bg-white/5 hover:bg-white/10"
-                  } rounded-full p-3 pr-8 flex items-center gap-4 transition-all cursor-pointer z-0`}
-                  transition:name={`team-pill-${member.name}`}
-                >
-                  <span>
-                    <img
-                      src={ member.pfp1 ? member.pfp1 : "/img/mascot_png.png" }
-                      alt={member.name}
-                      class={`${position === "Presidencia" && member.coordinator ? "w-20 h-20" : "w-12 h-12"} rounded-full z-10 absolute`}
-                      transition:name={`team-image-${member.name}`}
-                    />
-                    <img
-                      src={member.pfp ? member.pfp : `/img/defaultbg${defaultBgNum}.png`}
-                      alt={member.name}
-                      class={`${position === "Presidencia" && member.coordinator ? "w-20 h-20" : "w-12 h-12"} rounded-full aspect-square object-cover`}
-                      transition:name={`team-image-${member.name}`}
-                    />
-                  </span>
-                  <div transition:name={`team-content-${member.name}`}>
-                    <h3
-                      class={`${position === "Presidencia" && member.coordinator ? "text-2xl" : "text-xl"} text-white font-semibold`}
-                      transition:name={`team-name-${member.name}`}
-                    >
-                      {member.name}
-                      {position === "Presidencia" && member.coordinator && (
-                        <p class="mb-2 text-white/60 font-normal text-[17px]">
-                          {member.coordinator}
-                        </p>
-                      )}
-                    </h3>
-                    {member.links && Object.keys(member.links).length > 0 && (
-                      <div 
-                        class="flex gap-2 mt-1"
-                        transition:name={`team-socials-${member.name}`}
-                      >
-                        {Object.entries(member.links).map(([platform, url]) => (
-                          <a
-                            href={url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class={`${position === "Presidencia" && member.coordinator ? "w-6 h-6" : "w-4 h-4"} invert text-white/60 hover:text-white transition-colors`}
-                            set:html={socialLogos[platform]}
-                          />
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                </div>
-                <div
-                  class={`expanded-content ${
-                    member.isCoordinator
-                      ? "border-[#383838] bg-[#383838]"
-                      : "border-[#181818] bg-[#181818]"
-                  } opacity-0 pointer-events-none absolute top-0 left-0 border-4 rounded-[1.6rem] transition-all duration-300 z-50`}
-                  transition:name={`expanded-content-${member.name}`}
-                >
-                  <span class="block relative" id="parallax-container">
-                    <img
-                      src={ member.pfp1 ? member.pfp1 : "/img/mascot_png.png" }
-                      alt={member.name}
-                      class="bottom-0 w-56 z-10 absolute transition-transform duration-300 ease-out person-image"
-                      transition:name={`team-image-${member.name}`}
-                    />
-                   <div class={`px-4 bottom-0 left-0 w-full py-3 ${member.links ? "rounded-b-lg" : "rounded-b-3xl"} z-20 absolute bg-gradient-to-t from-[#383838] to-transparent`}>
-                      <h3
-                        class="text-xl font-bold text-white"
-                        transition:name={`team-name-${member.name}`}
-                      >
-                        {member.name}
-                        <p class="text-white/60 font-normal text-sm">
-                          {member.isCoordinator ? "Líder del equipo de" : ""}{" "}
-                          {member.coordinator && (
-                            <span>{member.coordinator} · </span>
-                          )}
-                          {member.position}
-                        </p>
-                      </h3>
-                    </div>
-                    <div class={`w-full h-32 rounded-t-3xl ${member.links ? "rounded-b-lg mb-1" : "rounded-b-3xl"} transition-all duration-300 ease-out overflow-hidden`}>
-                      <img
-                        src={member.pfp ? member.pfp : `/img/defaultbg${defaultBgNum}.png`}
-                        alt={member.name}
-                        class="w-[120%] max-w-[120%] background-image"
-                        transition:name={`team-image-${member.name}`}
-                      />
-                    </div>
-                  </span>
-                  {
-                    member.links && 
-                    <div
-                        class="grid auto-cols-fr grid-flow-col gap-1"
-                        transition:name={`team-socials-${member.name}`}
-                        style={`grid-template-columns: repeat(${Object.keys(member.links).length}, 1fr);`}
-                      >
-                        {Object.entries(member.links).map(([platform, url], index, array) => (
-                          <a
-                            href={url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class={`social-link flex items-center justify-center transition-colors bg-white/5 p-2 ${
-                              array.length === 1
-                                ? "rounded-b-3xl rounded-lg"
-                                : index === 0
-                                  ? "rounded-bl-3xl rounded-lg"
-                                  : index === array.length - 1
-                                    ? "rounded-br-3xl rounded-lg"
-                                    : "rounded-lg"
-                            }`}
-                            data-platform={platform}
-                          >
-                            <div
-                              class="w-5 social-logo invert"
-                              set:html={socialLogos[platform]}
-                            />
-                          </a>
-                        ))}
-                      </div>
-                  }
-                </div>
-              </div>
-            );
-          })}
+    <!-- The "View More" card -->
+    <a href="/team" class="team-member relative group">
+      <div class="block rounded-2xl overflow-hidden bg-gradient-to-br from-blue-900/60 to-indigo-900/60 border border-blue-700/20 shadow-xl hover:shadow-2xl transition-all duration-300 h-full flex flex-col items-center justify-center p-6 group-hover:bg-gradient-to-br group-hover:from-blue-800/60 group-hover:to-indigo-800/60">
+        <div class="mb-5 flex flex-col justify-center items-center">
+          <div class="w-24 h-24 rounded-full flex items-center justify-center border-4 border-zinc-900 bg-blue-500/10 shadow-lg text-4xl text-blue-300 font-bold group-hover:scale-110 transition-all duration-300 ease-out">
+            +{remainingMembers}
+          </div>
         </div>
-      </section>
-    ))
-  }
-</main>
-
-<script>
-  const navLinks = document.querySelectorAll('.position');
-  const sections = document.querySelectorAll('section');
-
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      const position = link.getAttribute('data-position');
-
-      // Update nav highlighting
-      navLinks.forEach(l => {
-        l.classList.remove('text-white', 'bg-white/10');
-        l.classList.add('text-white/60', 'bg-white/5');
-      });
-      link.classList.add('text-white', 'bg-white/10');
-      link.classList.remove('text-white/60', 'bg-white/5');
-
-      // Show/hide sections
-      sections.forEach(section => {
-        if (section.id === position.toLowerCase().replace(/\s+/g, '-')) {
-          section.classList.remove('hidden', 'opacity-0');
-          section.classList.add('opacity-100');
-        } else {
-          section.classList.add('opacity-0');
-          setTimeout(() => section.classList.add('hidden'), 300);
-        }
-      });
-    });
-  });
-
-  // Set initial active section
-  (navLinks[0] as HTMLElement).click();
-</script>
-
+        
+        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-300 transition-colors duration-300">
+          ¡Hay más miembros!
+        </h3>
+        
+        <p class="text-blue-200/80 text-sm text-center mb-6">
+          Conoce al resto del equipo que hace posible TARS
+        </p>
+        
+        <div class="inline-flex items-center justify-center gap-2 bg-white/10 group-hover:bg-white/20 px-4 py-2 rounded-lg text-white text-sm transition-colors mt-auto">
+          Ver todo el equipo
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </div>
+          
+        <div class="absolute -bottom-1 -right-1 w-32 h-32 bg-gradient-to-tr from-transparent to-blue-400/10 rounded-full filter blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="absolute -top-1 -left-1 w-32 h-32 bg-gradient-to-bl from-transparent to-indigo-400/10 rounded-full filter blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-500"></div>
+      </div>
+    </a>
+  </div>
+</div>
 
 <style>
-  html {
-    scroll-behavior: smooth;
+  .team-member {
+    transform: translateZ(0);
   }
 
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
+  .team-member:hover {
+    z-index: 10;
   }
 
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-
-  .team-pill {
-    transform: translateY(0);
-    transition: all 0.2s ease;
-  }
-  .team-pill:hover {
-    transform: translateY(-2px);
-  }
-
-  .team-pill-wrapper {
-    transform: scale(1);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .team-pill-wrapper:hover {
-    transform: scale(1);
-  }
-
-  .team-pill-wrapper:hover .team-pill {
-    opacity: 0.3;
-    pointer-events: none;
-  }
-
-  .expanded-content {
-    transform: scale(0.8);
-    transform-origin: center;
-    min-width: 300px;
-    width: 100%;
-    max-width: 400px;
-  }
-
-  .team-pill-wrapper:hover .expanded-content {
-    opacity: 1;
-    pointer-events: auto;
-    transform: scale(1);
-  }
-
-  @media (min-width: 640px) {
-    .expanded-content {
-      width: 400px;
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
     }
   }
 
-  ::view-transition-old(root),
-  ::view-transition-new(root) {
-    animation: none;
-    mix-blend-mode: normal;
+  .team-member::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #3b82f6, #6366f1, #8b5cf6, #3b82f6);
+    background-size: 400% 400%;
+    z-index: -1;
+    border-radius: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
 
-  ::view-transition-old(team-image),
-  ::view-transition-new(team-image) {
-    animation: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  .team-member:hover::after {
+    opacity: 0.4;
+    animation: gradient 10s ease infinite;
   }
 
-  .social-link[data-platform="LinkedIn"] {
-    background-color: #0077b5;
-  }
-  .social-link[data-platform="GitHub"] {
-    background-color: #a3a3a3;
-  }
-  .social-link[data-platform="Twitter"] {
-    background-color: #1da1f2;
-  }
-  .social-link[data-platform="Dribbble"] {
-    background-color: #ea4c89;
-  }
-
-  .social-link[data-platform="LinkedIn"]:hover {
-    background-color: #005f91;
-  }
-  .social-link[data-platform="GitHub"]:hover {
-    background-color: #8c8c8c;
-  }
-  .social-link[data-platform="Twitter"]:hover {
-    background-color: #1a91da;
-  }
-  .social-link[data-platform="Dribbble"]:hover {
-    background-color: #d84c89;
-  }
-
-  .person-image,
-  .background-image {
-    will-change: transform;
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
 </style>

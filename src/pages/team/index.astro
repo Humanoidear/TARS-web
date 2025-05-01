@@ -6,11 +6,26 @@ import HeadTitle from "../../components/HeadTitle.astro";
 import teamjson from "../../../public/json/team.json";
 import { ViewTransitions } from "astro:transitions";
 
-const groupedMembers = {
-  Presidencia: teamjson.filter((member) => member.isCoordinator === 0),
+// Define proper interface for team members
+interface TeamMember {
+  name: string;
+  position: string;
+  isCoordinator?: number;
+  coordinator?: string;
+  remove?: string;
+  pfp?: string;
+  pfp1?: string;
+  links?: Record<string, string>;
+}
+
+// Cast the team data to the proper type
+const typedTeamJson = teamjson as TeamMember[];
+
+const groupedMembers: Record<string, TeamMember[]> = {
+  Presidencia: typedTeamJson.filter((member) => member.isCoordinator === 0),
 };
 
-teamjson
+typedTeamJson
   .filter((member) => member.position && member.position.trim() !== "")
   .reduce((acc, member) => {
     const position = member.position;
@@ -25,7 +40,7 @@ const positions = Object.keys(groupedMembers).filter(
   (pos) => pos.trim() !== "" && groupedMembers[pos].length > 0
 );
 
-const socialLogos = {
+const socialLogos: Record<string, string> = {
   LinkedIn: `<?xml version="1.0" ?><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g><path d="M0 0h24v24H0z" fill="none"/><path d="M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z" fill-rule="nonzero"/></g></svg>`,
   GitHub: `<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg height="100%" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><style type="text/css"><![CDATA[
     .st0{fill-rule:evenodd;clip-rule:evenodd;}
@@ -34,7 +49,7 @@ const socialLogos = {
   Dribbble: `<?xml version="1.0" ?><svg data-name="Layer 2" id="Layer_2" viewBox="0 0 35 35" xmlns="http://www.w3.org/2000/svg"><path d="M17.5,34.75A17.25,17.25,0,1,1,34.75,17.5,17.27,17.27,0,0,1,17.5,34.75Zm0-32A14.75,14.75,0,1,0,32.25,17.5,14.77,14.77,0,0,0,17.5,2.75Z"/><path d="M9.51,17.17a22.17,22.17,0,0,1-8.17-1.55,1.25,1.25,0,1,1,.91-2.32,20.1,20.1,0,0,0,17-1.17,19.81,19.81,0,0,0,7.52-7.46,1.25,1.25,0,0,1,1.7-.47,1.26,1.26,0,0,1,.47,1.71,22.37,22.37,0,0,1-8.46,8.4A22.42,22.42,0,0,1,9.51,17.17Z"/><path d="M7.6,31.32a1.32,1.32,0,0,1-.54-.12,1.25,1.25,0,0,1-.58-1.67A22.38,22.38,0,0,1,33.82,18.06,1.25,1.25,0,1,1,33,20.42,19.87,19.87,0,0,0,8.73,30.61,1.25,1.25,0,0,1,7.6,31.32Z"/><path d="M22.81,33.84l-.3,0a1.25,1.25,0,0,1-.92-1.51,24.78,24.78,0,0,0,.66-5.72A24.87,24.87,0,0,0,21.06,19a24.16,24.16,0,0,0-2.29-5.1A25,25,0,0,0,9.13,4.62a1.25,1.25,0,1,1,1.19-2.2,27.51,27.51,0,0,1,10.6,10.16,26.61,26.61,0,0,1,2.53,5.62,27.58,27.58,0,0,1,1.3,8.38,27,27,0,0,1-.73,6.3A1.26,1.26,0,0,1,22.81,33.84Z"/></svg>`,
 };
 
-const groupIcons = {
+const groupIcons: Record<string, string> = {
   Presidencia: `<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M8 2h2v2h2v2h-2v10H8V6H6V4h2V2zM4 8V6h2v2H4zm2 10v2H4v2H2V8h2v10h2zm0 0h2v-2H6v2zm6 0h-2v-2h2v2zm2-10V6h-2v2h2zm2 0h-2v10h-2v2h2v2h2v-2h2v-2h2v-2h2V2h-2v2h-2v2h-2v2zm0 0h2V6h2v10h-2v2h-2V8z" fill="currentColor"/> </svg>`,
   Electronica: `<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M4 5H2v14h18v-4h2V9h-2V5H4zm14 2v10H4V7h14z" fill="currentColor"/> </svg>`,
   Finanzas: `<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M16 4H2v12h4v4h16V8h-4V4h-2zm0 2v2H6v6H4V6h12zm-8 4h12v8H8v-8zm8 2h-4v4h4v-4z" fill="currentColor"/> </svg>`,
@@ -68,7 +83,7 @@ const groupIcons = {
             href={`#${position.replace(/\s+/g, "-").toLowerCase()}`}
             class="position px-4 py-2 text-white/60 hover:text-white whitespace-nowrap transition-colors rounded-full bg-white/5 hover:bg-white/10 flex flex-row items-center gap-3"
           >
-            <span class="w-5 h-5" set:html={groupIcons[position]} /> {position}
+            <span class="w-5 h-5" set:html={groupIcons[position] || ''} /> {position}
           </a>
         ))
       }
@@ -83,7 +98,7 @@ const groupIcons = {
           class="mb-12 scroll-mt-20"
         >
           <h2 class="text-3xl font-bold text-white mb-6 flex flex-row items-center gap-3">
-            <span class="w-10 h-10" set:html={groupIcons[position]} />{" "}
+            <span class="w-10 h-10" set:html={groupIcons[position] || ''} />{" "}
             {position}
           </h2>
           <div class="flex flex-wrap gap-4">
@@ -131,11 +146,11 @@ const groupIcons = {
                       >
                         {member.links && Object.entries(member.links).map(([platform, url]) => (
                           <a
-                            href={url}
+                            href={url as string}
                             target="_blank"
                             rel="noopener noreferrer"
                             class={`${position === "Presidencia" && member.coordinator ? "w-6 h-6" : "w-4 h-4"} invert text-white/60 hover:text-white transition-colors`}
-                            set:html={socialLogos[platform]}
+                            set:html={socialLogos[platform] || ''}
                           />
                         ))}
                       </div>
@@ -188,7 +203,7 @@ const groupIcons = {
                       >
                         {Object.entries(member.links).map(([platform, url], index, array) => (
                           <a
-                            href={url}
+                            href={url as string}
                             target="_blank"
                             rel="noopener noreferrer"
                             class={`social-link flex items-center justify-center transition-colors bg-white/5 p-2 ${
@@ -204,7 +219,7 @@ const groupIcons = {
                           >
                             <div
                               class="w-5 social-logo invert"
-                              set:html={socialLogos[platform]}
+                              set:html={socialLogos[platform] || ''}
                             />
                           </a>
                         ))}
@@ -264,7 +279,7 @@ const groupIcons = {
     transform-origin: center;
     min-width: 300px;
     width: 100%;
-    max-width: 400px;
+    max-width: 400px.
   }
 
   .team-pill-wrapper:hover .expanded-content {
@@ -355,12 +370,12 @@ const groupIcons = {
   const observer2 = new IntersectionObserver(
     ([e]) => {
       if (!e.isIntersecting) {
-        navContainer.classList.remove(
+        navContainer?.classList.remove(
           "rounded-full",
           "max-w-[1500px]",
           "-translate-y-20"
         );
-        navContainer.classList.add(
+        navContainer?.classList.add(
           "border-b",
           "border-white/10",
           "bg-[#121212e8]",
@@ -368,12 +383,12 @@ const groupIcons = {
           "px-16"
         );
       } else {
-        navContainer.classList.add(
+        navContainer?.classList.add(
           "rounded-full",
           "max-w-[1500px]",
           "-translate-y-20"
         );
-        navContainer.classList.remove(
+        navContainer?.classList.remove(
           "border-b",
           "pt-20",
           "px-16",
@@ -384,25 +399,29 @@ const groupIcons = {
     { threshold: [0] }
   );
 
-  observer2.observe(sentinel);
+  if (sentinel) {
+    observer2.observe(sentinel);
+  }
 
   document.querySelectorAll("#parallax-container").forEach((container) => {
     const person = container.querySelector(".person-image") as HTMLElement;
     const background = container.querySelector(".background-image") as HTMLElement;
 
-    container.addEventListener("mousemove", (e: MouseEvent) => {
-      const rect = container.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const centerX = rect.width / 2;
-      const offsetX = ((x - centerX) / centerX) * 30;
+    if (person && background) {
+      container.addEventListener("mousemove", (e: MouseEvent) => {
+        const rect = container.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const centerX = rect.width / 2;
+        const offsetX = ((x - centerX) / centerX) * 30;
 
-      person.style.transform = `translateX(${offsetX / 5}px)`;
-      background.style.transform = `translateX(${-20 + -offsetX / 10}px)`;
-    });
+        person.style.transform = `translateX(${offsetX / 5}px)`;
+        background.style.transform = `translateX(${-20 + -offsetX / 10}px)`;
+      });
 
-    container.addEventListener("mouseleave", () => {
-      person.style.transform = "translateX(0)";
-      background.style.transform = "translateX(-20px)";
-    });
+      container.addEventListener("mouseleave", () => {
+        person.style.transform = "translateX(0)";
+        background.style.transform = "translateX(-20px)";
+      });
+    }
   });
 </script>

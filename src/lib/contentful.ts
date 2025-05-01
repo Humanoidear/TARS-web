@@ -13,7 +13,7 @@ export interface work {
     readTime: EntryFieldTypes.Number;
     author: EntryFieldTypes.Text;
     authorImage: EntryFieldTypes.AssetLink;
-    tags: EntryFieldTypes.Array<EntryFieldTypes.Text>;
+    tags: EntryFieldTypes.Symbol[];
   };
 }
 
