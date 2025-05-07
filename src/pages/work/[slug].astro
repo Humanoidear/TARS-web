@@ -243,7 +243,7 @@ if (!readTime && parsedSEOContent) {
 }
 ---
 
-<Layout title={`${title} | TARS Innovación y excelencia en robótica competitiva`} description={parsedSEOContent} image={headerImg} />
+<Layout title={`${title} | TARS Innovación y excelencia en robótica competitiva`} description={parsedSEOContent} image={(headerImg as any)?.fields?.file?.url} />
   <Header isWork />
 
   <div class="w-full relative overflow-hidden">
