@@ -68,7 +68,7 @@ const regularPosts = posts.length > 1 ? posts.slice(1) : [];
               </div>
               <div class="p-6 flex flex-col justify-center">
                 <div class="flex items-center space-x-3 mb-3">
-                  <span class="text-orange-500 text-sm font-medium">
+                  <span class="text-blue-500 text-sm font-medium">
                     {featuredPost.category}
                   </span>
                   <span class="w-1 h-1 rounded-full bg-gray-400" />
@@ -89,21 +89,14 @@ const regularPosts = posts.length > 1 ? posts.slice(1) : [];
                   {featuredPost.description ||
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec dui nec odio."}
                 </p>
-                <div class="mt-auto">
-                  <span class="inline-flex items-center text-blue-500 font-medium group-hover:translate-x-1 transition-transform">
+                <div class="mt-auto opacity-60 hover:opacity-100 transition-opacity duration-300">
+                  <span class="inline-flex items-center text-white font-medium group-hover:translate-x-1 transition-transform">
                     Leer más
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-5 w-5 ml-1"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
+                    <img 
+                      src="https://unpkg.com/pixelarticons@1.8.1/svg/arrow-right.svg"
+                      alt="Arrow right"
+                      class="w-6 h-6 invert ml-1 transition-transform duration-300 group-hover:translate-x-1"
+                    />
                   </span>
                 </div>
               </div>
@@ -153,20 +146,13 @@ const regularPosts = posts.length > 1 ? posts.slice(1) : [];
                       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec dui nec odio."}
                   </p>
                   <div class="mt-auto pt-3 border-t border-zinc-700/50">
-                    <span class="text-sm text-blue-500 font-medium flex items-center group-hover:translate-x-1 transition-transform">
+                    <span class="text-sm text-white font-medium flex items-center group-hover:translate-x-1 transition-transform">
                       Leer artículo
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-4 w-4 ml-1"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H3a1 1 0 110-2h9.586l-2.293-2.293a1 1 0 010-1.414z"
-                          clip-rule="evenodd"
-                        />
-                      </svg>
+                      <img 
+                      src="https://unpkg.com/pixelarticons@1.8.1/svg/arrow-right.svg"
+                      alt="Arrow right"
+                      class="w-6 h-6 invert ml-1 transition-transform duration-300 group-hover:translate-x-1"
+                    />
                     </span>
                   </div>
                 </div>

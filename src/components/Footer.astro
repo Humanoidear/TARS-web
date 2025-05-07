@@ -2,7 +2,6 @@
 import { contentfulClient } from "../lib/contentful";
 import type { work } from "../lib/contentful";
 import Button from "./Button.astro";
-import Competitions from "../../public/json/competitions.json";
 
 let currentYear = new Date().getFullYear();
 
@@ -90,7 +89,7 @@ const posts = entries.items.map((item) => {
   </span>
 
   <span class="hidden lg:flex flex-row gap-6 z-50">
-    <div class="max-w-[300px] flex flex-col gap-3">
+    <div class="max-w-[500px] flex flex-col gap-3">
       <h2 class="md:text-right font-extrabold text-2xl">
         Últimas publicaciones
       </h2>
@@ -118,17 +117,6 @@ const posts = entries.items.map((item) => {
             fill="currentColor"></path>
         </svg></a
       >
-    </div>
-    <div class="flex flex-row sm:flex-col gap-3">
-      {
-        Competitions.competitions.map((competition) => (
-          <img
-            src={competition.image}
-            alt={competition.title}
-            class="w-14 h-14 rounded-md aspect-square object-cove border-2 border-white/0 hover:border-white/20"
-          />
-        ))
-      }
     </div>
   </span>
 
