@@ -121,12 +121,14 @@ const groupIcons: Record<string, string> = {
                         class={`${position === "Presidencia" && member.coordinator ? "w-20 h-20" : "w-12 h-12"} rounded-full z-10 absolute`}
                         transition:name={`team-image-${member.name}`}
                       />
-                      <img
-                        src={member.pfp ? member.pfp : `/img/defaultbg${defaultBgNum}.png`}
-                        alt={member.name}
-                        class={`${position === "Presidencia" && member.coordinator ? "w-20 h-20" : "w-12 h-12"} rounded-full aspect-square object-cover`}
-                        transition:name={`team-image-${member.name}`}
-                      />
+                        <div class={`${position === "Presidencia" && member.coordinator ? "w-20 h-20" : "w-12 h-12"} rounded-full overflow-hidden relative`}>
+                        <img
+                          src={member.pfp ? member.pfp : `/img/defaultbg${defaultBgNum}.png`}
+                          alt={member.name}
+                          class="w-full h-full blur-xl object-cover"
+                          transition:name={`team-image-${member.name}`}
+                        />
+                      </div>
                     </span>
                     <div transition:name={`team-content-${member.name}`}>
                       <h3

@@ -4,314 +4,343 @@
     "position": "",
     "isCoordinator": 0,
     "coordinator": "Presidente",
-    "remove": "https://picsum.photos/200/200?random=1"
-},
-  {
-      "name": "Joan Albert Ortí",
-      "position": "Electronica",
-      "remove": "https://picsum.photos/200/200?random=1"
+    "remove": "https://picsum.photos/200/200?random=1",
+    "pfp1": "/img/members/pablo_utrillas.png"
   },
   {
-      "name": "Óscar Domínguez Correa",
-      "position": "Electronica",
-      "remove": "https://picsum.photos/200/200?random=2"
+    "name": "Joan Albert Ortí",
+    "position": "Electronica",
+    "remove": "https://picsum.photos/200/200?random=1",
+    "pfp1": "/img/members/joan_albert.png"
   },
   {
-      "name": "Vicente Burdeus Sánchez",
-      "position": "Electronica",
-      "remove": "https://picsum.photos/200/200?random=3"
+    "name": "Óscar Domínguez Correa",
+    "position": "Electronica",
+    "remove": "https://picsum.photos/200/200?random=2"
   },
   {
-      "name": "Saúl Sanchis Juan",
-      "position": "Electronica",
-      "remove": "https://picsum.photos/200/200?random=4"
+    "name": "Vicente Burdeus Sánchez",
+    "position": "Electronica",
+    "remove": "https://picsum.photos/200/200?random=3"
   },
   {
-      "name": "Enric Talens Miralles",
-      "position": "Electronica",
-      "remove": "https://picsum.photos/200/200?random=5"
+    "name": "Saúl Sanchis Juan",
+    "position": "Electronica",
+    "remove": "https://picsum.photos/200/200?random=4"
   },
   {
-      "name": "Raquel Montoliu Balaguer",
-      "position": "Electronica",
-      "remove": "https://picsum.photos/200/200?random=6"
+    "name": "Enric Talens Miralles",
+    "position": "Electronica",
+    "remove": "https://picsum.photos/200/200?random=5"
   },
   {
-      "name": "Ian Francisco García Ruiz",
-      "position": "Electronica",
-      "remove": "https://picsum.photos/200/200?random=7"
+    "name": "Raquel Montoliu Balaguer",
+    "position": "Electronica",
+    "remove": "https://picsum.photos/200/200?random=6",
+    "pfp1": "/img/members/raquel_montoliu.png"
   },
   {
-      "name": "Rosa María Hernández Valero",
-      "position": "Electronica",
-      "isCoordinator": 1,
-      "remove": "https://picsum.photos/200/200?random=8"
+    "name": "Ian Francisco García Ruiz",
+    "position": "Electronica",
+    "remove": "https://picsum.photos/200/200?random=7"
   },
   {
-      "name": "Iván Guillardini Montés",
-      "position": "Electronica",
-      "remove": "https://picsum.photos/200/200?random=9"
+    "name": "Rosa María Hernández Valero",
+    "position": "Electronica",
+    "isCoordinator": 1,
+    "remove": "https://picsum.photos/200/200?random=8"
   },
   {
-      "name": "María Rodríguez Hernández",
-      "position": "Electronica",
-      "remove": "https://picsum.photos/200/200?random=10"
+    "name": "Iván Guillardini Montés",
+    "position": "Electronica",
+    "remove": "https://picsum.photos/200/200?random=9"
   },
   {
-      "name": "Marcos Sellés Solà",
-      "position": "Electronica",
-      "remove": "https://picsum.photos/200/200?random=11"
+    "name": "María Rodríguez Hernández",
+    "position": "Electronica",
+    "remove": "https://picsum.photos/200/200?random=10",
+    "pfp1": "/img/members/maria_rodriguez.png"
   },
   {
-      "name": "Elena Clofent Muñoz",
-      "position": "Electronica",
-      "remove": "https://picsum.photos/200/200?random=12"
+    "name": "Marcos Sellés Solà",
+    "position": "Electronica",
+    "remove": "https://picsum.photos/200/200?random=11",
+    "pfp1": "/img/members/marcos_selles.png"
   },
   {
-      "name": "Gabriel Arnedo Espinosa",
-      "position": "Finanzas",
-      "remove": "https://picsum.photos/200/200?random=13"
+    "name": "Elena Clofent Muñoz",
+    "position": "Electronica",
+    "remove": "https://picsum.photos/200/200?random=12"
   },
   {
-      "name": "Ricardo Casasnovas Martin",
-      "position": "Finanzas",
-      "isCoordinator": 1,
-      "remove": "https://picsum.photos/200/200?random=14"
+    "name": "Gabriel Arnedo Espinosa",
+    "position": "Finanzas",
+    "remove": "https://picsum.photos/200/200?random=13",
+    "pfp1": "/img/members/gabriel_arnedo.png"
   },
   {
-      "name": "Marco Robert Valverde",
-      "position": "Finanzas",
-      "remove": "https://picsum.photos/200/200?random=15"
+    "name": "Ricardo Casasnovas Martin",
+    "position": "Finanzas",
+    "isCoordinator": 1,
+    "remove": "https://picsum.photos/200/200?random=14",
+    "pfp1": "/img/members/ricardo_casasnovas.png"
   },
   {
-      "name": "Carla Hidalgo Aroca",
-      "position": "Finanzas",
-      "remove": "https://picsum.photos/200/200?random=16"
+    "name": "Marco Robert Valverde",
+    "position": "Finanzas",
+    "remove": "https://picsum.photos/200/200?random=15"
   },
   {
-      "name": "Angela Espert Cornejo",
-      "position": "Finanzas",
-      "remove": "https://picsum.photos/200/200?random=17"
+    "name": "Carla Hidalgo Aroca",
+    "position": "Finanzas",
+    "remove": "https://picsum.photos/200/200?random=16",
+    "pfp1": "/img/members/carla_hidalgo.png"
   },
   {
-      "name": "Mario Martinez Carneros",
-      "position": "Finanzas",
-      "remove": "https://picsum.photos/200/200?random=18"
+    "name": "Angela Espert Cornejo",
+    "position": "Finanzas",
+    "remove": "https://picsum.photos/200/200?random=17",
+    "pfp1": "/img/members/angela_espert.png"
   },
   {
-      "name": "Jorge Márquez Morales",
-      "position": "Imagen",
-      "isCoordinator": 1,
-      "remove": "https://picsum.photos/200/200?random=19"
+    "name": "Mario Martinez Carneros",
+    "position": "Finanzas",
+    "remove": "https://picsum.photos/200/200?random=18",
+    "pfp1": "/img/members/mario_martinez.png"
   },
   {
-      "name": "Sandra Villora Parra",
-      "position": "Imagen",
-      "remove": "https://picsum.photos/200/200?random=20"
+    "name": "Jorge Márquez Morales",
+    "position": "Imagen",
+    "isCoordinator": 1,
+    "remove": "https://picsum.photos/200/200?random=19",
+    "pfp1": "/img/members/jorge_marquez.png"
   },
   {
-      "name": "Juan Palou de Comasema Jaume",
-      "position": "Imagen"
+    "name": "Sandra Villora Parra",
+    "position": "Imagen",
+    "remove": "https://picsum.photos/200/200?random=20",
+    "pfp1": "/img/members/sandra_villora.png"
   },
   {
-      "name": "Tongxin Pan Du",
-      "position": "Imagen",
-      "remove": "https://picsum.photos/200/200?random=22"
+    "name": "Juan Palou de Comasema Jaume",
+    "position": "Imagen",
+    "pfp1": "/img/members/juan_palou.png"
   },
   {
-      "name": "Pedro Diaz Masa Valencia",
-      "position": "Imagen",
-      "remove": "https://picsum.photos/200/200?random=23"
+    "name": "Tongxin Pan Du",
+    "position": "Imagen",
+    "remove": "https://picsum.photos/200/200?random=22"
   },
   {
-      "name": "Antonio Ros Otero",
-      "position": "Mecanica",
-      "remove": "https://picsum.photos/200/200?random=24"
+    "name": "Pedro Diaz Masa Valencia",
+    "position": "Imagen",
+    "remove": "https://picsum.photos/200/200?random=23",
+    "pfp1": "/img/members/pedro_diaz.png"
   },
   {
-      "name": "María Dolores Muñoz García",
-      "position": "Mecanica",
-      "isCoordinator": 0,
-      "coordinator": "Coordinadora RoboChallenge",
-      "remove": "https://picsum.photos/200/200?random=25"
+    "name": "Antonio Ros Otero",
+    "position": "Mecanica",
+    "remove": "https://picsum.photos/200/200?random=24"
   },
   {
-      "name": "Carlos Caballer Ruiz",
-      "position": "Mecanica",
-      "remove": "https://picsum.photos/200/200?random=26"
+    "name": "María Dolores Muñoz García",
+    "position": "Mecanica",
+    "isCoordinator": 0,
+    "coordinator": "Coordinadora RoboChallenge",
+    "remove": "https://picsum.photos/200/200?random=25",
+    "pfp1": "/img/members/maria_dolores.png"
   },
   {
-      "name": "Alejandro Guerrero Huaigua",
-      "position": "Mecanica",
-      "isCoordinator": 1,
-      "remove": "https://picsum.photos/200/200?random=27"
+    "name": "Carlos Caballer Ruiz",
+    "position": "Mecanica",
+    "remove": "https://picsum.photos/200/200?random=26"
   },
   {
-      "name": "Ana Parrilla Bouaiche",
-      "position": "Mecanica",
-      "remove": "https://picsum.photos/200/200?random=28"
+    "name": "Alejandro Guerrero Huaigua",
+    "position": "Mecanica",
+    "isCoordinator": 1,
+    "remove": "https://picsum.photos/200/200?random=27"
   },
   {
-      "name": "Manar Selham",
-      "position": "Mecanica",
-      "isCoordinator": 0,
-      "coordinator": "Coordinadora ERC",
-      "remove": "https://picsum.photos/200/200?random=29"
+    "name": "Ana Parrilla Bouaiche",
+    "position": "Mecanica",
+    "remove": "https://picsum.photos/200/200?random=28",
+    "pfp1": "/img/members/ana_parrilla.png"
   },
   {
-      "name": "Elizabeth Turley",
-      "position": "Mecanica",
-      "remove": "https://picsum.photos/200/200?random=30"
+    "name": "Manar Selham",
+    "position": "Mecanica",
+    "isCoordinator": 0,
+    "coordinator": "Coordinadora ERC",
+    "remove": "https://picsum.photos/200/200?random=29"
   },
   {
-      "name": "Carmelo Nicolas Estelles Pardo",
-      "position": "Mecanica",
-      "remove": "https://picsum.photos/200/200?random=31"
+    "name": "Elizabeth Turley",
+    "position": "Mecanica",
+    "remove": "https://picsum.photos/200/200?random=30"
   },
   {
-      "name": "Ali Abdelhamid Salmi",
-      "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=32"
+    "name": "Carmelo Nicolas Estelles Pardo",
+    "position": "Mecanica",
+    "remove": "https://picsum.photos/200/200?random=31"
   },
   {
-      "name": "David Bernad López",
-      "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=33"
+    "name": "Ali Abdelhamid Salmi",
+    "position": "Software",
+    "remove": "https://picsum.photos/200/200?random=32"
   },
   {
-      "name": "Javier Veyrat Zaragozá",
-      "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=34"
+    "name": "David Bernad López",
+    "position": "Software",
+    "remove": "https://picsum.photos/200/200?random=33",
+    "pfp1": "/img/members/david_bernad.png"
   },
   {
-      "name": "Jose Nicolas Mollá Eid-Macheh",
-      "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=35"
+    "name": "Javier Veyrat Zaragozá",
+    "position": "Software",
+    "remove": "https://picsum.photos/200/200?random=34",
+    "pfp1": "/img/members/javier_veyrat.png"
   },
   {
-      "name": "Sebastian Ballester Pirchmoser",
-      "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=36"
+    "name": "Jose Nicolas Mollá Eid-Macheh",
+    "position": "Software",
+    "remove": "https://picsum.photos/200/200?random=35"
   },
   {
-      "name": "Jose Luis Galán Avilés",
-      "position": "Software",
-      "isCoordinator": 1,
-      "remove": "https://picsum.photos/200/200?random=37"
+    "name": "Sebastian Ballester Pirchmoser",
+    "position": "Software",
+    "remove": "https://picsum.photos/200/200?random=36",
+    "pfp1": "/img/members/sebastian_ballester.png"
   },
   {
-      "name": "Rubén Darío Argaez Urrego",
-      "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=38"
+    "name": "Jose Luis Galán Avilés",
+    "position": "Software",
+    "isCoordinator": 1,
+    "remove": "https://picsum.photos/200/200?random=37",
+    "pfp1": "/img/members/jose_luis.png"
   },
   {
-      "name": "Ernesto Martínez Gómez",
-      "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=39"
+    "name": "Rubén Darío Argaez Urrego",
+    "position": "Software",
+    "remove": "https://picsum.photos/200/200?random=38"
   },
   {
-      "name": "Joan Mallasén Rodríguez",
-      "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=40"
+    "name": "Ernesto Martínez Gómez",
+    "position": "Software",
+    "remove": "https://picsum.photos/200/200?random=39"
   },
   {
-      "name": "Lorenzo Severini",
-      "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=41"
+    "name": "Joan Mallasén Rodríguez",
+    "position": "Software",
+    "remove": "https://picsum.photos/200/200?random=40"
   },
   {
-      "name": "Diego Jiménez Romero",
-      "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=42"
+    "name": "Lorenzo Severini",
+    "position": "Software",
+    "remove": "https://picsum.photos/200/200?random=41"
   },
   {
-      "name": "José Vidal Lima",
-      "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=43"
+    "name": "Diego Jiménez Romero",
+    "position": "Software",
+    "remove": "https://picsum.photos/200/200?random=42"
   },
   {
-      "name": "Ana Asenjo Madrigal",
-      "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=44"
+    "name": "José Vidal Lima",
+    "position": "Software",
+    "remove": "https://picsum.photos/200/200?random=43"
   },
   {
-      "name": "Alejandro González de la Santa Cruz",
-      "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=45"
+    "name": "Ana Asenjo Madrigal",
+    "position": "Software",
+    "remove": "https://picsum.photos/200/200?random=44",
+    "pfp1": "/img/members/ana_asenjo.png"
   },
   {
-      "name": "Andreu Martínez Cabrera",
-      "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=46"
+    "name": "Alejandro González de la Santa Cruz",
+    "position": "Software",
+    "remove": "https://picsum.photos/200/200?random=45",
+    "pfp1": "/img/members/alejandro_gonzalez.png"
   },
   {
-      "name": "Lucas Carrizo Ruggeri",
-      "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=47"
+    "name": "Andreu Martínez Cabrera",
+    "position": "Software",
+    "remove": "https://picsum.photos/200/200?random=46"
   },
   {
-      "name": "Francisco Nortes Novikov",
-      "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=48"
+    "name": "Lucas Carrizo Ruggeri",
+    "position": "Software",
+    "remove": "https://picsum.photos/200/200?random=47",
+    "pfp1": "/img/members/lucas_carrizo.png"
   },
   {
-      "name": "Adrián Escudero García",
-      "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=49"
+    "name": "Francisco Nortes Novikov",
+    "position": "Software",
+    "remove": "https://picsum.photos/200/200?random=48",
+    "pfp1": "/img/members/francisco_nortes.png"
   },
   {
-      "name": "Jesús París Navarro",
-      "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=50"
+    "name": "Adrián Escudero García",
+    "position": "Software",
+    "remove": "https://picsum.photos/200/200?random=49",
+    "pfp1": "/img/members/adrian_escudero.png"
   },
   {
-      "name": "Daniel Mirón Vidal",
-      "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=51"
+    "name": "Jesús París Navarro",
+    "position": "Software",
+    "remove": "https://picsum.photos/200/200?random=50"
   },
   {
-      "name": "Maria Bolumar García",
-      "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=52"
+    "name": "Daniel Mirón Vidal",
+    "position": "Software",
+    "remove": "https://picsum.photos/200/200?random=51",
+    "pfp1": "/img/members/daniel_miron.png"
   },
   {
-      "name": "Lucía Alba Torres",
-      "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=53"
+    "name": "Maria Bolumar García",
+    "position": "Software",
+    "remove": "https://picsum.photos/200/200?random=52",
+    "pfp1": "/img/members/maria_bolumar.png"
   },
   {
-      "name": "Francesc Loeches Nogués",
-      "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=54"
+    "name": "Lucía Alba Torres",
+    "position": "Software",
+    "remove": "https://picsum.photos/200/200?random=53"
   },
   {
-      "name": "Kai Aoiz Canillas",
-      "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=55"
+    "name": "Francesc Loeches Nogués",
+    "position": "Software",
+    "remove": "https://picsum.photos/200/200?random=54",
+    "pfp1": "/img/members/francesc_loeches.png"
   },
   {
-      "name": "Sergio Real Gonzalvo",
-      "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=56"
+    "name": "Kai Aoiz Canillas",
+    "position": "Software",
+    "remove": "https://picsum.photos/200/200?random=55",
+    "pfp1": "/img/members/kai_aoiz.png"
   },
   {
-      "name": "Ángela Ferré Pérez",
-      "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=57"
+    "name": "Sergio Real Gonzalvo",
+    "position": "Software",
+    "remove": "https://picsum.photos/200/200?random=56"
   },
   {
-      "name": "Marcos Mérida Bustamante",
-      "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=58"
+    "name": "Ángela Ferré Pérez",
+    "position": "Software",
+    "remove": "https://picsum.photos/200/200?random=57"
   },
   {
-      "name": "Thalia Mara Pereira Ben Abdelouahab",
-      "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=59"
+    "name": "Marcos Mérida Bustamante",
+    "position": "Software",
+    "remove": "https://picsum.photos/200/200?random=58"
   },
   {
-      "name": "Adolfo Fornás García",
-      "position": "Software",
-      "remove": "https://picsum.photos/200/200?random=60"
+    "name": "Thalia Mara Pereira Ben Abdelouahab",
+    "position": "Software",
+    "remove": "https://picsum.photos/200/200?random=59"
+  },
+  {
+    "name": "Adolfo Fornás García",
+    "position": "Software",
+    "remove": "https://picsum.photos/200/200?random=60"
   }
 ]
