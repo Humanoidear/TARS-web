@@ -1,346 +1,52 @@
 [
-  {
-    "name": "Pablo Utrillas González",
-    "position": "",
-    "isCoordinator": 0,
-    "coordinator": "Presidente",
-    "remove": "https://picsum.photos/200/200?random=1",
-    "pfp1": "/img/members/pablo_utrillas.png"
-  },
-  {
-    "name": "Joan Albert Ortí",
-    "position": "Electronica",
-    "remove": "https://picsum.photos/200/200?random=1",
-    "pfp1": "/img/members/joan_albert.png"
-  },
-  {
-    "name": "Óscar Domínguez Correa",
-    "position": "Electronica",
-    "remove": "https://picsum.photos/200/200?random=2"
-  },
-  {
-    "name": "Vicente Burdeus Sánchez",
-    "position": "Electronica",
-    "remove": "https://picsum.photos/200/200?random=3"
-  },
-  {
-    "name": "Saúl Sanchis Juan",
-    "position": "Electronica",
-    "remove": "https://picsum.photos/200/200?random=4"
-  },
-  {
-    "name": "Enric Talens Miralles",
-    "position": "Electronica",
-    "remove": "https://picsum.photos/200/200?random=5"
-  },
-  {
-    "name": "Raquel Montoliu Balaguer",
-    "position": "Electronica",
-    "remove": "https://picsum.photos/200/200?random=6",
-    "pfp1": "/img/members/raquel_montoliu.png"
-  },
-  {
-    "name": "Ian Francisco García Ruiz",
-    "position": "Electronica",
-    "remove": "https://picsum.photos/200/200?random=7"
-  },
-  {
-    "name": "Rosa María Hernández Valero",
-    "position": "Electronica",
-    "isCoordinator": 1,
-    "remove": "https://picsum.photos/200/200?random=8"
-  },
-  {
-    "name": "Iván Guillardini Montés",
-    "position": "Electronica",
-    "remove": "https://picsum.photos/200/200?random=9"
-  },
-  {
-    "name": "María Rodríguez Hernández",
-    "position": "Electronica",
-    "remove": "https://picsum.photos/200/200?random=10",
-    "pfp1": "/img/members/maria_rodriguez.png"
-  },
-  {
-    "name": "Marcos Sellés Solà",
-    "position": "Electronica",
-    "remove": "https://picsum.photos/200/200?random=11",
-    "pfp1": "/img/members/marcos_selles.png"
-  },
-  {
-    "name": "Elena Clofent Muñoz",
-    "position": "Electronica",
-    "remove": "https://picsum.photos/200/200?random=12"
-  },
-  {
-    "name": "Gabriel Arnedo Espinosa",
-    "position": "Finanzas",
-    "remove": "https://picsum.photos/200/200?random=13",
-    "pfp1": "/img/members/gabriel_arnedo.png"
-  },
-  {
-    "name": "Ricardo Casasnovas Martin",
-    "position": "Finanzas",
-    "isCoordinator": 1,
-    "remove": "https://picsum.photos/200/200?random=14",
-    "pfp1": "/img/members/ricardo_casasnovas.png"
-  },
-  {
-    "name": "Marco Robert Valverde",
-    "position": "Finanzas",
-    "remove": "https://picsum.photos/200/200?random=15"
-  },
-  {
-    "name": "Carla Hidalgo Aroca",
-    "position": "Finanzas",
-    "remove": "https://picsum.photos/200/200?random=16",
-    "pfp1": "/img/members/carla_hidalgo.png"
-  },
-  {
-    "name": "Angela Espert Cornejo",
-    "position": "Finanzas",
-    "remove": "https://picsum.photos/200/200?random=17",
-    "pfp1": "/img/members/angela_espert.png"
-  },
-  {
-    "name": "Mario Martinez Carneros",
-    "position": "Finanzas",
-    "remove": "https://picsum.photos/200/200?random=18",
-    "pfp1": "/img/members/mario_martinez.png"
-  },
-  {
-    "name": "Jorge Márquez Morales",
-    "position": "Imagen",
-    "isCoordinator": 1,
-    "remove": "https://picsum.photos/200/200?random=19",
-    "pfp1": "/img/members/jorge_marquez.png"
-  },
-  {
-    "name": "Sandra Villora Parra",
-    "position": "Imagen",
-    "remove": "https://picsum.photos/200/200?random=20",
-    "pfp1": "/img/members/sandra_villora.png"
-  },
-  {
-    "name": "Juan Palou de Comasema Jaume",
-    "position": "Imagen",
-    "pfp1": "/img/members/juan_palou.png"
-  },
-  {
-    "name": "Tongxin Pan Du",
-    "position": "Imagen",
-    "remove": "https://picsum.photos/200/200?random=22"
-  },
-  {
-    "name": "Pedro Diaz Masa Valencia",
-    "position": "Imagen",
-    "remove": "https://picsum.photos/200/200?random=23",
-    "pfp1": "/img/members/pedro_diaz.png"
-  },
-  {
-    "name": "Antonio Ros Otero",
-    "position": "Mecanica",
-    "remove": "https://picsum.photos/200/200?random=24"
-  },
-  {
-    "name": "María Dolores Muñoz García",
-    "position": "Mecanica",
-    "isCoordinator": 0,
-    "coordinator": "Coordinadora RoboChallenge",
-    "remove": "https://picsum.photos/200/200?random=25",
-    "pfp1": "/img/members/maria_dolores.png"
-  },
-  {
-    "name": "Carlos Caballer Ruiz",
-    "position": "Mecanica",
-    "remove": "https://picsum.photos/200/200?random=26"
-  },
-  {
-    "name": "Alejandro Guerrero Huaigua",
-    "position": "Mecanica",
-    "isCoordinator": 1,
-    "remove": "https://picsum.photos/200/200?random=27"
-  },
-  {
-    "name": "Ana Parrilla Bouaiche",
-    "position": "Mecanica",
-    "remove": "https://picsum.photos/200/200?random=28",
-    "pfp1": "/img/members/ana_parrilla.png"
-  },
-  {
-    "name": "Manar Selham",
-    "position": "Mecanica",
-    "isCoordinator": 0,
-    "coordinator": "Coordinadora ERC",
-    "remove": "https://picsum.photos/200/200?random=29"
-  },
-  {
-    "name": "Elizabeth Turley",
-    "position": "Mecanica",
-    "remove": "https://picsum.photos/200/200?random=30"
-  },
-  {
-    "name": "Carmelo Nicolas Estelles Pardo",
-    "position": "Mecanica",
-    "remove": "https://picsum.photos/200/200?random=31"
-  },
-  {
-    "name": "Ali Abdelhamid Salmi",
-    "position": "Software",
-    "remove": "https://picsum.photos/200/200?random=32"
-  },
-  {
-    "name": "David Bernad López",
-    "position": "Software",
-    "remove": "https://picsum.photos/200/200?random=33",
-    "pfp1": "/img/members/david_bernad.png"
-  },
-  {
-    "name": "Javier Veyrat Zaragozá",
-    "position": "Software",
-    "remove": "https://picsum.photos/200/200?random=34",
-    "pfp1": "/img/members/javier_veyrat.png"
-  },
-  {
-    "name": "Jose Nicolas Mollá Eid-Macheh",
-    "position": "Software",
-    "remove": "https://picsum.photos/200/200?random=35"
-  },
-  {
-    "name": "Sebastian Ballester Pirchmoser",
-    "position": "Software",
-    "remove": "https://picsum.photos/200/200?random=36",
-    "pfp1": "/img/members/sebastian_ballester.png"
-  },
-  {
-    "name": "Jose Luis Galán Avilés",
-    "position": "Software",
-    "isCoordinator": 1,
-    "remove": "https://picsum.photos/200/200?random=37",
-    "pfp1": "/img/members/jose_luis.png"
-  },
-  {
-    "name": "Rubén Darío Argaez Urrego",
-    "position": "Software",
-    "remove": "https://picsum.photos/200/200?random=38"
-  },
-  {
-    "name": "Ernesto Martínez Gómez",
-    "position": "Software",
-    "remove": "https://picsum.photos/200/200?random=39"
-  },
-  {
-    "name": "Joan Mallasén Rodríguez",
-    "position": "Software",
-    "remove": "https://picsum.photos/200/200?random=40"
-  },
-  {
-    "name": "Lorenzo Severini",
-    "position": "Software",
-    "remove": "https://picsum.photos/200/200?random=41"
-  },
-  {
-    "name": "Diego Jiménez Romero",
-    "position": "Software",
-    "remove": "https://picsum.photos/200/200?random=42"
-  },
-  {
-    "name": "José Vidal Lima",
-    "position": "Software",
-    "remove": "https://picsum.photos/200/200?random=43"
-  },
-  {
-    "name": "Ana Asenjo Madrigal",
-    "position": "Software",
-    "remove": "https://picsum.photos/200/200?random=44",
-    "pfp1": "/img/members/ana_asenjo.png"
-  },
-  {
-    "name": "Alejandro González de la Santa Cruz",
-    "position": "Software",
-    "remove": "https://picsum.photos/200/200?random=45",
-    "pfp1": "/img/members/alejandro_gonzalez.png"
-  },
-  {
-    "name": "Andreu Martínez Cabrera",
-    "position": "Software",
-    "remove": "https://picsum.photos/200/200?random=46"
-  },
-  {
-    "name": "Lucas Carrizo Ruggeri",
-    "position": "Software",
-    "remove": "https://picsum.photos/200/200?random=47",
-    "pfp1": "/img/members/lucas_carrizo.png"
-  },
-  {
-    "name": "Francisco Nortes Novikov",
-    "position": "Software",
-    "remove": "https://picsum.photos/200/200?random=48",
-    "pfp1": "/img/members/francisco_nortes.png"
-  },
-  {
-    "name": "Adrián Escudero García",
-    "position": "Software",
-    "remove": "https://picsum.photos/200/200?random=49",
-    "pfp1": "/img/members/adrian_escudero.png"
-  },
-  {
-    "name": "Jesús París Navarro",
-    "position": "Software",
-    "remove": "https://picsum.photos/200/200?random=50"
-  },
-  {
-    "name": "Daniel Mirón Vidal",
-    "position": "Software",
-    "remove": "https://picsum.photos/200/200?random=51",
-    "pfp1": "/img/members/daniel_miron.png"
-  },
-  {
-    "name": "Maria Bolumar García",
-    "position": "Software",
-    "remove": "https://picsum.photos/200/200?random=52",
-    "pfp1": "/img/members/maria_bolumar.png"
-  },
-  {
-    "name": "Lucía Alba Torres",
-    "position": "Software",
-    "remove": "https://picsum.photos/200/200?random=53"
-  },
-  {
-    "name": "Francesc Loeches Nogués",
-    "position": "Software",
-    "remove": "https://picsum.photos/200/200?random=54",
-    "pfp1": "/img/members/francesc_loeches.png"
-  },
-  {
-    "name": "Kai Aoiz Canillas",
-    "position": "Software",
-    "remove": "https://picsum.photos/200/200?random=55",
-    "pfp1": "/img/members/kai_aoiz.png"
-  },
-  {
-    "name": "Sergio Real Gonzalvo",
-    "position": "Software",
-    "remove": "https://picsum.photos/200/200?random=56"
-  },
-  {
-    "name": "Ángela Ferré Pérez",
-    "position": "Software",
-    "remove": "https://picsum.photos/200/200?random=57"
-  },
-  {
-    "name": "Marcos Mérida Bustamante",
-    "position": "Software",
-    "remove": "https://picsum.photos/200/200?random=58"
-  },
-  {
-    "name": "Thalia Mara Pereira Ben Abdelouahab",
-    "position": "Software",
-    "remove": "https://picsum.photos/200/200?random=59"
-  },
-  {
-    "name": "Adolfo Fornás García",
-    "position": "Software",
-    "remove": "https://picsum.photos/200/200?random=60"
-  }
+  { "name": "Juan Palou de Comasema Jaume", "position": "Imagen", "pfp1": "/img/members/juan_palou.png" },
+  { "name": "Daniel Mirón Vidal", "position": "Software", "pfp1": "/img/members/daniel_miron.png" },
+  { "name": "Javier Veyrat Zaragozá", "position": "Software", "pfp1": "/img/members/javier_veyrat.png" },
+  { "name": "Raquel Montoliu Balaguer", "position": "Electronica", "pfp1": "/img/members/raquel_montoliu.png" },
+  { "name": "María Rodríguez Hernández", "position": "Electronica", "pfp1": "/img/members/maria_rodriguez.png" },
+  { "name": "Angela Espert Cornejo", "position": "Finanzas", "pfp1": "/img/members/angela_espert.png" },
+  { "name": "Paula Parra García", "position": "Software" },
+  { "name": "Gabriel Arnedo Espinosa", "position": "Finanzas", "pfp1": "/img/members/gabriel_arnedo.png" },
+  { "name": "Tongxin Pan Du", "position": "Imagen" },
+  { "name": "Jose Luis Galán Avilés", "position": "Software", "isCoordinator": 1, "pfp1": "/img/members/jose_luis.png" },
+  { "name": "Claudia Navarro Pérez", "position": "Software" },
+  { "name": "Sandra Villora Parra", "position": "Imagen", "pfp1": "/img/members/sandra_villora.png" },
+  { "name": "Alejandro González de la Santa Cruz", "position": "Software", "pfp1": "/img/members/alejandro_gonzalez.png" },
+  { "name": "Ana Parrilla Bouaiche", "position": "Mecanica", "pfp1": "/img/members/ana_parrilla.png" },
+  { "name": "Jorge Márquez Morales", "position": "Imagen", "isCoordinator": 1, "pfp1": "/img/members/jorge_marquez.png" },
+  { "name": "Antonio Ros Otero", "position": "Mecanica" },
+  { "name": "Rubén Darío Argaez Urrego", "position": "Software" },
+  { "name": "Carla Hidalgo Aroca", "position": "Finanzas", "pfp1": "/img/members/carla_hidalgo.png" },
+  { "name": "Julio cesar Cova Berruguete", "position": "Software" },
+  { "name": "Asier Pallarés Orozco", "position": "Software" },
+  { "name": "Sebastian Ballester Pirchmoser", "position": "Software", "pfp1": "/img/members/sebastian_ballester.png" },
+  { "name": "Rodrigo Quesada Bilbao", "position": "Software" },
+  { "name": "Pedro Diaz-Masa Valencia", "position": "Imagen", "pfp1": "/img/members/pedro_diaz.png" },
+  { "name": "María Dolores Muñoz García", "position": "Mecanica", "coordinator": "Coordinadora RoboChallenge", "pfp1": "/img/members/maria_dolores.png" },
+  { "name": "Diego Jiménez Romero", "position": "Software" },
+  { "name": "Francisco Nortes Novikov", "position": "Software", "pfp1": "/img/members/francisco_nortes.png" },
+  { "name": "Enric Talens Miralles", "position": "Electronica" },
+  { "name": "Joan Albert Ortí", "position": "Electronica", "pfp1": "/img/members/joan_albert.png" },
+  { "name": "Ismael Boulaich Dahhou", "position": "Software" },
+  { "name": "Alejandro Tribaldo casanova", "position": "Software" },
+  { "name": "Adrián Escudero García", "position": "Software", "pfp1": "/img/members/adrian_escudero.png" },
+  { "name": "Jaume Sancho Gayà", "position": "Software" },
+  { "name": "Miranda Giménez Ferrando", "position": "Software" },
+  { "name": "Saúl Sanchis Juan", "position": "Electronica" },
+  { "name": "Carles Gradolí Montagud", "position": "Software" },
+  { "name": "Oscar Gandia Iglesias", "position": "Software" },
+  { "name": "Miguel Rabasco Bernabé", "position": "Software" },
+  { "name": "Marina Gallart de Miguel", "position": "Software" },
+  { "name": "Jordi Ortiz Terol", "position": "Software" },
+  { "name": "Alberto Vallet Baixauli", "position": "Software" },
+  { "name": "Mikel Roncal Garnica", "position": "Software" },
+  { "name": "Enrique Heredia Lidón", "position": "Software" },
+  { "name": "Pablo Copete Garrido", "position": "Software" },
+  { "name": "Angel Paya Gomez", "position": "Software" },
+  { "name": "Alejandra Beatriz Arévalo Ficher", "position": "Software" },
+  { "name": "Carlos Rams Aleixandre", "position": "Software" },
+  { "name": "Alejandro Rizo Reyes", "position": "Software" },
+  { "name": "Carlos Marín Muñoz", "position": "Software" },
+  { "name": "Paula Martín-Sacristán Casanova", "position": "Software" },
+  { "name": "Martín González Villavicencio", "position": "Software" }
 ]
