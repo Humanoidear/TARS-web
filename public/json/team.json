@@ -1,11 +1,12 @@
 [
+  { "name": "Pablo Utrillas González", "position": "", "isCoordinator": 0, "coordinator": "Presidente", "remove": "https://picsum.photos/200/200?random=1", "pfp1": "/img/members/pablo_utrillas.png" },
   { "name": "Juan Palou de Comasema Jaume", "position": "Imagen", "pfp1": "/img/members/juan_palou.png" },
   { "name": "Daniel Mirón Vidal", "position": "Software", "pfp1": "/img/members/daniel_miron.png" },
   { "name": "Javier Veyrat Zaragozá", "position": "Software", "pfp1": "/img/members/javier_veyrat.png" },
   { "name": "Raquel Montoliu Balaguer", "position": "Electronica", "pfp1": "/img/members/raquel_montoliu.png" },
   { "name": "María Rodríguez Hernández", "position": "Electronica", "pfp1": "/img/members/maria_rodriguez.png" },
   { "name": "Angela Espert Cornejo", "position": "Finanzas", "pfp1": "/img/members/angela_espert.png" },
-  { "name": "Paula Parra García", "position": "Software" },
+  { "name": "Paula Parra García", "position": "Software","pfp1": "/img/members/paula_parra.png"  },
   { "name": "Gabriel Arnedo Espinosa", "position": "Finanzas", "pfp1": "/img/members/gabriel_arnedo.png" },
   { "name": "Tongxin Pan Du", "position": "Imagen" },
   { "name": "Jose Luis Galán Avilés", "position": "Software", "isCoordinator": 1, "pfp1": "/img/members/jose_luis.png" },
