@@ -2,6 +2,7 @@
 import { contentfulClient } from "../lib/contentful";
 import type { work } from "../lib/contentful";
 import Button from "./Button.astro";
+import { mail_llegada_correos_patrocinios } from "../lib/constants";
 
 let currentYear = new Date().getFullYear();
 
@@ -45,7 +46,7 @@ const posts = entries.items.map((item) => {
       <Button icon="/img/user.svg" href="/about" text="Únete" white />
           <Button 
         icon="/img/money.svg" 
-        href="mailto:contacto@tarsupv.com?subject=Patrocinio" 
+        href={`mailto:${mail_llegada_correos_patrocinios}?subject=Queremos%20formar%20parte%20de%20la%20familia%20TARS%20Robotics%20UPV`} 
         text="Patrocinar" 
       />
     </span>

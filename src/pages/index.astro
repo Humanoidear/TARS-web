@@ -6,6 +6,7 @@ import Button from "../components/Button.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import TeamJson from "../components/team.astro";
+import Sponsors from "../components/Sponsors.astro";
 import Threejs from "../components/threejs.astro";
 import Competitions from "../../public/json/competitions.json";
 import { format } from "date-fns";
@@ -304,6 +305,9 @@ const upcomingCompetitions = Competitions.competitions.slice(0, 3);
           </div>
         </div>
       </div>
+
+      <!-- Sponsors Section -->
+      <Sponsors preview />
 
       <!-- Team Section -->
       <div class="px-6 sm:px-36 mt-36">

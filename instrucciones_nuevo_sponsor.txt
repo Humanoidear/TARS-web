@@ -1,0 +1,26 @@
+Pasos para añadir un sponsor nuevo
+----------------------------------
+1) Prepara el logo:
+   - Coloca la imagen en public/img/sponsors/ (PNG o SVG).
+   - Anota la ruta pública, por ejemplo: /img/sponsors/nombre-logo.png.
+
+2) Añade la entrada en public/json/sponsors.json:
+   - Agrega un objeto dentro del array "sponsors" con este formato:
+     {
+       "name": "Nombre del sponsor",
+       "logo": "/img/sponsors/nombre-logo.png",
+       "url": "https://web-del-sponsor.com",
+       "tier": "PATROCINADOR OFICIAL",  // usa uno de: COLABORADOR | PATROCINADOR OFICIAL | SOCIO ESTRATEGICO
+       "description": "Texto opcional para la página dedicada"
+     }
+
+3) Revisa en local:
+   - Ejecuta npm run dev.
+   - Home: el logo debe salir en la cinta del preview.
+   - /sponsors: debe aparecer en su tier con nombre, logo y descripción.
+
+4) Si quieres cambiar el correo de contacto de patrocinios:
+   - Edita mail_llegada_correos_patrocinios en src/lib/constants.ts.
+
+5) Antes de desplegar:
+   - Ejecuta npm run build para validar.

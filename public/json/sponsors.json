@@ -1,0 +1,32 @@
+{
+  "sponsors": [
+    {
+      "name": "Universitat Politecnica de Valencia",
+      "logo": "/img/logo-geupv.png",
+      "url": "https://www.upv.es",
+      "tier": "SOCIO ESTRATEGICO",
+      "description": "Socio institucional que impulsa proyectos y competiciones del equipo TARS."
+    },
+    {
+      "name": "TARS",
+      "logo": "/img/logo-wordmark.png",
+      "url": "https://tarsupv.com",
+      "tier": "PATROCINADOR OFICIAL",
+      "description": "Patrocinador oficial que apoya el desarrollo de nuestros prototipos y presencia en eventos."
+    },
+    {
+      "name": "Maker Lab",
+      "logo": "/img/defaultbg1.png",
+      "url": "#",
+      "tier": "COLABORADOR",
+      "description": "Colaboracion en fabricacion rapida y apoyo con materiales para iterar prototipos."
+    },
+    {
+      "name": "Robotics Partner",
+      "logo": "/img/defaultbg2.png",
+      "url": "#",
+      "tier": "COLABORADOR",
+      "description": "Asesoramiento tecnico y mentorias para la preparacion de competiciones."
+    }
+  ]
+}
