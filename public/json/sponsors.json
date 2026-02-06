@@ -1,32 +1,25 @@
 {
   "sponsors": [
     {
-      "name": "Universitat Politecnica de Valencia",
-      "logo": "/img/logo-geupv.png",
+      "name": "Generación Espontánea",
+      "logo": "/img/sponsors/logo_ge.png",
       "url": "https://www.upv.es",
       "tier": "SOCIO ESTRATEGICO",
-      "description": "Socio institucional que impulsa proyectos y competiciones del equipo TARS."
+      "description": "Programa de la Universitat Politécnica de Valencia que nos proporciona un marco para desarrollar nuestras actividades de forma autónoma"
     },
     {
-      "name": "TARS",
-      "logo": "/img/logo-wordmark.png",
-      "url": "https://tarsupv.com",
+      "name": "Bricogeek",
+      "logo": "/img/sponsors/logo_bricogeek.png",
+      "url": "https://tienda.bricogeek.com/",
       "tier": "PATROCINADOR OFICIAL",
-      "description": "Patrocinador oficial que apoya el desarrollo de nuestros prototipos y presencia en eventos."
+      "description": "Empresa dedicada a la distribución de material de electrónica, robótica y tecnología orientada a proyectos educativos y profesionales. Ha apoyado al grupo desde sus primeros pasos y continúa ampliando su colaboración para impulsar nuestro crecimiento conjunto."
     },
     {
-      "name": "Maker Lab",
-      "logo": "/img/defaultbg1.png",
-      "url": "#",
-      "tier": "COLABORADOR",
-      "description": "Colaboracion en fabricacion rapida y apoyo con materiales para iterar prototipos."
-    },
-    {
-      "name": "Robotics Partner",
-      "logo": "/img/defaultbg2.png",
-      "url": "#",
-      "tier": "COLABORADOR",
-      "description": "Asesoramiento tecnico y mentorias para la preparacion de competiciones."
+      "name": "Borrell",
+      "logo": "/img/sponsors/logo_borrell.png",
+      "url": "https://www.jborrell.es/",
+      "tier": "PATROCINADOR OFICIAL",
+      "description": "Empresa líder en el diseño y fabricación de maquinaria para el procesado de frutos secos, con soluciones industriales de alta calidad y presencia internacional."
     }
   ]
 }

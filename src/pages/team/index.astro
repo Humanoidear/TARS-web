@@ -36,6 +36,12 @@ typedTeamJson
     return acc;
   }, groupedMembers);
 
+Object.keys(groupedMembers).forEach((position) => {
+  groupedMembers[position].sort(
+    (a, b) => (b.isCoordinator ?? 0) - (a.isCoordinator ?? 0)
+  );
+});
+
 const positions = Object.keys(groupedMembers).filter(
   (pos) => pos.trim() !== "" && groupedMembers[pos].length > 0
 );
@@ -180,7 +186,7 @@ const groupIcons: Record<string, string> = {
                         >
                           {member.name}
                           <p class="text-white/60 font-normal text-sm">
-                            {member.isCoordinator ? "Líder del equipo de" : ""}{" "}
+                            {member.isCoordinator ? "Coordinador de" : ""}{" "}
                             {member.coordinator && (
                               <span>{member.coordinator} · </span>
                             )}
