@@ -2,7 +2,6 @@
   { "name": "Juan Palou de Comasema Jaume", "position": "Imagen", "pfp1": "/img/members/juan_palou.png" },
   { "name": "Daniel Mirón Vidal", "position": "Software", "pfp1": "/img/members/daniel_miron.png" },
   { "name": "Javier Veyrat Zaragozá", "position": "Software", "pfp1": "/img/members/javier_veyrat.png" },
-  { "name": "Raquel Montoliu Balaguer", "position": "Electronica", "pfp1": "/img/members/raquel_montoliu.png" },
   { "name": "María Rodríguez Hernández", "position": "Software", "pfp1": "/img/members/maria_rodriguez.png" },
   { "name": "Angela Espert Cornejo", "position": "Imagen", "pfp1": "/img/members/angela_espert.png" },
   { "name": "Paula Parra García", "position": "Mecanica","isCoordinator": 1, "coordinator": "Departamento de Mecanica","pfp1": "/img/members/paula_parra.png"  },
