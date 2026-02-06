@@ -62,12 +62,10 @@ const ribbonLogos = logoList;
         <div class="ticker-seq" data-ticker-seq>
           {
             ribbonLogos.map((sponsor) => {
-              const Wrapper = sponsor.url ? "a" : "div";
+              const Wrapper = "a";
               return (
                 <Wrapper
-                  href={sponsor.url}
-                  target={sponsor.url ? "_blank" : undefined}
-                  rel={sponsor.url ? "noreferrer" : undefined}
+                  href="/sponsors#sponsors"
                 class="flex items-center justify-center px-2 py-1 opacity-70 hover:opacity-100 transition-opacity border border-white/10 rounded-lg"
                   aria-label={sponsor.name}
                 >
@@ -85,12 +83,10 @@ const ribbonLogos = logoList;
         <div class="ticker-seq" data-ticker-seq aria-hidden="true">
           {
             ribbonLogos.map((sponsor) => {
-              const Wrapper = sponsor.url ? "a" : "div";
+              const Wrapper = "a";
               return (
                 <Wrapper
-                  href={sponsor.url}
-                  target={sponsor.url ? "_blank" : undefined}
-                  rel={sponsor.url ? "noreferrer" : undefined}
+                  href="/sponsors#sponsors"
                 class="flex items-center justify-center px-2 py-1 opacity-70 hover:opacity-100 transition-opacity border border-white/10 rounded-lg"
                   aria-label={sponsor.name}
                 >
