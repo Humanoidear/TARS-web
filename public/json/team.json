@@ -6,7 +6,7 @@
   { "name": "Angela Espert Cornejo", "position": "Imagen", "pfp1": "/img/members/angela_espert.png" },
   { "name": "Paula Parra García", "position": "Mecanica","isCoordinator": 1, "coordinator": "Departamento de Mecanica","pfp1": "/img/members/paula_parra.png"  },
   { "name": "Gabriel Arnedo Espinosa", "position": "Finanzas","isCoordinator": 1, "coordinator": "Departamento de Finanzas y Patrocinios", "pfp1": "/img/members/gabriel_arnedo.png" },
-  { "name": "Tongxin Pan Du", "position": "Imagen" },
+  { "name": "Tongxin Pan Du", "position": "Imagen","pfp1": "/img/members/tongxin_pan.png"  },
   { "name": "Angela Abad", "position": "Imagen" ,"pfp1": "/img/members/angela_abad.png" },
   { "name": "Ana Parrilla Bouaiche", "position": "Mecanica", "pfp1": "/img/members/ana_parrilla.png" },
   { "name": "Pedro Diaz-Masa Valencia", "position": "Imagen", "isCoordinator": 1, "coordinator": "Departamento de Imagen", "pfp1": "/img/members/pedro_diaz.png" },
