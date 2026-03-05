@@ -1,0 +1,40 @@
+{
+  "initiatives": [
+    {
+      "title": "Taller de Git y GitHub",
+      "description": "Impartido por Francisco, coordinador de software, para aprender a usar esta tecnologia clave en el trabajo tecnico del equipo.",
+      "lead": "Francisco Nortes",
+      "leadImage": "/img/members/francisco_nortes.png",
+      "image": "/img/iniciativas/taller_git.jpg",
+      "focus": "Software",
+      "frequency": "Realizado"
+    },
+    {
+      "title": "Taller de soldadura",
+      "description": "Impartido por Enrique, coordinador de electronica, para aprender a soldar los basicos y ganar soltura practica dentro del taller.",
+      "lead": "Enrique Heredia",
+      "leadImage": "/img/members/enrique_heredia.png",
+      "image": "/img/iniciativas/taller_soldadura.jpg",
+      "focus": "Electronica",
+      "frequency": "Realizado"
+    },
+    {
+      "title": "Taller de CapCut",
+      "description": "Impartido por Pedro, coordinador de imagen, para aprender los basicos de la edicion y desarrollar habilidades clave para redes sociales.",
+      "lead": "Pedro Diaz Masa",
+      "leadImage": "/img/members/pedro_diaz.png",
+      "image": "/img/iniciativas/taller_capcut.JPG",
+      "focus": "Imagen y RRSS",
+      "frequency": "Realizado"
+    },
+    {
+      "title": "Concurso de camisetas",
+      "description": "Hecho por Pedro Diaz Masa, en el que se invita a los integrantes del equipo a hacer la foto mas original con la camiseta del equipo.",
+      "lead": "Pedro Diaz Masa",
+      "leadImage": "/img/members/pedro_diaz.png",
+      "image": "/img/iniciativas/camisetas.PNG",
+      "focus": "Comunidad",
+      "frequency": "En curso"
+    }
+  ]
+}
