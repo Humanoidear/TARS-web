@@ -3,11 +3,12 @@
     {
       "slug": "taller-git-github",
       "title": "Taller de Git y GitHub",
-      "description": "Impartido por Francisco, coordinador de software, para aprender a usar esta tecnologia clave en el trabajo tecnico del equipo.",
+      "description": "Impartido por Francisco, coordinador de Software, para aprender a usar esta tecnologia clave en el trabajo técnico del equipo.",
       "longDescription": [
-        "Esta iniciativa se planteo para que los miembros del equipo trabajaran con un flujo comun de ramas, commits y revision de cambios.",
+        "Esta idea se planteó ya que Francisco, detectó que era clave para el funcionamiento de su equipo, que debían conocer a fondo la herramienta que usan para mantener el código al día",
         "Durante el taller se explicaron conceptos basicos y practicos de Git y GitHub, aplicados al dia a dia de proyectos tecnicos compartidos dentro de TARS.",
-        "El objetivo fue reducir errores de coordinacion, mejorar la trazabilidad del trabajo y facilitar una forma mas profesional de colaborar."
+        "El objetivo fue reducir errores de coordinacion, mejorar la trazabilidad del trabajo y facilitar una forma mas profesional de colaborar.",
+        "Al terminar el taller, todos sus participantes conocían los básicos de esta tecnología y entendían mejor las instrucciones que les da Francisco"
       ],
       "lead": "Francisco Nortes",
       "leadImage": "/img/members/francisco_nortes.png",
@@ -16,16 +17,19 @@
         "/img/iniciativas/taller_git.jpg"
       ],
       "focus": "Software",
-      "frequency": "Realizado"
+      "frequency": "En curso"
     },
     {
       "slug": "taller-soldadura",
       "title": "Taller de soldadura",
       "description": "Impartido por Enrique, coordinador de electronica, para aprender a soldar los basicos y ganar soltura practica dentro del taller.",
       "longDescription": [
-        "Este taller se organizo para que los miembros nuevos pudieran familiarizarse con una habilidad esencial en cualquier proyecto de electronica aplicada.",
-        "Se cubrieron materiales, seguridad, tecnicas de soldadura y errores habituales, con una parte practica para afianzar lo aprendido.",
-        "La iniciativa ayudo a que mas miembros pudieran participar con autonomia en montajes y reparaciones del equipo."
+        "Durante todo el mes de febrero, el Coordinador de Electrónica, Enrique, ha impartido este taller semana tras semana a todos los miembros de TARS",
+        "Este taller se organizó para que los miembros nuevos pudieran familiarizarse con una habilidad esencial en cualquier proyecto de electronica aplicada.",
+        "Cada semana, Enrique se pasa horas en el taller enseñando a los miembros de TARS Robotics a soldar",
+        "Además, le añade un toque muy divertido al final del taller, que solo las personas que lo han hecho saben cuál es. Haciendo el taler mucho mas divertido",
+        "La iniciativa esta ayudando a que los miembros de TARS se acostumbren a pringarse las manos en el taller y a pasar tiempo trabajando en cosas distintas"
+
       ],
       "lead": "Enrique Heredia",
       "leadImage": "/img/members/enrique_heredia.png",
@@ -34,7 +38,7 @@
         "/img/iniciativas/taller_soldadura.jpg"
       ],
       "focus": "Electronica",
-      "frequency": "Realizado"
+      "frequency": "En curso"
     },
     {
       "slug": "taller-capcut",
@@ -43,7 +47,8 @@
       "longDescription": [
         "La iniciativa se enfoco en mejorar la capacidad del equipo para comunicar proyectos y actividades de una forma visualmente cuidada.",
         "Se trabajaron principios de edicion, ritmo, formatos para redes y criterios para transformar material tecnico en piezas de comunicacion claras.",
-        "El taller sirvio tambien para repartir mejor el trabajo de imagen y reforzar la identidad visual del equipo."
+        "El taller sirvio tambien para repartir mejor el trabajo de imagen y reforzar la identidad visual del equipo.",
+        "Este taller no solo es util para los miembros del departamento de Imágen, sino que nos ha sido útil a todos los miembros. Hoy en día, saber hacer vídeos que sean atractivos es una habilidad clave que se necesita en todos los aspectos de la vida académica, social y laboral."
       ],
       "lead": "Pedro Diaz Masa",
       "leadImage": "/img/members/pedro_diaz.png",
@@ -51,7 +56,7 @@
       "gallery": [
         "/img/iniciativas/taller_capcut.JPG"
       ],
-      "focus": "Imagen y RRSS",
+      "focus": "Imagen",
       "frequency": "Realizado"
     },
     {
@@ -59,7 +64,8 @@
       "title": "Concurso de camisetas",
       "description": "Hecho por Pedro Diaz Masa, en el que se invita a los integrantes del equipo a hacer la foto mas original con la camiseta del equipo.",
       "longDescription": [
-        "Esta iniciativa nacio con la idea de reforzar sentimiento de equipo y generar contenido mas espontaneo alrededor de TARS.",
+        "No todo es código y trabajo duro en TARS. Tambien hay sitio para la diversión. Aprovechando nuestras impresionantes camisetas, hemos organizado una competicion para que nuestros miembros aprovechasen momentos graciosos y se hiciesen fotos con la camiseta de TARS",
+        "Esta iniciativa nació con la idea de reforzar sentimiento de equipo y generar contenido mas espontaneo alrededor de TARS.",
         "Se planteo como una dinamica abierta para que cada integrante pudiera participar con una propuesta propia y creativa.",
         "Ademas del componente interno, el concurso ayuda a proyectar la imagen del grupo de una forma cercana y reconocible."
       ],

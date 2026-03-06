@@ -1,5 +1,6 @@
 <header
-  class="top-0 header w-screen h-20 bg-opacity-50 px-2 sm:px-10 flex flex-row gap-6 items-center justify-between z-50 fixed"
+  id="siteHeader"
+  class="top-0 header w-screen h-20 px-2 sm:px-10 flex flex-row gap-6 items-center justify-between z-50 fixed"
 >
   <a href="/" class="flex flex-row items-center gap-3">
     <img src="/img/logo-isotype.png" id="isotype" class="w-14 h-14 aspect-square transition-all">
@@ -252,13 +253,16 @@
   }
 
   document.addEventListener("scroll", () => {
+    const header = document.getElementById("siteHeader");
     const isotype = document.getElementById("isotype");
     const wordmark = document.getElementById("wordmark");
     if (window.scrollY > 0) {
+      header?.classList.add("scrolled");
       isotype.style.transform = "translate(-60px, 0)";
       wordmark.style.transform = "translate(-60px, 0)";
       isotype.style.opacity = "0";
     } else {
+      header?.classList.remove("scrolled");
       isotype.style.transform = "translate(0, 0)";
       wordmark.style.transform = "translate(0, 0)";
       isotype.style.opacity = "1";
@@ -356,7 +360,26 @@
 </script>
 
 <style>
-   .header::before {
+  .header {
+    background: linear-gradient(
+      180deg,
+      rgba(8, 8, 8, 0.12) 0%,
+      rgba(8, 8, 8, 0.02) 100%
+    );
+    border-bottom: 1px solid transparent;
+    transition:
+      background-color 0.25s ease,
+      box-shadow 0.25s ease,
+      border-color 0.25s ease;
+  }
+
+  .header.scrolled {
+    background: rgba(8, 8, 8, 0.92);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  }
+
+  .header::before {
     content: "";
     position: absolute;
     top: 0;
@@ -433,74 +456,6 @@
   .link:hover {
     background-color: #6363633e;
     font-weight: 700;
-  }
-
-  header.with-before::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 1) 0%,
-      rgba(0, 0, 0, 0.6) 50%,
-      rgba(0, 0, 0, 0) 100%
-    );
-    filter: blur(4px);
-    transform: scale(150%);
-    pointer-events: none;
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-  }
-
-  header.with-before::before {
-    animation: fadeIn 0.5s forwards;
-  }
-
-  header:not(.with-before)::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 1) 0%,
-      rgba(0, 0, 0, 0.6) 50%,
-      rgba(0, 0, 0, 0) 100%
-    );
-    filter: blur(4px);
-    transform: scale(150%);
-    pointer-events: none;
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-  }
-
-  header:not(.with-before)::before {
-    animation: fadeOut 0.5s forwards;
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  @keyframes fadeOut {
-    from {
-      opacity: 1;
-    }
-    to {
-      opacity: 0;
-    }
   }
 
   a:hover div {
