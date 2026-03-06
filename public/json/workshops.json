@@ -1,0 +1,50 @@
+{
+  "featuredMessage": "Espacio donde reunimos los talleres que organizamos desde TARS para compartir herramientas, procesos y experiencia practica.",
+  "contactUrl": "mailto:tarsupv@gmail.com?subject=Quiero%20informacion%20sobre%20los%20talleres%20de%20TARS",
+  "workshops": [
+    {
+      "slug": "taller-siguelineas-oprobots",
+      "title": "Taller siguelineas",
+      "category": "Robotica",
+      "status": "Proximamente",
+      "date": "30 de abril de 2026",
+      "partner": "OPRobots",
+      "location": "Edificio 1E de la ETSINF, aula 1E 0.1",
+      "schedule": "12:30 - 20:00",
+      "summary": "Taller para el diseno de un robot siguelineas competitivo en colaboracion con OPRobots.",
+      "description": [
+        "Este taller esta pensado como una puerta de entrada al mundo de los robots siguelineas, desde la idea inicial hasta la puesta a punto sobre pista.",
+        "Durante la sesion mostraremos conceptos basicos de mecanica, sensores, control y ajuste del robot, con un enfoque practico para que los asistentes entiendan como tomar decisiones tecnicas reales.",
+        "La actividad se organiza en colaboracion con OPRobots y servira tambien para compartir experiencia, resolver dudas y presentar recursos con los que seguir aprendiendo despues del evento."
+      ],
+      "heroImage": "/img/talleres/taller_siguelineas.jpg",
+      "gallery": [],
+      "highlights": [
+        "Introduccion al funcionamiento de un robot siguelineas",
+        "Revision de sensores, control y ajuste sobre pista",
+        "Consejos practicos para empezar a iterar tu propio diseno"
+      ],
+      "partners": [
+        {
+          "name": "OPRobots",
+          "role": "Colaborador",
+          "logo": "/img/sponsors/logo_oprobots.png"
+        }
+      ],
+      "sponsors": [
+        {
+          "name": "NTT DATA",
+          "role": "Patrocinador",
+          "logo": "/img/sponsors/logo_nttdata.svg"
+        },
+        {
+          "name": "HP",
+          "role": "Patrocinador",
+          "logo": "/img/sponsors/logo_hp.png"
+        }
+      ],
+      "ctaLabel": "Pedir informacion",
+      "ctaUrl": "mailto:tarsupv@gmail.com?subject=Informacion%20sobre%20el%20taller%20siguelineas"
+    }
+  ]
+}

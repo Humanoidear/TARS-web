@@ -1,38 +1,74 @@
 {
   "initiatives": [
     {
+      "slug": "taller-git-github",
       "title": "Taller de Git y GitHub",
       "description": "Impartido por Francisco, coordinador de software, para aprender a usar esta tecnologia clave en el trabajo tecnico del equipo.",
+      "longDescription": [
+        "Esta iniciativa se planteo para que los miembros del equipo trabajaran con un flujo comun de ramas, commits y revision de cambios.",
+        "Durante el taller se explicaron conceptos basicos y practicos de Git y GitHub, aplicados al dia a dia de proyectos tecnicos compartidos dentro de TARS.",
+        "El objetivo fue reducir errores de coordinacion, mejorar la trazabilidad del trabajo y facilitar una forma mas profesional de colaborar."
+      ],
       "lead": "Francisco Nortes",
       "leadImage": "/img/members/francisco_nortes.png",
       "image": "/img/iniciativas/taller_git.jpg",
+      "gallery": [
+        "/img/iniciativas/taller_git.jpg"
+      ],
       "focus": "Software",
       "frequency": "Realizado"
     },
     {
+      "slug": "taller-soldadura",
       "title": "Taller de soldadura",
       "description": "Impartido por Enrique, coordinador de electronica, para aprender a soldar los basicos y ganar soltura practica dentro del taller.",
+      "longDescription": [
+        "Este taller se organizo para que los miembros nuevos pudieran familiarizarse con una habilidad esencial en cualquier proyecto de electronica aplicada.",
+        "Se cubrieron materiales, seguridad, tecnicas de soldadura y errores habituales, con una parte practica para afianzar lo aprendido.",
+        "La iniciativa ayudo a que mas miembros pudieran participar con autonomia en montajes y reparaciones del equipo."
+      ],
       "lead": "Enrique Heredia",
       "leadImage": "/img/members/enrique_heredia.png",
       "image": "/img/iniciativas/taller_soldadura.jpg",
+      "gallery": [
+        "/img/iniciativas/taller_soldadura.jpg"
+      ],
       "focus": "Electronica",
       "frequency": "Realizado"
     },
     {
+      "slug": "taller-capcut",
       "title": "Taller de CapCut",
       "description": "Impartido por Pedro, coordinador de imagen, para aprender los basicos de la edicion y desarrollar habilidades clave para redes sociales.",
+      "longDescription": [
+        "La iniciativa se enfoco en mejorar la capacidad del equipo para comunicar proyectos y actividades de una forma visualmente cuidada.",
+        "Se trabajaron principios de edicion, ritmo, formatos para redes y criterios para transformar material tecnico en piezas de comunicacion claras.",
+        "El taller sirvio tambien para repartir mejor el trabajo de imagen y reforzar la identidad visual del equipo."
+      ],
       "lead": "Pedro Diaz Masa",
       "leadImage": "/img/members/pedro_diaz.png",
       "image": "/img/iniciativas/taller_capcut.JPG",
+      "gallery": [
+        "/img/iniciativas/taller_capcut.JPG"
+      ],
       "focus": "Imagen y RRSS",
       "frequency": "Realizado"
     },
     {
+      "slug": "concurso-camisetas",
       "title": "Concurso de camisetas",
       "description": "Hecho por Pedro Diaz Masa, en el que se invita a los integrantes del equipo a hacer la foto mas original con la camiseta del equipo.",
+      "longDescription": [
+        "Esta iniciativa nacio con la idea de reforzar sentimiento de equipo y generar contenido mas espontaneo alrededor de TARS.",
+        "Se planteo como una dinamica abierta para que cada integrante pudiera participar con una propuesta propia y creativa.",
+        "Ademas del componente interno, el concurso ayuda a proyectar la imagen del grupo de una forma cercana y reconocible."
+      ],
       "lead": "Pedro Diaz Masa",
       "leadImage": "/img/members/pedro_diaz.png",
       "image": "/img/iniciativas/camisetas.PNG",
+      "gallery": [
+        "/img/iniciativas/camisetas.PNG"
+      ],
       "focus": "Comunidad",
       "frequency": "En curso"
     }

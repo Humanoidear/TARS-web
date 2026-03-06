@@ -20,7 +20,6 @@
         <a href="/#about" class="home-dropdown-link">Sobre nosotros</a>
         <a href="/#competitions" class="home-dropdown-link">Competiciones</a>
         <a href="/#initiatives" class="home-dropdown-link">Iniciativas internas</a>
-        <a href="/#sponsors" class="home-dropdown-link">Patrocinadores</a>
         <a href="/#contact" class="home-dropdown-link">Contacto</a>
       </div>
     </div>
@@ -47,6 +46,12 @@
         </a>
       </div>
     </div>
+    <a
+      onmouseover="followMouse('/workshops')"
+      onmouseleave="removeMov('/workshops')"
+      href="/workshops"
+      class="link text-white transition-all"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M4 3h16v4H4V3zm0 7h16v11H4V10zm3 3v5h4v-5H7zm6 0h4v2h-4v-2zm0 3h4v2h-4v-2z" fill="currentColor"/> </svg> Talleres</a
+    >
     <a
       onmouseover="followMouse('/talleres')"
       onmouseleave="removeMov('/talleres')"
@@ -142,6 +147,16 @@
       style="opacity:0; animation: fadeslide 0.3s 600ms cubic-bezier(0, 0, 0, 1) forwards;"
     >
       <a
+        onmouseover="followMouse('/workshops')"
+        onmouseleave="removeMov('/workshops')"
+        href="/workshops"
+        class="text-3xl link text-white transition-all"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M4 3h16v4H4V3zm0 7h16v11H4V10zm3 3v5h4v-5H7zm6 0h4v2h-4v-2zm0 3h4v2h-4v-2z" fill="currentColor"/> </svg> Talleres</a
+      >
+    </span>
+    <span
+      style="opacity:0; animation: fadeslide 0.3s 700ms cubic-bezier(0, 0, 0, 1) forwards;"
+    >
+      <a
         onmouseover="followMouse('/talleres')"
         onmouseleave="removeMov('/talleres')"
         href="/talleres"
@@ -149,7 +164,7 @@
       >
     </span>
     <span
-      style="opacity:0; animation: fadeslide 0.3s 800ms cubic-bezier(0, 0, 0, 1) forwards;"
+      style="opacity:0; animation: fadeslide 0.3s 900ms cubic-bezier(0, 0, 0, 1) forwards;"
     >
       <a
         onmouseover="followMouse('/work')"
