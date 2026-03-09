@@ -2,9 +2,9 @@
   "featuredChannelUrl": "https://www.youtube.com/@TARSupv?sub_confirmation=1",
   "teacherCommunity": {
     "title": "Comunidad para docentes",
-    "description": "Os invitamos a uniros a esta comunidad de WhatsApp. Aquó podréis resolver todas vuestras dudas técnicas de la mano de TARS Robotics UPV",
-    "ctaLabel": "Solicitar acceso por WhatsApp",
-    "url": "https://wa.me/34722158786?text=Hola%20TARS%2C%20soy%20docente%20y%20quiero%20unirme%20a%20la%20comunidad%20de%20WhatsApp%20de%20UN%20Robotics."
+    "description": "Os invitamos a uniros a esta comunidad de WhatsApp. Solo tenéis que rellenar este simple formulario y os daremos acceso inmediatamente.",
+    "ctaLabel": "Solicitar acceso por Google Forms",
+    "url": "https://forms.gle/fiwJL88cCsXBQsLV8"
   },
   "workshops": [
     {
