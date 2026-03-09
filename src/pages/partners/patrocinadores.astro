@@ -19,20 +19,20 @@ const sponsors = (SponsorsData.sponsors || []) as Sponsor[];
 const tiers = [
   { key: "SOCIO ESTRATEGICO", label: "Socio estrategico" },
   { key: "PATROCINADOR OFICIAL", label: "Patrocinador oficial" },
-  { key: "COLABORADOR", label: "Colaborador" },
+  { key: "COLABORADOR", label: "COLABORADOR" },
 ];
 const sponsorMailto = `mailto:${mail_llegada_correos_patrocinios}?subject=Queremos%20formar%20parte%20de%20la%20familia%20TARS%20Robotics%20UPV`;
 ---
 
-<Layout title="Sponsors | TARS Innovacion y excelencia en robotica competitiva">
+<Layout title="Partners | Patrocinadores TARS">
   <Header />
   <HeadTitle
     icon="/img/money.svg"
-    text="Sponsors"
+    text="Patrocinadores"
     description="Nuestros aliados clave y colaboradores que hacen posible TARS."
   />
 
-  <main class="max-w-[1400px] mx-auto px-4 sm:px-10 pb-16">
+  <main id="sponsors" class="max-w-[1400px] mx-auto px-4 sm:px-10 pb-16">
     <section class="mb-10 flex flex-col gap-4">
       <h2 class="text-3xl font-bold text-white">Aliados que impulsan TARS</h2>
       <p class="text-white/70 max-w-3xl">

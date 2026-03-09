@@ -1,25 +1,32 @@
 {
   "sponsors": [
     {
-      "name": "Generación Espontánea",
+      "name": "Generacion Espontanea",
       "logo": "/img/sponsors/logo_ge.png",
       "url": "https://www.upv.es",
       "tier": "SOCIO ESTRATEGICO",
-      "description": "Programa de la Universitat Politécnica de Valencia que nos proporciona un marco para desarrollar nuestras actividades de forma autónoma"
+      "description": "Programa de la Universitat Politecnica de Valencia que nos proporciona un marco para desarrollar nuestras actividades de forma autonoma."
     },
     {
       "name": "Bricogeek",
       "logo": "/img/sponsors/logo_bricogeek.png",
       "url": "https://tienda.bricogeek.com/",
       "tier": "PATROCINADOR OFICIAL",
-      "description": "Empresa dedicada a la distribución de material de electrónica, robótica y tecnología orientada a proyectos educativos y profesionales. Ha apoyado al grupo desde sus primeros pasos y continúa ampliando su colaboración para impulsar nuestro crecimiento conjunto."
+      "description": "Empresa de distribucion de material de electronica, robotica y tecnologia para proyectos educativos y profesionales."
     },
     {
       "name": "Borrell",
       "logo": "/img/sponsors/logo_borrell.png",
       "url": "https://www.jborrell.es/",
       "tier": "PATROCINADOR OFICIAL",
-      "description": "Empresa líder en el diseño y fabricación de maquinaria para el procesado de frutos secos, con soluciones industriales de alta calidad y presencia internacional."
+      "description": "Empresa de diseno y fabricacion de maquinaria para el procesado de frutos secos con presencia internacional."
+    },
+    {
+      "name": "Electronday",
+      "logo": "/img/sponsors/logo_electronday.jpg",
+      "url": "https://electronday.es/",
+      "tier": "COLABORADOR",
+      "description": "Empresa colaboradora en electronica y componentes, apoyando al equipo en prototipado y pruebas tecnicas."
     }
   ]
 }

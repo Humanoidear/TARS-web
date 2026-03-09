@@ -1,46 +1,69 @@
 <header
-  class="top-0 header w-screen h-20 bg-opacity-50 px-2 sm:px-10 flex flex-row gap-6 items-center justify-between z-50 fixed"
+  id="siteHeader"
+  class="top-0 header w-screen h-20 px-2 sm:px-10 flex flex-row gap-6 items-center justify-between z-50 fixed"
 >
   <a href="/" class="flex flex-row items-center gap-3">
     <img src="/img/logo-isotype.png" id="isotype" class="w-14 h-14 aspect-square transition-all">
     <img src="/img/logo-wordmark.png" id="wordmark" class="h-6 transition-all">
   </a>
   <nav class="hidden sm:flex justify-between">
-    <a
-      onmouseover="followMouse('/')"
-      onmouseleave="removeMov('/')"
-      href="/"
-      class="link text-white transition-all"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M14 2h-4v2H8v2H6v2H4v2H2v2h2v10h7v-6h2v6h7V12h2v-2h-2V8h-2V6h-2V4h-2V2zm0 2v2h2v2h2v2h2v2h-2v8h-3v-6H9v6H6v-8H4v-2h2V8h2V6h2V4h4z" fill="currentColor"/> </svg> Home</a
-    >
-    <a
-      onmouseover="followMouse('/#about')"
-      onmouseleave="removeMov('/#about')"
-      href="/#about"
-      class="link text-white transition-all"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M3 3h2v18H3V3zm16 0H5v2h14v14H5v2h16V3h-2zm-8 6h2V7h-2v2zm2 8h-2v-6h2v6z" fill="currentColor"/> </svg> About</a
-    >
+    <div id="homeMenuWrap" class="relative">
+      <a
+        onmouseover="followMouse('/')"
+        onmouseleave="removeMov('/')"
+        href="/"
+        class="link text-white transition-all"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M14 2h-4v2H8v2H6v2H4v2H2v2h2v10h7v-6h2v6h7V12h2v-2h-2V8h-2V6h-2V4h-2V2zm0 2v2h2v2h2v2h2v2h-2v8h-3v-6H9v6H6v-8H4v-2h2V8h2V6h2V4h4z" fill="currentColor"/> </svg> Home
+        <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-4 h-4 opacity-70"><path d="M12 16l-6-6h12l-6 6z" fill="currentColor"/></svg></a
+      >
+      <div id="homeDropdown" class="home-dropdown absolute top-full left-0 mt-2 min-w-[250px] rounded-lg border border-zinc-700/80 bg-[#101010]/95 backdrop-blur-md p-2 shadow-xl">
+        <a href="/#top" class="home-dropdown-link">Inicio</a>
+        <a href="/#news" class="home-dropdown-link">Ultimas noticias</a>
+        <a href="/#about" class="home-dropdown-link">Sobre nosotros</a>
+        <a href="/#competitions" class="home-dropdown-link">Competiciones</a>
+        <a href="/#initiatives" class="home-dropdown-link">Iniciativas internas</a>
+        <a href="/#contact" class="home-dropdown-link">Contacto</a>
+      </div>
+    </div>
     <a
       onmouseover="followMouse('/team')"
       onmouseleave="removeMov('/team')"
       href="/team"
       class="link text-white transition-all"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M11 0H5v2H3v6h2v2h6V8H5V2h6V0zm0 2h2v6h-2V2zM0 14h2v4h12v2H0v-6zm2 0h12v-2H2v2zm14 0h-2v6h2v-6zM15 0h4v2h-4V0zm4 8h-4v2h4V8zm0-6h2v6h-2V2zm5 12h-2v4h-4v2h6v-6zm-6-2h4v2h-4v-2z" fill="currentColor"/> </svg> Team</a
     >
+    <div id="partnersMenuWrap" class="relative">
+      <a
+        onmouseover="followMouse('/partners')"
+        onmouseleave="removeMov('/partners')"
+        href="/partners"
+        class="link text-white transition-all"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2l2.39 4.84 5.34.77-3.86 3.76.91 5.31L12 14.77 7.22 16.68l.91-5.31L4.27 7.61l5.34-.77L12 2z" fill="currentColor"/> </svg> Partners
+        <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-4 h-4 opacity-70"><path d="M12 16l-6-6h12l-6 6z" fill="currentColor"/></svg></a
+      >
+      <div id="partnersDropdown" class="home-dropdown absolute top-full left-0 mt-2 min-w-[230px] rounded-lg border border-zinc-700/80 bg-[#101010]/95 backdrop-blur-md p-2 shadow-xl">
+        <a href="/partners#patrocinadores" class="home-dropdown-link">
+          Patrocinadores
+        </a>
+        <a href="/partners#entidades" class="home-dropdown-link">
+          Entidades
+        </a>
+      </div>
+    </div>
     <a
-      onmouseover="followMouse('/sponsors')"
-      onmouseleave="removeMov('/sponsors')"
-      href="/sponsors"
-      class="link text-white transition-all"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2l2.39 4.84 5.34.77-3.86 3.76.91 5.31L12 14.77 7.22 16.68l.91-5.31L4.27 7.61l5.34-.77L12 2z" fill="currentColor"/> </svg> Sponsors</a
+      onmouseover="followMouse('/workshops')"
+      onmouseleave="removeMov('/workshops')"
+      href="/workshops"
+      class="link text-white transition-all"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M4 3h16v4H4V3zm0 7h16v11H4V10zm3 3v5h4v-5H7zm6 0h4v2h-4v-2zm0 3h4v2h-4v-2z" fill="currentColor"/> </svg> Talleres</a
+    >
+    <a
+      onmouseover="followMouse('/talleres')"
+      onmouseleave="removeMov('/talleres')"
+      href="/talleres"
+      class="link text-white transition-all"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M4 4h16v12H4V4zm2 2v8h12V6H6zm14 12H4v2h16v-2zM2 2h2v16H2V2zm18 0h2v16h-2V2z" fill="currentColor"/> </svg> UN Robotics</a
     >
     <a
       onmouseover="followMouse('/work')"
       onmouseleave="removeMov('/work')"
       href="/work"
       class="link text-white transition-all"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M7 0h16v20H5V0h2zm14 18V2H7v16h14zM9 4h10v2H9V4zm10 4H9v2h10V8zM9 12h7v2H9v-2zm10 10H3V4H1v20h18v-2z" fill="currentColor"/> </svg> News</a
-    >
-    <a
-      onmouseover="followMouse('/#contact')"
-      onmouseleave="removeMov('/#contact')"
-      href="/#contact"
-      class="link text-white transition-all"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M20 2H2v20h2V4h16v12H6v2H4v2h2v-2h16V2h-2z" fill="currentColor"/> </svg> Contact</a
     >
   </nav>
   <div class="sm:hidden flex items-center">
@@ -77,62 +100,79 @@
     <span
       style="opacity:0; animation: fadeslide 0.3s 0ms cubic-bezier(0, 0, 0, 1) forwards;"
     >
-    <a
-    onmouseover="followMouse('/')"
-    onmouseleave="removeMov('/')"
-    href="/"
-    class="text-3xl link text-white transition-all"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M14 2h-4v2H8v2H6v2H4v2H2v2h2v10h7v-6h2v6h7V12h2v-2h-2V8h-2V6h-2V4h-2V2zm0 2v2h2v2h2v2h2v2h-2v8h-3v-6H9v6H6v-8H4v-2h2V8h2V6h2V4h4z" fill="currentColor"/> </svg> Home</a
-  >
-  </span>
+      <a
+        onmouseover="followMouse('/')"
+        onmouseleave="removeMov('/')"
+        href="/"
+        class="text-3xl link text-white transition-all"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M14 2h-4v2H8v2H6v2H4v2H2v2h2v10h7v-6h2v6h7V12h2v-2h-2V8h-2V6h-2V4h-2V2zm0 2v2h2v2h2v2h2v2h-2v8h-3v-6H9v6H6v-8H4v-2h2V8h2V6h2V4h4z" fill="currentColor"/> </svg> Home</a
+      >
+    </span>
     <span
       style="opacity:0; animation: fadeslide 0.3s 200ms cubic-bezier(0, 0, 0, 1) forwards;"
     >
-    <a
-    onmouseover="followMouse('/#about')"
-    onmouseleave="removeMov('/#about')"
-    href="/#about"
-    class="text-3xl link text-white transition-all"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M3 3h2v18H3V3zm16 0H5v2h14v14H5v2h16V3h-2zm-8 6h2V7h-2v2zm2 8h-2v-6h2v6z" fill="currentColor"/> </svg> About</a
-  >
-  </span>
+      <a
+        onmouseover="followMouse('/team')"
+        onmouseleave="removeMov('/team')"
+        href="/team"
+        class="text-3xl link text-white transition-all"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M11 0H5v2H3v6h2v2h6V8H5V2h6V0zm0 2h2v6h-2V2zM0 14h2v4h12v2H0v-6zm2 0h12v-2H2v2zm14 0h-2v6h2v-6zM15 0h4v2h-4V0zm4 8h-4v2h4V8zm0-6h2v6h-2V2zm5 12h-2v4h-4v2h6v-6zm-6-2h4v2h-4v-2z" fill="currentColor"/> </svg> Team</a
+      >
+    </span>
     <span
       style="opacity:0; animation: fadeslide 0.3s 400ms cubic-bezier(0, 0, 0, 1) forwards;"
     >
-    <a
-    onmouseover="followMouse('/team')"
-    onmouseleave="removeMov('/team')"
-    href="/team"
-    class="text-3xl link text-white transition-all"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M11 0H5v2H3v6h2v2h6V8H5V2h6V0zm0 2h2v6h-2V2zM0 14h2v4h12v2H0v-6zm2 0h12v-2H2v2zm14 0h-2v6h2v-6zM15 0h4v2h-4V0zm4 8h-4v2h4V8zm0-6h2v6h-2V2zm5 12h-2v4h-4v2h6v-6zm-6-2h4v2h-4v-2z" fill="currentColor"/> </svg> Team</a
-  >
+      <a
+        onmouseover="followMouse('/partners')"
+        onmouseleave="removeMov('/partners')"
+        href="/partners"
+        class="text-3xl link text-white transition-all"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2l2.39 4.84 5.34.77-3.86 3.76.91 5.31L12 14.77 7.22 16.68l.91-5.31L4.27 7.61l5.34-.77L12 2z" fill="currentColor"/> </svg> Partners</a
+      >
+    </span>
+    <span
+      style="opacity:0; animation: fadeslide 0.3s 500ms cubic-bezier(0, 0, 0, 1) forwards;"
+    >
+      <a
+        href="/partners#patrocinadores"
+        class="text-xl link text-white/80 transition-all"
+      >
+        Patrocinadores
+      </a>
+    </span>
+    <span
+      style="opacity:0; animation: fadeslide 0.3s 550ms cubic-bezier(0, 0, 0, 1) forwards;"
+    >
+      <a href="/partners#entidades" class="text-xl link text-white/80 transition-all">
+        Entidades
+      </a>
     </span>
     <span
       style="opacity:0; animation: fadeslide 0.3s 600ms cubic-bezier(0, 0, 0, 1) forwards;"
     >
-    <a
-    onmouseover="followMouse('/sponsors')"
-    onmouseleave="removeMov('/sponsors')"
-    href="/sponsors"
-    class="text-3xl link text-white transition-all"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2l2.39 4.84 5.34.77-3.86 3.76.91 5.31L12 14.77 7.22 16.68l.91-5.31L4.27 7.61l5.34-.77L12 2z" fill="currentColor"/> </svg> Sponsors</a
-  >
-  </span>
-    <span
-      style="opacity:0; animation: fadeslide 0.3s 1000ms cubic-bezier(0, 0, 0, 1) forwards;"
-    >
-    <a
-    onmouseover="followMouse('/work')"
-    onmouseleave="removeMov('/work')"
-    href="/work"
-    class="text-3xl link text-white transition-all"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M7 0h16v20H5V0h2zm14 18V2H7v16h14zM9 4h10v2H9V4zm10 4H9v2h10V8zM9 12h7v2H9v-2zm10 10H3V4H1v20h18v-2z" fill="currentColor"/> </svg> News</a
-  >
+      <a
+        onmouseover="followMouse('/workshops')"
+        onmouseleave="removeMov('/workshops')"
+        href="/workshops"
+        class="text-3xl link text-white transition-all"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M4 3h16v4H4V3zm0 7h16v11H4V10zm3 3v5h4v-5H7zm6 0h4v2h-4v-2zm0 3h4v2h-4v-2z" fill="currentColor"/> </svg> Talleres</a
+      >
     </span>
     <span
-      style="opacity:0; animation: fadeslide 0.3s 800ms cubic-bezier(0, 0, 0, 1) forwards;"
+      style="opacity:0; animation: fadeslide 0.3s 700ms cubic-bezier(0, 0, 0, 1) forwards;"
     >
-    <a
-    onmouseover="followMouse('/#contact')"
-    onmouseleave="removeMov('/#contact')"
-    href="/#contact"
-    class="text-3xl link text-white transition-all"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M20 2H2v20h2V4h16v12H6v2H4v2h2v-2h16V2h-2z" fill="currentColor"/> </svg> Contact</a
-  >
+      <a
+        onmouseover="followMouse('/talleres')"
+        onmouseleave="removeMov('/talleres')"
+        href="/talleres"
+        class="text-3xl link text-white transition-all"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M4 4h16v12H4V4zm2 2v8h12V6H6zm14 12H4v2h16v-2zM2 2h2v16H2V2zm18 0h2v16h-2V2z" fill="currentColor"/> </svg> UN Robotics</a
+      >
+    </span>
+    <span
+      style="opacity:0; animation: fadeslide 0.3s 900ms cubic-bezier(0, 0, 0, 1) forwards;"
+    >
+      <a
+        onmouseover="followMouse('/work')"
+        onmouseleave="removeMov('/work')"
+        href="/work"
+        class="text-3xl link text-white transition-all"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M7 0h16v20H5V0h2zm14 18V2H7v16h14zM9 4h10v2H9V4zm10 4H9v2h10V8zM9 12h7v2H9v-2zm10 10H3V4H1v20h18v-2z" fill="currentColor"/> </svg> News</a
+      >
     </span>
   </div>
   <div
@@ -213,17 +253,53 @@
   }
 
   document.addEventListener("scroll", () => {
+    const header = document.getElementById("siteHeader");
     const isotype = document.getElementById("isotype");
     const wordmark = document.getElementById("wordmark");
     if (window.scrollY > 0) {
+      header?.classList.add("scrolled");
       isotype.style.transform = "translate(-60px, 0)";
       wordmark.style.transform = "translate(-60px, 0)";
       isotype.style.opacity = "0";
     } else {
+      header?.classList.remove("scrolled");
       isotype.style.transform = "translate(0, 0)";
       wordmark.style.transform = "translate(0, 0)";
       isotype.style.opacity = "1";
     }
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const dropdowns = [];
+
+    const setupDelayedDropdown = (menuWrapId, dropdownId) => {
+      const menuWrap = document.getElementById(menuWrapId);
+      const dropdown = document.getElementById(dropdownId);
+      if (!menuWrap || !dropdown) return;
+      dropdowns.push(dropdown);
+
+      let closeTimeout;
+      const openMenu = () => {
+        if (closeTimeout) clearTimeout(closeTimeout);
+        dropdowns.forEach((item) => {
+          if (item !== dropdown) item.classList.remove("open");
+        });
+        dropdown.classList.add("open");
+      };
+      const closeMenuDelayed = () => {
+        closeTimeout = setTimeout(() => {
+          dropdown.classList.remove("open");
+        }, 1000);
+      };
+
+      menuWrap.addEventListener("mouseenter", openMenu);
+      menuWrap.addEventListener("mouseleave", closeMenuDelayed);
+      dropdown.addEventListener("mouseenter", openMenu);
+      dropdown.addEventListener("mouseleave", closeMenuDelayed);
+    };
+
+    setupDelayedDropdown("homeMenuWrap", "homeDropdown");
+    setupDelayedDropdown("partnersMenuWrap", "partnersDropdown");
   });
 </script>
 
@@ -284,7 +360,26 @@
 </script>
 
 <style>
-   .header::before {
+  .header {
+    background: linear-gradient(
+      180deg,
+      rgba(8, 8, 8, 0.12) 0%,
+      rgba(8, 8, 8, 0.02) 100%
+    );
+    border-bottom: 1px solid transparent;
+    transition:
+      background-color 0.25s ease,
+      box-shadow 0.25s ease,
+      border-color 0.25s ease;
+  }
+
+  .header.scrolled {
+    background: rgba(8, 8, 8, 0.92);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  }
+
+  .header::before {
     content: "";
     position: absolute;
     top: 0;
@@ -316,78 +411,51 @@
     width: 20px;
     height: 20px;
   }
+
+  .home-dropdown {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px) scale(0.98);
+    transform-origin: top left;
+    transition: all 0.22s ease;
+    pointer-events: none;
+    box-shadow:
+      0 10px 30px rgba(0, 0, 0, 0.45),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
+
+  .home-dropdown.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+  }
+
+  .home-dropdown-link {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 6px;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.9rem;
+    font-family: "SourceCodePro", monospace;
+    border: 1px solid transparent;
+    transition: all 0.18s;
+  }
+
+  .home-dropdown-link:hover {
+    background: linear-gradient(
+      90deg,
+      rgba(59, 130, 246, 0.12),
+      rgba(147, 51, 234, 0.08)
+    );
+    border-color: rgba(59, 130, 246, 0.3);
+    color: white;
+    transform: translateX(2px);
+  }
   
   .link:hover {
     background-color: #6363633e;
     font-weight: 700;
-  }
-
-  header.with-before::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 1) 0%,
-      rgba(0, 0, 0, 0.6) 50%,
-      rgba(0, 0, 0, 0) 100%
-    );
-    filter: blur(4px);
-    transform: scale(150%);
-    pointer-events: none;
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-  }
-
-  header.with-before::before {
-    animation: fadeIn 0.5s forwards;
-  }
-
-  header:not(.with-before)::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 1) 0%,
-      rgba(0, 0, 0, 0.6) 50%,
-      rgba(0, 0, 0, 0) 100%
-    );
-    filter: blur(4px);
-    transform: scale(150%);
-    pointer-events: none;
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-  }
-
-  header:not(.with-before)::before {
-    animation: fadeOut 0.5s forwards;
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  @keyframes fadeOut {
-    from {
-      opacity: 1;
-    }
-    to {
-      opacity: 0;
-    }
   }
 
   a:hover div {

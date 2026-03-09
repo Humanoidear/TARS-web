@@ -1,0 +1,29 @@
+{
+  "featuredChannelUrl": "https://www.youtube.com/@TARSupv?sub_confirmation=1",
+  "workshops": [
+    {
+      "title": "Introduccion a la competicion ONU",
+      "description": "Contexto general de la competicion, formato de entrega y criterios de evaluacion.",
+      "youtubeUrl": "https://youtu.be/ywEkzXkNuP8?si=2jmWm7qKovsGU8Mx",
+      "level": "Basico",
+      "duration": "12 min",
+      "status": "Disponible"
+    },
+    {
+      "title": "Diseno de solucion y estrategia",
+      "description": "Como definir el problema, crear una propuesta clara y organizar un plan tecnico viable.",
+      "youtubeUrl": "https://youtu.be/ywEkzXkNuP8?si=2jmWm7qKovsGU8Mx",
+      "level": "Intermedio",
+      "duration": "18 min",
+      "status": "Proximamente"
+    },
+    {
+      "title": "Preparacion de entrega final",
+      "description": "Checklist final para documentacion, validacion y presentacion antes del envio oficial.",
+      "youtubeUrl": "https://youtu.be/ywEkzXkNuP8?si=2jmWm7qKovsGU8Mx",
+      "level": "Intermedio",
+      "duration": "15 min",
+      "status": "Proximamente"
+    }
+  ]
+}

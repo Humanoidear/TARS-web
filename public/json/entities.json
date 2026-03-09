@@ -1,0 +1,11 @@
+{
+  "entities": [
+    {
+      "name": "Organizacion de las Naciones Unidas (ONU)",
+      "logo": "/img/entities/logo_onu.svg",
+      "whatTheyDo": "La ONU impulsa la cooperacion internacional y trabaja en retos globales como educacion, desarrollo sostenible, innovacion y acceso equitativo a oportunidades.",
+      "collaboration": "Colaboramos participando en su competicion mediante talleres formativos y contenido tecnico para preparar a los participantes desde nuestra experiencia en robotica.",
+      "url": "https://www.un.org/"
+    }
+  ]
+}
