@@ -57,7 +57,7 @@
       onmouseover="followMouse('/talleres')"
       onmouseleave="removeMov('/talleres')"
       href="/talleres"
-      class="link text-white transition-all"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M4 4h16v12H4V4zm2 2v8h12V6H6zm14 12H4v2h16v-2zM2 2h2v16H2V2zm18 0h2v16h-2V2z" fill="currentColor"/> </svg> UN Robotics</a
+      class="link text-white transition-all"><img src="/img/entities/onu-mark.svg" alt="ONU" class="onu-nav-icon" /> UN Robotics</a
     >
     <a
       onmouseover="followMouse('/work')"
@@ -161,7 +161,7 @@
         onmouseover="followMouse('/talleres')"
         onmouseleave="removeMov('/talleres')"
         href="/talleres"
-        class="text-3xl link text-white transition-all"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M4 4h16v12H4V4zm2 2v8h12V6H6zm14 12H4v2h16v-2zM2 2h2v16H2V2zm18 0h2v16h-2V2z" fill="currentColor"/> </svg> UN Robotics</a
+        class="text-3xl link text-white transition-all"><img src="/img/entities/onu-mark.svg" alt="ONU" class="onu-nav-icon" /> UN Robotics</a
       >
     </span>
     <span
@@ -410,6 +410,14 @@
   .link svg {
     width: 20px;
     height: 20px;
+  }
+
+  .onu-nav-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    filter: invert(1);
+    opacity: 0.92;
   }
 
   .home-dropdown {

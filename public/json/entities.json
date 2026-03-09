@@ -1,10 +1,10 @@
 {
   "entities": [
     {
-      "name": "Organizacion de las Naciones Unidas (ONU)",
-      "logo": "/img/entities/logo_onu.svg",
-      "whatTheyDo": "La ONU impulsa la cooperacion internacional y trabaja en retos globales como educacion, desarrollo sostenible, innovacion y acceso equitativo a oportunidades.",
-      "collaboration": "Colaboramos participando en su competicion mediante talleres formativos y contenido tecnico para preparar a los participantes desde nuestra experiencia en robotica.",
+      "name": "United Nations Global Service Center",
+      "logo": "/img/entities/ungsc_logo.jfif",
+      "whatTheyDo": "The United Nations Global Service Centre (Valencia) provides operational, technological and logistical support to United Nations missions worldwide.",
+      "collaboration": "UNGSC promotes the teacher training initiative linked to the UN Robotics Competition. TARS Robotics UPV contributes by producing educational tutorials to help teachers guide students in building robots for the competition.",
       "url": "https://www.un.org/"
     }
   ]

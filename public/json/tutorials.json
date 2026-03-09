@@ -1,25 +1,31 @@
 {
   "featuredChannelUrl": "https://www.youtube.com/@TARSupv?sub_confirmation=1",
+  "teacherCommunity": {
+    "title": "Comunidad para docentes",
+    "description": "Os invitamos a uniros a esta comunidad de WhatsApp. Aquó podréis resolver todas vuestras dudas técnicas de la mano de TARS Robotics UPV",
+    "ctaLabel": "Solicitar acceso por WhatsApp",
+    "url": "https://wa.me/34722158786?text=Hola%20TARS%2C%20soy%20docente%20y%20quiero%20unirme%20a%20la%20comunidad%20de%20WhatsApp%20de%20UN%20Robotics."
+  },
   "workshops": [
     {
-      "title": "Introduccion a la competicion ONU",
-      "description": "Contexto general de la competicion, formato de entrega y criterios de evaluacion.",
+      "title": "Introduccion a la competicion UN Robotics",
+      "description": "Comentaremos los requisitos, normativa y especificaciones técnicas de la competición en la que participaréis ",
       "youtubeUrl": "https://youtu.be/ywEkzXkNuP8?si=2jmWm7qKovsGU8Mx",
       "level": "Basico",
       "duration": "12 min",
       "status": "Disponible"
     },
     {
-      "title": "Diseno de solucion y estrategia",
-      "description": "Como definir el problema, crear una propuesta clara y organizar un plan tecnico viable.",
+      "title": "Configuración del Arduino IDE",
+      "description": "Configuración del Arduino IDE. El entorno será configurado de forma que sea simple e intuitivo para los alumnos manejarse en estos entornos.",
       "youtubeUrl": "https://youtu.be/ywEkzXkNuP8?si=2jmWm7qKovsGU8Mx",
-      "level": "Intermedio",
+      "level": "Basico",
       "duration": "18 min",
       "status": "Proximamente"
     },
     {
-      "title": "Preparacion de entrega final",
-      "description": "Checklist final para documentacion, validacion y presentacion antes del envio oficial.",
+      "title": "Hardware: motores DC",
+      "description": "Descripcion, puesta en marcha y código básico para hacer funcionar un motor DC",
       "youtubeUrl": "https://youtu.be/ywEkzXkNuP8?si=2jmWm7qKovsGU8Mx",
       "level": "Intermedio",
       "duration": "15 min",
