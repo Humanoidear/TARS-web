@@ -6,6 +6,7 @@ import Button from "../components/Button.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Threejs from "../components/threejs.astro";
+import Team from "../components/team.astro";
 import Competitions from "../../public/json/competitions.json";
 import InternalInitiatives from "../../public/json/internal_initiatives.json";
 import { format } from "date-fns";
@@ -372,6 +373,22 @@ const internalInitiatives = InternalInitiatives.initiatives;
             ))
           }
         </div>
+      </div>
+
+      <!-- Team Section -->
+      <div id="team" class="px-6 sm:px-36 mt-28 scroll-mt-28">
+        <span class="inline-block text-blue-500 text-sm font-medium mb-2">
+          QUIENES SOMOS
+        </span>
+        <div class="mb-6 w-full flex flex-row items-center justify-between gap-6">
+          <h2 class="font-bold text-4xl text-white">
+            Conoce al equipo
+          </h2>
+        </div>
+        <p class="text-white/70 max-w-3xl mb-8">
+          Personas que disenian, construyen y coordinan cada proyecto dentro de TARS.
+        </p>
+        <Team />
       </div>
 
       <!-- Contact Section -->
