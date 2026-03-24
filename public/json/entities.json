@@ -2,7 +2,6 @@
   "entities": [
     {
       "name": "United Nations Global Service Center",
-      "logo": "/img/entities/ungsc_logo.jfif",
       "whatTheyDo": "The United Nations Global Service Centre (Valencia) provides operational, technological and logistical support to United Nations missions worldwide.",
       "collaboration": "UNGSC promotes the teacher training initiative linked to the UN Robotics Competition. TARS Robotics UPV contributes by producing educational tutorials to help teachers guide students in building robots for the competition.",
       "url": "https://www.un.org/"

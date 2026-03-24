@@ -1,32 +1,39 @@
 {
   "sponsors": [
     {
-      "name": "Generacion Espontanea",
+      "name": "Generación Espontánea",
       "logo": "/img/sponsors/logo_ge.png",
       "url": "https://www.upv.es",
       "tier": "SOCIO ESTRATEGICO",
-      "description": "Programa de la Universitat Politecnica de Valencia que nos proporciona un marco para desarrollar nuestras actividades de forma autonoma."
+      "description": "Programa de la Universitat Politècnica de València que nos proporciona un marco para desarrollar nuestras actividades de forma autónoma."
     },
     {
       "name": "Bricogeek",
       "logo": "/img/sponsors/logo_bricogeek.png",
       "url": "https://tienda.bricogeek.com/",
       "tier": "PATROCINADOR OFICIAL",
-      "description": "Empresa de distribucion de material de electronica, robotica y tecnologia para proyectos educativos y profesionales."
+      "description": "Empresa de distribución de material de electrónica, robótica y tecnología para proyectos educativos y profesionales."
     },
     {
       "name": "Borrell",
       "logo": "/img/sponsors/logo_borrell.png",
       "url": "https://www.jborrell.es/",
       "tier": "PATROCINADOR OFICIAL",
-      "description": "Empresa de diseno y fabricacion de maquinaria para el procesado de frutos secos con presencia internacional."
+      "description": "Empresa de diseño y fabricación de maquinaria para el procesado de frutos secos con presencia internacional."
     },
     {
       "name": "Electronday",
       "logo": "/img/sponsors/logo_electronday.jpg",
       "url": "https://electronday.es/",
       "tier": "COLABORADOR",
-      "description": "Empresa colaboradora en electronica y componentes, apoyando al equipo en prototipado y pruebas tecnicas."
+      "description": "Empresa colaboradora en electrónica y componentes, apoyando al equipo en prototipado y pruebas técnicas."
+    },
+    {
+      "name": "Smart Materials",
+      "logo": "/img/sponsors/logo_smart_materials.jpg",
+      "url": "https://www.smartmaterials3d.com/",
+      "tier": "COLABORADOR",
+      "description": "Empresa líder de filamentos 3D. Colabora con nosotros ofreciéndonos material de primera al mejor precio."
     }
   ]
 }

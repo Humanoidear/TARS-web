@@ -27,19 +27,19 @@ interface Entity {
 const sponsors = (SponsorsData.sponsors || []) as Sponsor[];
 const entities = (EntitiesData.entities || []) as Entity[];
 const tiers = [
-  { key: "SOCIO ESTRATEGICO", label: "Socio estrategico" },
+  { key: "SOCIO ESTRATEGICO", label: "Socio estratégico" },
   { key: "PATROCINADOR OFICIAL", label: "Patrocinador oficial" },
-  { key: "COLABORADOR", label: "COLABORADOR" },
+  { key: "COLABORADOR", label: "Colaborador" },
 ];
 const sponsorMailto = `mailto:${mail_llegada_correos_patrocinios}?subject=Queremos%20formar%20parte%20de%20la%20familia%20TARS%20Robotics%20UPV`;
 ---
 
-<Layout title="Partners | TARS Innovacion y excelencia en robotica competitiva">
+<Layout title="Partners | TARS Innovación y excelencia en robótica competitiva">
   <Header />
   <HeadTitle
     icon="/img/money.svg"
     text="Partners"
-    description="Primero patrocinadores y despues entidades, en una unica pagina."
+    description="Primero patrocinadores y después entidades, en una única página."
   />
 
   <main class="max-w-[1400px] mx-auto px-4 sm:px-10 pb-16">
@@ -132,7 +132,7 @@ const sponsorMailto = `mailto:${mail_llegada_correos_patrocinios}?subject=Querem
     <section id="entidades" class="mt-20 mb-8 flex flex-col gap-3 scroll-mt-28">
       <h2 class="text-3xl font-bold text-white">Entidades</h2>
       <p class="text-white/70 max-w-3xl">
-        Organizaciones e instituciones que colaboran con TARS en iniciativas estrategicas.
+        Organizaciones e instituciones que colaboran con TARS en iniciativas estratégicas.
       </p>
     </section>
 
@@ -144,7 +144,7 @@ const sponsorMailto = `mailto:${mail_llegada_correos_patrocinios}?subject=Querem
               <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-5">
                 <div>
                   <h2 class="text-2xl font-bold text-white">{entity.name}</h2>
-                  <p class="mt-2 text-sm text-white/60">Pulsa para desplegar informacion</p>
+                  <p class="mt-2 text-sm text-white/60">Pulsa para desplegar información</p>
                 </div>
                 <div class="flex items-center gap-4">
                   {
@@ -163,18 +163,18 @@ const sponsorMailto = `mailto:${mail_llegada_correos_patrocinios}?subject=Querem
             <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
               <div class="rounded-lg border border-zinc-800/60 bg-black/20 p-4">
                 <h3 class="text-blue-400 text-sm uppercase tracking-wide">
-                  Que hacen
+                  Qué hacen
                 </h3>
                 <p class="mt-2 text-white/75 text-sm leading-relaxed">
-                  {entity.whatTheyDo || "Informacion no disponible."}
+                  {entity.whatTheyDo || "Información no disponible."}
                 </p>
               </div>
               <div class="rounded-lg border border-zinc-800/60 bg-black/20 p-4">
                 <h3 class="text-blue-400 text-sm uppercase tracking-wide">
-                  Como colaboramos
+                  Cómo colaboramos
                 </h3>
                 <p class="mt-2 text-white/75 text-sm leading-relaxed">
-                  {entity.collaboration || "Informacion no disponible."}
+                  {entity.collaboration || "Información no disponible."}
                 </p>
               </div>
             </div>
