@@ -62,7 +62,7 @@ const groupIcons: Record<string, string> = {
 };
 ---
 
-<Layout title="Equipo | TARS InnovaciÃ³n y excelencia en robÃ³tica competitiva">
+<Layout title="Equipo | TARS Innovación y excelencia en robótica competitiva">
   <ViewTransitions />
   <Header isWork />
   <HeadTitle
@@ -86,7 +86,7 @@ const groupIcons: Record<string, string> = {
             href={`#${position.replace(/\s+/g, "-").toLowerCase()}`}
             class="position px-4 py-2 text-white/60 hover:text-white whitespace-nowrap transition-colors rounded-full bg-white/5 hover:bg-white/10 flex flex-row items-center gap-3"
           >
-            <span class="w-5 h-5" set:html={groupIcons[position] || ''} /> {position}
+            <span class="w-5 h-5" set:html={groupIcons[position] || ""} /> {position}
           </a>
         ))
       }
@@ -101,7 +101,7 @@ const groupIcons: Record<string, string> = {
           class="mb-12 scroll-mt-20"
         >
           <h2 class="text-3xl font-bold text-white mb-6 flex flex-row items-center gap-3">
-            <span class="w-10 h-10" set:html={groupIcons[position] || ''} />{" "}
+            <span class="w-10 h-10" set:html={groupIcons[position] || ""} />{" "}
             {position}
           </h2>
           <div class="flex flex-wrap gap-4">
@@ -174,7 +174,7 @@ const groupIcons: Record<string, string> = {
                           <p class="text-white/60 font-normal text-sm">
                             {member.isCoordinator ? "Coordinador de" : ""}{" "}
                             {member.coordinator && (
-                              <span>{member.coordinator} Â· </span>
+                              <span>{member.coordinator} · </span>
                             )}
                             {member.position}
                           </p>
@@ -201,7 +201,7 @@ const groupIcons: Record<string, string> = {
                                 ) : (
                                   <div
                                     class="w-4 social-logo invert"
-                                    set:html={socialLogos[platform] || ''}
+                                    set:html={socialLogos[platform] || ""}
                                   />
                                 )
                               }
