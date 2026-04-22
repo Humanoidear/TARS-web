@@ -17,7 +17,7 @@
         "/img/iniciativas/taller_git.jpg"
       ],
       "focus": "Software",
-      "frequency": "En curso"
+      "frequency": "Realizado"
     },
     {
       "slug": "taller-soldadura",
@@ -76,7 +76,9 @@
         "/img/iniciativas/camisetas.PNG"
       ],
       "focus": "Comunidad",
-      "frequency": "En curso"
+      "frequency": "Realizado",
+      "winnerNames": "Angela Abad y Paula Martin-Sacristan",
+      "winnerUrl": "https://www.instagram.com/p/DXbaWrZSHDV/"
     }
   ]
 }

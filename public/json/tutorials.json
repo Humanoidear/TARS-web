@@ -1,5 +1,5 @@
 {
-  "featuredChannelUrl": "https://www.youtube.com/@TARSupv?sub_confirmation=1",
+  "featuredChannelUrl": "https://www.youtube.com/playlist?list=PL2ABiMbMKvinQDs1INBtqFAb1L3lxGrhH",
   "teacherCommunity": {
     "title": "Comunidad para docentes",
     "description": "Os invitamos a uniros a esta comunidad de WhatsApp. Solo teneis que rellenar este simple formulario y os daremos acceso inmediatamente.",
@@ -11,6 +11,14 @@
       "title": "Servomotores, que son y como usarlos",
       "description": "Tutorial sobre que son los servomotores y como utilizarlos en vuestros proyectos de UN Robotics.",
       "youtubeUrl": "https://youtu.be/lSvQtyl-pFQ?si=ZlK85o3ETKg7EHka",
+      "level": "Basico",
+      "duration": "Pendiente",
+      "status": "Disponible"
+    },
+    {
+      "title": "Sensores magneticos, como usarlos y como funcionan",
+      "description": "Tutorial sobre el uso de los sensores magneticos; como usarlos y como funcionan.",
+      "youtubeUrl": "https://youtu.be/FaswPQeHL8k",
       "level": "Basico",
       "duration": "Pendiente",
       "status": "Disponible"
