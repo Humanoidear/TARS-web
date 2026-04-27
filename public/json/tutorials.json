@@ -12,7 +12,6 @@
       "description": "Tutorial sobre que son los servomotores y como utilizarlos en vuestros proyectos de UN Robotics.",
       "youtubeUrl": "https://youtu.be/lSvQtyl-pFQ?si=ZlK85o3ETKg7EHka",
       "level": "Basico",
-      "duration": "Pendiente",
       "status": "Disponible"
     },
     {
@@ -20,7 +19,27 @@
       "description": "Tutorial sobre el uso de los sensores magneticos; como usarlos y como funcionan.",
       "youtubeUrl": "https://youtu.be/FaswPQeHL8k",
       "level": "Basico",
-      "duration": "Pendiente",
+      "status": "Disponible"
+    },
+    {
+      "title": "Sensores de infrarrojos, que son y como usarlos",
+      "description": "Tutorial sobre el uso de los sensores de infrarrojos; como usarlos y como funcionan.",
+      "youtubeUrl": "https://youtu.be/eoi9GpYDcEk",
+      "level": "Basico",
+      "status": "Disponible"
+    },
+    {
+      "title": "Sensores RGB, que son y como usarlos",
+      "description": "Tutorial sobre el uso de los sensores RGB; como usarlos y como funcionan.",
+      "youtubeUrl": "https://youtu.be/PIYvbo3QZKU",
+      "level": "Basico",
+      "status": "Disponible"
+    },
+    {
+      "title": "Conexion Bluetooth, que es y como funciona",
+      "description": "Tutorial sobre la configuracion de las conexiones Bluetooth y para que sirven.",
+      "youtubeUrl": "https://youtu.be/7jNuWwfWNG4",
+      "level": "Basico",
       "status": "Disponible"
     }
   ]
