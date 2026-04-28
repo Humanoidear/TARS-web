@@ -41,6 +41,20 @@
       "youtubeUrl": "https://youtu.be/7jNuWwfWNG4",
       "level": "Basico",
       "status": "Disponible"
+    },
+    {
+      "title": "Sensores de ultrasonido, para que sirven y como funcionan",
+      "description": "Tutorial sobre la configuracion del sensor de ultrasonidos.",
+      "youtubeUrl": "https://youtu.be/HI66RoNNd-0",
+      "level": "Basico",
+      "status": "Disponible"
+    },
+    {
+      "title": "Motores, que son y como funcionan",
+      "description": "Tutorial sobre la configuracion y uso de los motores.",
+      "youtubeUrl": "https://youtu.be/86tu_HRffjc",
+      "level": "Basico",
+      "status": "Disponible"
     }
   ]
 }
